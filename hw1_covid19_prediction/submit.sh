@@ -1,0 +1,1 @@
+kaggle competitions submit -c ml2022spring-hw1 -f submission.csv -m "Message"
