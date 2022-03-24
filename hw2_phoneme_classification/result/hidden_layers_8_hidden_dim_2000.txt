@@ -1,0 +1,161 @@
+Namespace(batch_size=512, batchnorm=True, concat_nframes=19, dropout=0.5, hidden_dim=2000, hidden_layers=8, learning_rate=0.0001, num_epoch=150)
+[Dataset] - # phone classes: 41, number of utterances for train: 3428
+[INFO] train set
+torch.Size([2116368, 741])
+torch.Size([2116368])
+[Dataset] - # phone classes: 41, number of utterances for val: 858
+[INFO] val set
+torch.Size([527790, 741])
+torch.Size([527790])
+DEVICE: cuda:0
+[001/150] Train Acc: 0.461373 Loss: 1.837359 | Val Acc: 0.590629 loss: 1.340772
+saving model with acc 0.591
+[002/150] Train Acc: 0.570632 Loss: 1.414567 | Val Acc: 0.633163 loss: 1.183877
+saving model with acc 0.633
+[003/150] Train Acc: 0.602592 Loss: 1.303020 | Val Acc: 0.657136 loss: 1.104970
+saving model with acc 0.657
+[004/150] Train Acc: 0.620675 Loss: 1.239817 | Val Acc: 0.670219 loss: 1.058643
+saving model with acc 0.670
+[005/150] Train Acc: 0.633638 Loss: 1.194015 | Val Acc: 0.680475 loss: 1.022446
+saving model with acc 0.680
+[006/150] Train Acc: 0.643202 Loss: 1.159038 | Val Acc: 0.688912 loss: 0.993501
+saving model with acc 0.689
+[007/150] Train Acc: 0.651843 Loss: 1.130234 | Val Acc: 0.695326 loss: 0.970485
+saving model with acc 0.695
+[008/150] Train Acc: 0.658174 Loss: 1.106983 | Val Acc: 0.700313 loss: 0.951183
+saving model with acc 0.700
+[009/150] Train Acc: 0.664238 Loss: 1.084980 | Val Acc: 0.705053 loss: 0.935736
+saving model with acc 0.705
+[010/150] Train Acc: 0.669719 Loss: 1.067079 | Val Acc: 0.709221 loss: 0.920682
+saving model with acc 0.709
+[011/150] Train Acc: 0.674198 Loss: 1.050919 | Val Acc: 0.712314 loss: 0.910204
+saving model with acc 0.712
+[012/150] Train Acc: 0.678088 Loss: 1.036667 | Val Acc: 0.714847 loss: 0.898670
+saving model with acc 0.715
+[013/150] Train Acc: 0.682021 Loss: 1.022198 | Val Acc: 0.718877 loss: 0.887689
+saving model with acc 0.719
+[014/150] Train Acc: 0.686146 Loss: 1.009021 | Val Acc: 0.720959 loss: 0.878760
+saving model with acc 0.721
+[015/150] Train Acc: 0.689356 Loss: 0.998072 | Val Acc: 0.724210 loss: 0.869837
+saving model with acc 0.724
+[016/150] Train Acc: 0.692460 Loss: 0.986950 | Val Acc: 0.725675 loss: 0.864521
+saving model with acc 0.726
+[017/150] Train Acc: 0.695200 Loss: 0.976961 | Val Acc: 0.726975 loss: 0.860233
+saving model with acc 0.727
+[018/150] Train Acc: 0.697952 Loss: 0.967863 | Val Acc: 0.729946 loss: 0.850344
+saving model with acc 0.730
+[019/150] Train Acc: 0.700093 Loss: 0.959164 | Val Acc: 0.731674 loss: 0.845181
+saving model with acc 0.732
+[020/150] Train Acc: 0.702778 Loss: 0.949779 | Val Acc: 0.732666 loss: 0.839702
+saving model with acc 0.733
+[021/150] Train Acc: 0.705166 Loss: 0.942180 | Val Acc: 0.734591 loss: 0.835173
+saving model with acc 0.735
+[022/150] Train Acc: 0.707272 Loss: 0.935474 | Val Acc: 0.736221 loss: 0.830342
+saving model with acc 0.736
+[023/150] Train Acc: 0.709078 Loss: 0.927722 | Val Acc: 0.737674 loss: 0.824406
+saving model with acc 0.738
+[024/150] Train Acc: 0.711465 Loss: 0.920727 | Val Acc: 0.738669 loss: 0.821404
+saving model with acc 0.739
+[025/150] Train Acc: 0.712933 Loss: 0.914389 | Val Acc: 0.740059 loss: 0.818039
+saving model with acc 0.740
+[026/150] Train Acc: 0.715370 Loss: 0.907875 | Val Acc: 0.741651 loss: 0.813773
+saving model with acc 0.742
+[027/150] Train Acc: 0.716769 Loss: 0.902093 | Val Acc: 0.741314 loss: 0.813605
+[028/150] Train Acc: 0.718556 Loss: 0.896010 | Val Acc: 0.743938 loss: 0.806517
+saving model with acc 0.744
+[029/150] Train Acc: 0.719924 Loss: 0.890600 | Val Acc: 0.743309 loss: 0.806906
+[030/150] Train Acc: 0.721600 Loss: 0.885668 | Val Acc: 0.744529 loss: 0.803806
+saving model with acc 0.745
+[031/150] Train Acc: 0.723012 Loss: 0.880836 | Val Acc: 0.745063 loss: 0.799142
+saving model with acc 0.745
+[032/150] Train Acc: 0.724232 Loss: 0.875688 | Val Acc: 0.747007 loss: 0.795383
+saving model with acc 0.747
+[033/150] Train Acc: 0.725402 Loss: 0.871094 | Val Acc: 0.747246 loss: 0.794956
+saving model with acc 0.747
+[034/150] Train Acc: 0.726896 Loss: 0.866320 | Val Acc: 0.747331 loss: 0.792716
+saving model with acc 0.747
+[035/150] Train Acc: 0.728068 Loss: 0.861940 | Val Acc: 0.748470 loss: 0.790365
+saving model with acc 0.748
+[036/150] Train Acc: 0.729410 Loss: 0.857948 | Val Acc: 0.748970 loss: 0.790103
+saving model with acc 0.749
+[037/150] Train Acc: 0.730533 Loss: 0.853628 | Val Acc: 0.749791 loss: 0.786701
+saving model with acc 0.750
+[038/150] Train Acc: 0.731276 Loss: 0.850559 | Val Acc: 0.750552 loss: 0.783864
+saving model with acc 0.751
+[039/150] Train Acc: 0.732858 Loss: 0.845707 | Val Acc: 0.750804 loss: 0.783588
+saving model with acc 0.751
+[040/150] Train Acc: 0.733952 Loss: 0.841732 | Val Acc: 0.751723 loss: 0.780294
+saving model with acc 0.752
+[041/150] Train Acc: 0.734500 Loss: 0.838760 | Val Acc: 0.752360 loss: 0.779623
+saving model with acc 0.752
+[042/150] Train Acc: 0.735813 Loss: 0.835305 | Val Acc: 0.751941 loss: 0.779847
+[043/150] Train Acc: 0.736734 Loss: 0.832579 | Val Acc: 0.753561 loss: 0.776132
+saving model with acc 0.754
+[044/150] Train Acc: 0.737731 Loss: 0.828345 | Val Acc: 0.753425 loss: 0.776095
+[045/150] Train Acc: 0.738546 Loss: 0.826229 | Val Acc: 0.754527 loss: 0.774023
+saving model with acc 0.755
+[046/150] Train Acc: 0.739369 Loss: 0.823183 | Val Acc: 0.754372 loss: 0.773067
+[047/150] Train Acc: 0.740366 Loss: 0.819116 | Val Acc: 0.755065 loss: 0.770975
+saving model with acc 0.755
+[048/150] Train Acc: 0.740902 Loss: 0.817735 | Val Acc: 0.755009 loss: 0.771448
+[049/150] Train Acc: 0.741810 Loss: 0.814153 | Val Acc: 0.755380 loss: 0.770565
+saving model with acc 0.755
+[050/150] Train Acc: 0.742708 Loss: 0.810869 | Val Acc: 0.756162 loss: 0.769266
+saving model with acc 0.756
+[051/150] Train Acc: 0.743094 Loss: 0.809066 | Val Acc: 0.755929 loss: 0.768874
+[052/150] Train Acc: 0.744462 Loss: 0.805205 | Val Acc: 0.756900 loss: 0.765302
+saving model with acc 0.757
+[053/150] Train Acc: 0.745040 Loss: 0.803359 | Val Acc: 0.756331 loss: 0.768313
+[054/150] Train Acc: 0.745508 Loss: 0.801624 | Val Acc: 0.757750 loss: 0.763361
+saving model with acc 0.758
+[055/150] Train Acc: 0.746250 Loss: 0.799250 | Val Acc: 0.757258 loss: 0.764418
+[056/150] Train Acc: 0.747122 Loss: 0.796089 | Val Acc: 0.757064 loss: 0.763054
+[057/150] Train Acc: 0.747563 Loss: 0.794107 | Val Acc: 0.757760 loss: 0.763681
+saving model with acc 0.758
+[058/150] Train Acc: 0.748046 Loss: 0.791668 | Val Acc: 0.758006 loss: 0.761495
+saving model with acc 0.758
+[059/150] Train Acc: 0.748966 Loss: 0.789932 | Val Acc: 0.758521 loss: 0.760769
+saving model with acc 0.759
+[060/150] Train Acc: 0.749157 Loss: 0.787762 | Val Acc: 0.757879 loss: 0.762135
+[061/150] Train Acc: 0.749887 Loss: 0.785365 | Val Acc: 0.758281 loss: 0.761249
+[062/150] Train Acc: 0.750519 Loss: 0.783325 | Val Acc: 0.759861 loss: 0.758109
+saving model with acc 0.760
+[063/150] Train Acc: 0.751152 Loss: 0.781821 | Val Acc: 0.759573 loss: 0.757459
+[064/150] Train Acc: 0.751975 Loss: 0.779454 | Val Acc: 0.759798 loss: 0.759046
+[065/150] Train Acc: 0.752746 Loss: 0.776782 | Val Acc: 0.759609 loss: 0.758329
+[066/150] Train Acc: 0.752836 Loss: 0.776366 | Val Acc: 0.760238 loss: 0.757956
+saving model with acc 0.760
+[067/150] Train Acc: 0.753275 Loss: 0.773825 | Val Acc: 0.760568 loss: 0.757114
+saving model with acc 0.761
+[068/150] Train Acc: 0.753276 Loss: 0.772894 | Val Acc: 0.760822 loss: 0.755836
+saving model with acc 0.761
+[069/150] Train Acc: 0.753964 Loss: 0.771435 | Val Acc: 0.760535 loss: 0.756155
+[070/150] Train Acc: 0.755200 Loss: 0.768463 | Val Acc: 0.761371 loss: 0.754520
+saving model with acc 0.761
+[071/150] Train Acc: 0.754966 Loss: 0.767971 | Val Acc: 0.761301 loss: 0.755294
+[072/150] Train Acc: 0.755608 Loss: 0.766135 | Val Acc: 0.761255 loss: 0.755124
+[073/150] Train Acc: 0.756096 Loss: 0.764251 | Val Acc: 0.762184 loss: 0.752028
+saving model with acc 0.762
+[074/150] Train Acc: 0.756334 Loss: 0.762791 | Val Acc: 0.762008 loss: 0.753039
+[075/150] Train Acc: 0.756973 Loss: 0.761491 | Val Acc: 0.762523 loss: 0.752097
+saving model with acc 0.763
+[076/150] Train Acc: 0.757114 Loss: 0.759653 | Val Acc: 0.762290 loss: 0.753625
+[077/150] Train Acc: 0.758083 Loss: 0.758316 | Val Acc: 0.762358 loss: 0.752577
+[078/150] Train Acc: 0.758071 Loss: 0.756956 | Val Acc: 0.762525 loss: 0.752507
+saving model with acc 0.763
+[079/150] Train Acc: 0.758724 Loss: 0.755424 | Val Acc: 0.762650 loss: 0.751052
+saving model with acc 0.763
+[080/150] Train Acc: 0.758825 Loss: 0.754253 | Val Acc: 0.763124 loss: 0.751538
+saving model with acc 0.763
+[081/150] Train Acc: 0.759307 Loss: 0.752424 | Val Acc: 0.763330 loss: 0.749718
+saving model with acc 0.763
+[082/150] Train Acc: 0.759522 Loss: 0.751432 | Val Acc: 0.762862 loss: 0.749345
+[083/150] Train Acc: 0.759776 Loss: 0.750213 | Val Acc: 0.763851 loss: 0.749168
+saving model with acc 0.764
+[084/150] Train Acc: 0.760795 Loss: 0.748183 | Val Acc: 0.764001 loss: 0.749181
+saving model with acc 0.764
+[085/150] Train Acc: 0.760577 Loss: 0.748091 | Val Acc: 0.763377 loss: 0.748439
+[086/150] Train Acc: 0.761438 Loss: 0.745331 | Val Acc: 0.763887 loss: 0.747468
+[087/150] Train Acc: 0.761238 Loss: 0.745678 | Val Acc: 0.763880 loss: 0.747752
+[088/150] Train Acc: 0.761635 Loss: 0.744285 | Val Acc: 0.764501 loss: 0.744631
+saving model with acc 0.765

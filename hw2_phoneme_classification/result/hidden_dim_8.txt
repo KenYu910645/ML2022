@@ -1,0 +1,23 @@
+Namespace(batch_size=512, concat_nframes=19, hidden_dim=8, hidden_layers=3, learning_rate=0.0001, num_epoch=5)
+[Dataset] - # phone classes: 41, number of utterances for train: 3428
+[INFO] train set
+torch.Size([2116368, 741])
+torch.Size([2116368])
+[Dataset] - # phone classes: 41, number of utterances for val: 858
+[INFO] val set
+torch.Size([527790, 741])
+torch.Size([527790])
+DEVICE: cuda:0
+[001/005] Train Acc: 0.266974 Loss: 2.714586 | Val Acc: 0.351562 loss: 2.295048
+saving model with acc 0.352
+[002/005] Train Acc: 0.377271 Loss: 2.191464 | Val Acc: 0.391927 loss: 2.128994
+saving model with acc 0.392
+[003/005] Train Acc: 0.401976 Loss: 2.083856 | Val Acc: 0.404890 loss: 2.065615
+saving model with acc 0.405
+[004/005] Train Acc: 0.412087 Loss: 2.036465 | Val Acc: 0.413305 loss: 2.028765
+saving model with acc 0.413
+[005/005] Train Acc: 0.420216 Loss: 2.003623 | Val Acc: 0.421402 loss: 1.999117
+saving model with acc 0.421
+[Dataset] - # phone classes: 41, number of utterances for test: 1078
+[INFO] test set
+torch.Size([646268, 741])
