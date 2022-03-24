@@ -1,0 +1,107 @@
+Namespace(batch_size=64, input_size=128, learning_rate=0.0003, n_epochs=30, patience=300)
+One ./food11/training sample ./food11/training/0_0.jpg
+One ./food11/validation sample ./food11/validation/0_0.jpg
+[ Train | 001/030 ] loss = 1.89909, acc = 0.32903
+[ Valid | 001/030 ] loss = 1.98945, acc = 0.35743
+[ Valid | 001/030 ] loss = 1.98945, acc = 0.35743 -> best
+Best model found at epoch 0, saving model
+[ Train | 002/030 ] loss = 1.58066, acc = 0.44770
+[ Valid | 002/030 ] loss = 1.60821, acc = 0.44964
+[ Valid | 002/030 ] loss = 1.60821, acc = 0.44964 -> best
+Best model found at epoch 1, saving model
+[ Train | 003/030 ] loss = 1.41364, acc = 0.50794
+[ Valid | 003/030 ] loss = 1.55771, acc = 0.49248
+[ Valid | 003/030 ] loss = 1.55771, acc = 0.49248 -> best
+Best model found at epoch 2, saving model
+[ Train | 004/030 ] loss = 1.24460, acc = 0.57099
+[ Valid | 004/030 ] loss = 1.39314, acc = 0.53966
+[ Valid | 004/030 ] loss = 1.39314, acc = 0.53966 -> best
+Best model found at epoch 3, saving model
+[ Train | 005/030 ] loss = 1.12220, acc = 0.60810
+[ Valid | 005/030 ] loss = 1.29811, acc = 0.55584
+[ Valid | 005/030 ] loss = 1.29811, acc = 0.55584 -> best
+Best model found at epoch 4, saving model
+[ Train | 006/030 ] loss = 1.04284, acc = 0.63931
+[ Valid | 006/030 ] loss = 1.23894, acc = 0.58489
+[ Valid | 006/030 ] loss = 1.23894, acc = 0.58489 -> best
+Best model found at epoch 5, saving model
+[ Train | 007/030 ] loss = 0.95801, acc = 0.66780
+[ Valid | 007/030 ] loss = 1.21864, acc = 0.60545
+[ Valid | 007/030 ] loss = 1.21864, acc = 0.60545 -> best
+Best model found at epoch 6, saving model
+[ Train | 008/030 ] loss = 0.89196, acc = 0.69361
+[ Valid | 008/030 ] loss = 1.34504, acc = 0.58556
+[ Valid | 008/030 ] loss = 1.34504, acc = 0.58556
+[ Train | 009/030 ] loss = 0.82583, acc = 0.71569
+[ Valid | 009/030 ] loss = 1.18495, acc = 0.61161
+[ Valid | 009/030 ] loss = 1.18495, acc = 0.61161 -> best
+Best model found at epoch 8, saving model
+[ Train | 010/030 ] loss = 0.77550, acc = 0.73335
+[ Valid | 010/030 ] loss = 1.05939, acc = 0.66179
+[ Valid | 010/030 ] loss = 1.05939, acc = 0.66179 -> best
+Best model found at epoch 9, saving model
+[ Train | 011/030 ] loss = 0.72170, acc = 0.74944
+[ Valid | 011/030 ] loss = 1.10512, acc = 0.64064
+[ Valid | 011/030 ] loss = 1.10512, acc = 0.64064
+[ Train | 012/030 ] loss = 0.66486, acc = 0.76917
+[ Valid | 012/030 ] loss = 1.14692, acc = 0.63536
+[ Valid | 012/030 ] loss = 1.14692, acc = 0.63536
+[ Train | 013/030 ] loss = 0.63246, acc = 0.77667
+[ Valid | 013/030 ] loss = 1.14650, acc = 0.64104
+[ Valid | 013/030 ] loss = 1.14650, acc = 0.64104
+[ Train | 014/030 ] loss = 0.58171, acc = 0.79538
+[ Valid | 014/030 ] loss = 1.19595, acc = 0.65049
+[ Valid | 014/030 ] loss = 1.19595, acc = 0.65049
+[ Train | 015/030 ] loss = 0.51992, acc = 0.81845
+[ Valid | 015/030 ] loss = 1.06450, acc = 0.67644
+[ Valid | 015/030 ] loss = 1.06450, acc = 0.67644 -> best
+Best model found at epoch 14, saving model
+[ Train | 016/030 ] loss = 0.49247, acc = 0.82657
+[ Valid | 016/030 ] loss = 1.09311, acc = 0.67256
+[ Valid | 016/030 ] loss = 1.09311, acc = 0.67256
+[ Train | 017/030 ] loss = 0.44084, acc = 0.84359
+[ Valid | 017/030 ] loss = 1.32092, acc = 0.65578
+[ Valid | 017/030 ] loss = 1.32092, acc = 0.65578
+[ Train | 018/030 ] loss = 0.39401, acc = 0.85972
+[ Valid | 018/030 ] loss = 1.26223, acc = 0.67221
+[ Valid | 018/030 ] loss = 1.26223, acc = 0.67221
+[ Train | 019/030 ] loss = 0.37229, acc = 0.87083
+[ Valid | 019/030 ] loss = 1.28305, acc = 0.65754
+[ Valid | 019/030 ] loss = 1.28305, acc = 0.65754
+[ Train | 020/030 ] loss = 0.31591, acc = 0.88873
+[ Valid | 020/030 ] loss = 1.40097, acc = 0.64673
+[ Valid | 020/030 ] loss = 1.40097, acc = 0.64673
+[ Train | 021/030 ] loss = 0.29649, acc = 0.89831
+[ Valid | 021/030 ] loss = 1.29929, acc = 0.66845
+[ Valid | 021/030 ] loss = 1.29929, acc = 0.66845
+[ Train | 022/030 ] loss = 0.27427, acc = 0.90621
+[ Valid | 022/030 ] loss = 1.26885, acc = 0.69169
+[ Valid | 022/030 ] loss = 1.26885, acc = 0.69169 -> best
+Best model found at epoch 21, saving model
+[ Train | 023/030 ] loss = 0.23081, acc = 0.92173
+[ Valid | 023/030 ] loss = 1.32601, acc = 0.69816
+[ Valid | 023/030 ] loss = 1.32601, acc = 0.69816 -> best
+Best model found at epoch 22, saving model
+[ Train | 024/030 ] loss = 0.21415, acc = 0.92510
+[ Valid | 024/030 ] loss = 1.36340, acc = 0.67963
+[ Valid | 024/030 ] loss = 1.36340, acc = 0.67963
+[ Train | 025/030 ] loss = 0.19406, acc = 0.92956
+[ Valid | 025/030 ] loss = 1.49245, acc = 0.68986
+[ Valid | 025/030 ] loss = 1.49245, acc = 0.68986
+[ Train | 026/030 ] loss = 0.18227, acc = 0.93615
+[ Valid | 026/030 ] loss = 1.41950, acc = 0.69583
+[ Valid | 026/030 ] loss = 1.41950, acc = 0.69583
+[ Train | 027/030 ] loss = 0.16313, acc = 0.94496
+[ Valid | 027/030 ] loss = 1.54529, acc = 0.67943
+[ Valid | 027/030 ] loss = 1.54529, acc = 0.67943
+[ Train | 028/030 ] loss = 0.17101, acc = 0.93750
+[ Valid | 028/030 ] loss = 1.33814, acc = 0.69294
+[ Valid | 028/030 ] loss = 1.33814, acc = 0.69294
+[ Train | 029/030 ] loss = 0.14752, acc = 0.94833
+[ Valid | 029/030 ] loss = 1.64285, acc = 0.66571
+[ Valid | 029/030 ] loss = 1.64285, acc = 0.66571
+[ Train | 030/030 ] loss = 0.14213, acc = 0.95111
+[ Valid | 030/030 ] loss = 1.56506, acc = 0.68834
+[ Valid | 030/030 ] loss = 1.56506, acc = 0.68834
+One ./food11/test sample ./food11/test/0001.jpg
+Save testing result to submission.csv

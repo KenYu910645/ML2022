@@ -1,0 +1,975 @@
+Namespace(batch_size=64, input_size=224, learning_rate=0.0003, n_epochs=300, patience=300)
+One ./food11/training sample ./food11/training/0_0.jpg
+One ./food11/validation sample ./food11/validation/0_0.jpg
+My_Classifier(
+  (model): ResNet(
+    (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (relu): ReLU(inplace=True)
+    (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+    (layer1): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (downsample): Sequential(
+          (0): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+    )
+    (layer2): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (downsample): Sequential(
+          (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (3): Bottleneck(
+        (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+    )
+    (layer3): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (downsample): Sequential(
+          (0): Conv2d(512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (3): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (4): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (5): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (6): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (7): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (8): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (9): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (10): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (11): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (12): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (13): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (14): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (15): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (16): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (17): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (18): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (19): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (20): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (21): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (22): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+    )
+    (layer4): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (downsample): Sequential(
+          (0): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+    )
+    (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
+    (fc): Linear(in_features=2048, out_features=11, bias=True)
+  )
+)
+Epoch(001/300) train_loss 2.21298 | train_acc 0.23008 | valid_loss 2.13158 | valid_acc 0.31296
+[ Valid | 001/300 ] loss = 2.13158, acc = 0.31296 -> best
+Best model found at epoch 0, saving model
+Epoch(002/300) train_loss 1.88717 | train_acc 0.35272 | valid_loss 1.98012 | valid_acc 0.33042
+[ Valid | 002/300 ] loss = 1.98012, acc = 0.33042 -> best
+Best model found at epoch 1, saving model
+Epoch(003/300) train_loss 1.71861 | train_acc 0.40595 | valid_loss 1.72041 | valid_acc 0.41773
+[ Valid | 003/300 ] loss = 1.72041, acc = 0.41773 -> best
+Best model found at epoch 2, saving model
+Epoch(004/300) train_loss 1.60375 | train_acc 0.44980 | valid_loss 1.74305 | valid_acc 0.42175
+[ Valid | 004/300 ] loss = 1.74305, acc = 0.42175 -> best
+Best model found at epoch 3, saving model
+Epoch(005/300) train_loss 1.50915 | train_acc 0.48149 | valid_loss 1.58878 | valid_acc 0.46612
+[ Valid | 005/300 ] loss = 1.58878, acc = 0.46612 -> best
+Best model found at epoch 4, saving model
+Epoch(006/300) train_loss 1.40196 | train_acc 0.51782 | valid_loss 1.65611 | valid_acc 0.46082
+[ Valid | 006/300 ] loss = 1.65611, acc = 0.46082
+Epoch(007/300) train_loss 1.33980 | train_acc 0.54379 | valid_loss 1.44936 | valid_acc 0.51243
+[ Valid | 007/300 ] loss = 1.44936, acc = 0.51243 -> best
+Best model found at epoch 6, saving model
+Epoch(008/300) train_loss 1.27984 | train_acc 0.55756 | valid_loss 1.44193 | valid_acc 0.52297
+[ Valid | 008/300 ] loss = 1.44193, acc = 0.52297 -> best
+Best model found at epoch 7, saving model
+Epoch(009/300) train_loss 1.20735 | train_acc 0.58129 | valid_loss 1.30534 | valid_acc 0.57284
+[ Valid | 009/300 ] loss = 1.30534, acc = 0.57284 -> best
+Best model found at epoch 8, saving model
+Epoch(010/300) train_loss 1.14339 | train_acc 0.60748 | valid_loss 1.49280 | valid_acc 0.51794
+[ Valid | 010/300 ] loss = 1.49280, acc = 0.51794
+Epoch(011/300) train_loss 1.09870 | train_acc 0.61845 | valid_loss 1.42758 | valid_acc 0.53532
+[ Valid | 011/300 ] loss = 1.42758, acc = 0.53532
+Epoch(012/300) train_loss 1.04675 | train_acc 0.64498 | valid_loss 1.62882 | valid_acc 0.51320
+[ Valid | 012/300 ] loss = 1.62882, acc = 0.51320
+Epoch(013/300) train_loss 0.99597 | train_acc 0.65784 | valid_loss 1.25245 | valid_acc 0.58914
+[ Valid | 013/300 ] loss = 1.25245, acc = 0.58914 -> best
+Best model found at epoch 12, saving model
+Epoch(014/300) train_loss 0.96483 | train_acc 0.67109 | valid_loss 1.40229 | valid_acc 0.54359
+[ Valid | 014/300 ] loss = 1.40229, acc = 0.54359
+Epoch(015/300) train_loss 0.92418 | train_acc 0.68609 | valid_loss 1.23878 | valid_acc 0.60861
+[ Valid | 015/300 ] loss = 1.23878, acc = 0.60861 -> best
+Best model found at epoch 14, saving model
+Epoch(016/300) train_loss 0.88802 | train_acc 0.69839 | valid_loss 1.19902 | valid_acc 0.60187
+[ Valid | 016/300 ] loss = 1.19902, acc = 0.60187
+Epoch(017/300) train_loss 0.84529 | train_acc 0.71006 | valid_loss 1.24809 | valid_acc 0.63112
+[ Valid | 017/300 ] loss = 1.24809, acc = 0.63112 -> best
+Best model found at epoch 16, saving model
+Epoch(018/300) train_loss 0.83209 | train_acc 0.71504 | valid_loss 1.23580 | valid_acc 0.61181
+[ Valid | 018/300 ] loss = 1.23580, acc = 0.61181
+Epoch(019/300) train_loss 0.76964 | train_acc 0.73579 | valid_loss 1.23085 | valid_acc 0.61664
+[ Valid | 019/300 ] loss = 1.23085, acc = 0.61664
+Epoch(020/300) train_loss 0.74626 | train_acc 0.74290 | valid_loss 1.09220 | valid_acc 0.64579
+[ Valid | 020/300 ] loss = 1.09220, acc = 0.64579 -> best
+Best model found at epoch 19, saving model
+Epoch(021/300) train_loss 0.70843 | train_acc 0.75391 | valid_loss 1.08257 | valid_acc 0.65610
+[ Valid | 021/300 ] loss = 1.08257, acc = 0.65610 -> best
+Best model found at epoch 20, saving model
+Epoch(022/300) train_loss 0.70236 | train_acc 0.75925 | valid_loss 1.24387 | valid_acc 0.66284
+[ Valid | 022/300 ] loss = 1.24387, acc = 0.66284 -> best
+Best model found at epoch 21, saving model
+Epoch(023/300) train_loss 0.64603 | train_acc 0.77780 | valid_loss 1.03349 | valid_acc 0.68793
+[ Valid | 023/300 ] loss = 1.03349, acc = 0.68793 -> best
+Best model found at epoch 22, saving model
+Epoch(024/300) train_loss 0.61436 | train_acc 0.79101 | valid_loss 1.31537 | valid_acc 0.62262
+[ Valid | 024/300 ] loss = 1.31537, acc = 0.62262
+Epoch(025/300) train_loss 0.58850 | train_acc 0.79468 | valid_loss 1.18878 | valid_acc 0.65735
+[ Valid | 025/300 ] loss = 1.18878, acc = 0.65735
+Epoch(026/300) train_loss 0.56280 | train_acc 0.80794 | valid_loss 1.10697 | valid_acc 0.67577
+[ Valid | 026/300 ] loss = 1.10697, acc = 0.67577
+Epoch(027/300) train_loss 0.53847 | train_acc 0.81343 | valid_loss 1.04650 | valid_acc 0.69160
+[ Valid | 027/300 ] loss = 1.04650, acc = 0.69160 -> best
+Best model found at epoch 26, saving model
+Epoch(028/300) train_loss 0.51136 | train_acc 0.82240 | valid_loss 1.14510 | valid_acc 0.67172
+[ Valid | 028/300 ] loss = 1.14510, acc = 0.67172
+Epoch(029/300) train_loss 0.50019 | train_acc 0.82768 | valid_loss 1.04789 | valid_acc 0.68849
+[ Valid | 029/300 ] loss = 1.04789, acc = 0.68849
+Epoch(030/300) train_loss 0.49178 | train_acc 0.83036 | valid_loss 1.20229 | valid_acc 0.70093
+[ Valid | 030/300 ] loss = 1.20229, acc = 0.70093 -> best
+Best model found at epoch 29, saving model
+Epoch(031/300) train_loss 0.47546 | train_acc 0.83671 | valid_loss 1.05305 | valid_acc 0.69199
+[ Valid | 031/300 ] loss = 1.05305, acc = 0.69199
+Epoch(032/300) train_loss 0.42963 | train_acc 0.85220 | valid_loss 1.16760 | valid_acc 0.70641
+[ Valid | 032/300 ] loss = 1.16760, acc = 0.70641 -> best
+Best model found at epoch 31, saving model
+Epoch(033/300) train_loss 0.41544 | train_acc 0.85573 | valid_loss 1.06454 | valid_acc 0.69661
+[ Valid | 033/300 ] loss = 1.06454, acc = 0.69661
+Epoch(034/300) train_loss 0.39955 | train_acc 0.85994 | valid_loss 1.12157 | valid_acc 0.71261
+[ Valid | 034/300 ] loss = 1.12157, acc = 0.71261 -> best
+Best model found at epoch 33, saving model
+Epoch(035/300) train_loss 0.39681 | train_acc 0.86357 | valid_loss 1.12793 | valid_acc 0.69024
+[ Valid | 035/300 ] loss = 1.12793, acc = 0.69024
+Epoch(036/300) train_loss 0.36635 | train_acc 0.87728 | valid_loss 1.39236 | valid_acc 0.64306
+[ Valid | 036/300 ] loss = 1.39236, acc = 0.64306
+Epoch(037/300) train_loss 0.34826 | train_acc 0.88103 | valid_loss 1.22852 | valid_acc 0.69055
+[ Valid | 037/300 ] loss = 1.22852, acc = 0.69055
+Epoch(038/300) train_loss 0.33352 | train_acc 0.88238 | valid_loss 1.01432 | valid_acc 0.73014
+[ Valid | 038/300 ] loss = 1.01432, acc = 0.73014 -> best
+Best model found at epoch 37, saving model
+Epoch(039/300) train_loss 0.33520 | train_acc 0.88337 | valid_loss 1.49395 | valid_acc 0.66102
+[ Valid | 039/300 ] loss = 1.49395, acc = 0.66102
+Epoch(040/300) train_loss 0.30010 | train_acc 0.89665 | valid_loss 1.13904 | valid_acc 0.71088
+[ Valid | 040/300 ] loss = 1.13904, acc = 0.71088
+Epoch(041/300) train_loss 0.31468 | train_acc 0.89397 | valid_loss 1.10298 | valid_acc 0.71417
+[ Valid | 041/300 ] loss = 1.10298, acc = 0.71417
+Epoch(042/300) train_loss 0.28858 | train_acc 0.90173 | valid_loss 1.21534 | valid_acc 0.73297
+[ Valid | 042/300 ] loss = 1.21534, acc = 0.73297 -> best
+Best model found at epoch 41, saving model
+Epoch(043/300) train_loss 0.26775 | train_acc 0.90798 | valid_loss 1.21957 | valid_acc 0.69594
+[ Valid | 043/300 ] loss = 1.21957, acc = 0.69594
+Epoch(044/300) train_loss 0.27958 | train_acc 0.90234 | valid_loss 1.30799 | valid_acc 0.68608
+[ Valid | 044/300 ] loss = 1.30799, acc = 0.68608
+Epoch(045/300) train_loss 0.23962 | train_acc 0.91750 | valid_loss 1.26177 | valid_acc 0.69904
+[ Valid | 045/300 ] loss = 1.26177, acc = 0.69904
+Epoch(046/300) train_loss 0.24663 | train_acc 0.91524 | valid_loss 1.14553 | valid_acc 0.71203
+[ Valid | 046/300 ] loss = 1.14553, acc = 0.71203
+Epoch(047/300) train_loss 0.23558 | train_acc 0.91861 | valid_loss 1.21588 | valid_acc 0.71686
+[ Valid | 047/300 ] loss = 1.21588, acc = 0.71686
+Epoch(048/300) train_loss 0.23037 | train_acc 0.91798 | valid_loss 1.28871 | valid_acc 0.70558
+[ Valid | 048/300 ] loss = 1.28871, acc = 0.70558
+Epoch(049/300) train_loss 0.22456 | train_acc 0.92377 | valid_loss 1.28019 | valid_acc 0.71097
+[ Valid | 049/300 ] loss = 1.28019, acc = 0.71097
+Epoch(050/300) train_loss 0.19757 | train_acc 0.93159 | valid_loss 1.25500 | valid_acc 0.71079
+[ Valid | 050/300 ] loss = 1.25500, acc = 0.71079
+Epoch(051/300) train_loss 0.20030 | train_acc 0.92929 | valid_loss 1.13990 | valid_acc 0.72920
+[ Valid | 051/300 ] loss = 1.13990, acc = 0.72920
+Epoch(052/300) train_loss 0.18730 | train_acc 0.93373 | valid_loss 1.54743 | valid_acc 0.70017
+[ Valid | 052/300 ] loss = 1.54743, acc = 0.70017
+Epoch(053/300) train_loss 0.18625 | train_acc 0.93577 | valid_loss 1.40064 | valid_acc 0.70319
+[ Valid | 053/300 ] loss = 1.40064, acc = 0.70319
+Epoch(054/300) train_loss 0.19576 | train_acc 0.93228 | valid_loss 1.44218 | valid_acc 0.70903
+[ Valid | 054/300 ] loss = 1.44218, acc = 0.70903
+Epoch(055/300) train_loss 0.16892 | train_acc 0.94071 | valid_loss 1.17893 | valid_acc 0.72740
+[ Valid | 055/300 ] loss = 1.17893, acc = 0.72740
+Epoch(056/300) train_loss 0.16975 | train_acc 0.94310 | valid_loss 1.27483 | valid_acc 0.71138
+[ Valid | 056/300 ] loss = 1.27483, acc = 0.71138
+Epoch(057/300) train_loss 0.18012 | train_acc 0.93897 | valid_loss 1.35403 | valid_acc 0.71473
+[ Valid | 057/300 ] loss = 1.35403, acc = 0.71473
+Epoch(058/300) train_loss 0.16778 | train_acc 0.94327 | valid_loss 1.34843 | valid_acc 0.73288
+[ Valid | 058/300 ] loss = 1.34843, acc = 0.73288
+Epoch(059/300) train_loss 0.15681 | train_acc 0.94391 | valid_loss 1.40686 | valid_acc 0.71340
+[ Valid | 059/300 ] loss = 1.40686, acc = 0.71340
+Epoch(060/300) train_loss 0.14990 | train_acc 0.94510 | valid_loss 1.28514 | valid_acc 0.73066
+[ Valid | 060/300 ] loss = 1.28514, acc = 0.73066
+Epoch(061/300) train_loss 0.15723 | train_acc 0.94625 | valid_loss 1.18335 | valid_acc 0.74048
+[ Valid | 061/300 ] loss = 1.18335, acc = 0.74048 -> best
+Best model found at epoch 60, saving model
+Epoch(062/300) train_loss 0.15020 | train_acc 0.94871 | valid_loss 1.29418 | valid_acc 0.71447
+[ Valid | 062/300 ] loss = 1.29418, acc = 0.71447
+Epoch(063/300) train_loss 0.11870 | train_acc 0.95873 | valid_loss 1.20715 | valid_acc 0.74243
+[ Valid | 063/300 ] loss = 1.20715, acc = 0.74243 -> best
+Best model found at epoch 62, saving model
+Epoch(064/300) train_loss 0.14095 | train_acc 0.95141 | valid_loss 1.31365 | valid_acc 0.73106
+[ Valid | 064/300 ] loss = 1.31365, acc = 0.73106
+Epoch(065/300) train_loss 0.14883 | train_acc 0.95048 | valid_loss 1.37263 | valid_acc 0.72509
+[ Valid | 065/300 ] loss = 1.37263, acc = 0.72509
+Epoch(066/300) train_loss 0.14145 | train_acc 0.95143 | valid_loss 1.32056 | valid_acc 0.72534
+[ Valid | 066/300 ] loss = 1.32056, acc = 0.72534
+Epoch(067/300) train_loss 0.14649 | train_acc 0.95117 | valid_loss 1.22327 | valid_acc 0.73288
+[ Valid | 067/300 ] loss = 1.22327, acc = 0.73288
+Epoch(068/300) train_loss 0.12632 | train_acc 0.95948 | valid_loss 1.32664 | valid_acc 0.72853
+[ Valid | 068/300 ] loss = 1.32664, acc = 0.72853
+Epoch(069/300) train_loss 0.11594 | train_acc 0.95948 | valid_loss 1.40605 | valid_acc 0.71628
+[ Valid | 069/300 ] loss = 1.40605, acc = 0.71628
+Epoch(070/300) train_loss 0.12717 | train_acc 0.95540 | valid_loss 1.29270 | valid_acc 0.73180
+[ Valid | 070/300 ] loss = 1.29270, acc = 0.73180
+Epoch(071/300) train_loss 0.12436 | train_acc 0.95591 | valid_loss 1.21808 | valid_acc 0.74670
+[ Valid | 071/300 ] loss = 1.21808, acc = 0.74670 -> best
+Best model found at epoch 70, saving model
+Epoch(072/300) train_loss 0.12229 | train_acc 0.95873 | valid_loss 1.40587 | valid_acc 0.73771
+[ Valid | 072/300 ] loss = 1.40587, acc = 0.73771
+Epoch(073/300) train_loss 0.10882 | train_acc 0.96296 | valid_loss 1.38669 | valid_acc 0.72390
+[ Valid | 073/300 ] loss = 1.38669, acc = 0.72390
+Epoch(074/300) train_loss 0.11387 | train_acc 0.96206 | valid_loss 1.30630 | valid_acc 0.73837
+[ Valid | 074/300 ] loss = 1.30630, acc = 0.73837
+Epoch(075/300) train_loss 0.11662 | train_acc 0.96097 | valid_loss 1.42330 | valid_acc 0.72603
+[ Valid | 075/300 ] loss = 1.42330, acc = 0.72603
+Epoch(076/300) train_loss 0.12172 | train_acc 0.96008 | valid_loss 1.19298 | valid_acc 0.74194
+[ Valid | 076/300 ] loss = 1.19298, acc = 0.74194
+Epoch(077/300) train_loss 0.09373 | train_acc 0.96740 | valid_loss 1.56372 | valid_acc 0.70740
+[ Valid | 077/300 ] loss = 1.56372, acc = 0.70740
+Epoch(078/300) train_loss 0.13020 | train_acc 0.95454 | valid_loss 1.40958 | valid_acc 0.70964
+[ Valid | 078/300 ] loss = 1.40958, acc = 0.70964
+Epoch(079/300) train_loss 0.09693 | train_acc 0.96780 | valid_loss 1.63423 | valid_acc 0.69798
+[ Valid | 079/300 ] loss = 1.63423, acc = 0.69798
+Epoch(080/300) train_loss 0.10496 | train_acc 0.96270 | valid_loss 1.34115 | valid_acc 0.74165
+[ Valid | 080/300 ] loss = 1.34115, acc = 0.74165
+Epoch(081/300) train_loss 0.10002 | train_acc 0.96452 | valid_loss 1.30875 | valid_acc 0.73748
+[ Valid | 081/300 ] loss = 1.30875, acc = 0.73748
+Epoch(082/300) train_loss 0.10664 | train_acc 0.96252 | valid_loss 1.39283 | valid_acc 0.73431
+[ Valid | 082/300 ] loss = 1.39283, acc = 0.73431
+Epoch(083/300) train_loss 0.09113 | train_acc 0.96901 | valid_loss 1.38968 | valid_acc 0.73250
+[ Valid | 083/300 ] loss = 1.38968, acc = 0.73250
+Epoch(084/300) train_loss 0.09840 | train_acc 0.96794 | valid_loss 1.30954 | valid_acc 0.74234
+[ Valid | 084/300 ] loss = 1.30954, acc = 0.74234
+Epoch(085/300) train_loss 0.10267 | train_acc 0.96603 | valid_loss 1.44248 | valid_acc 0.71144
+[ Valid | 085/300 ] loss = 1.44248, acc = 0.71144
+Epoch(086/300) train_loss 0.10090 | train_acc 0.96659 | valid_loss 1.47512 | valid_acc 0.71968
+[ Valid | 086/300 ] loss = 1.47512, acc = 0.71968
+Epoch(087/300) train_loss 0.08790 | train_acc 0.97036 | valid_loss 1.49993 | valid_acc 0.72448
+[ Valid | 087/300 ] loss = 1.49993, acc = 0.72448
+Epoch(088/300) train_loss 0.07989 | train_acc 0.97254 | valid_loss 1.29539 | valid_acc 0.74310
+[ Valid | 088/300 ] loss = 1.29539, acc = 0.74310
+Epoch(089/300) train_loss 0.09791 | train_acc 0.96736 | valid_loss 1.44022 | valid_acc 0.72205
+[ Valid | 089/300 ] loss = 1.44022, acc = 0.72205
+Epoch(090/300) train_loss 0.10100 | train_acc 0.96579 | valid_loss 1.24916 | valid_acc 0.74694
+[ Valid | 090/300 ] loss = 1.24916, acc = 0.74694 -> best
+Best model found at epoch 89, saving model
+Epoch(091/300) train_loss 0.09232 | train_acc 0.97234 | valid_loss 1.35090 | valid_acc 0.73212
+[ Valid | 091/300 ] loss = 1.35090, acc = 0.73212
+Epoch(092/300) train_loss 0.09990 | train_acc 0.96458 | valid_loss 1.34699 | valid_acc 0.73731
+[ Valid | 092/300 ] loss = 1.34699, acc = 0.73731
+Epoch(093/300) train_loss 0.09570 | train_acc 0.96700 | valid_loss 1.31247 | valid_acc 0.75101
+[ Valid | 093/300 ] loss = 1.31247, acc = 0.75101 -> best
+Best model found at epoch 92, saving model
+Epoch(094/300) train_loss 0.06576 | train_acc 0.97698 | valid_loss 1.41871 | valid_acc 0.73064
+[ Valid | 094/300 ] loss = 1.41871, acc = 0.73064
+Epoch(095/300) train_loss 0.08845 | train_acc 0.97093 | valid_loss 1.28705 | valid_acc 0.74531
+[ Valid | 095/300 ] loss = 1.28705, acc = 0.74531
+Epoch(096/300) train_loss 0.09165 | train_acc 0.96925 | valid_loss 1.36804 | valid_acc 0.74048
+[ Valid | 096/300 ] loss = 1.36804, acc = 0.74048
+Epoch(097/300) train_loss 0.07596 | train_acc 0.97304 | valid_loss 1.40795 | valid_acc 0.73674
+[ Valid | 097/300 ] loss = 1.40795, acc = 0.73674
+Epoch(098/300) train_loss 0.09882 | train_acc 0.96655 | valid_loss 1.39872 | valid_acc 0.74453
+[ Valid | 098/300 ] loss = 1.39872, acc = 0.74453
+Epoch(099/300) train_loss 0.08043 | train_acc 0.97365 | valid_loss 1.39908 | valid_acc 0.73885
+[ Valid | 099/300 ] loss = 1.39908, acc = 0.73885
+Epoch(100/300) train_loss 0.08120 | train_acc 0.97339 | valid_loss 1.40074 | valid_acc 0.72470
+[ Valid | 100/300 ] loss = 1.40074, acc = 0.72470
+Epoch(101/300) train_loss 0.07486 | train_acc 0.97530 | valid_loss 1.41341 | valid_acc 0.73211
+[ Valid | 101/300 ] loss = 1.41341, acc = 0.73211
+Epoch(102/300) train_loss 0.10778 | train_acc 0.96484 | valid_loss 1.38120 | valid_acc 0.73038
+[ Valid | 102/300 ] loss = 1.38120, acc = 0.73038
+Epoch(103/300) train_loss 0.08835 | train_acc 0.97395 | valid_loss 1.43258 | valid_acc 0.74012
+[ Valid | 103/300 ] loss = 1.43258, acc = 0.74012
+Epoch(104/300) train_loss 0.06956 | train_acc 0.97661 | valid_loss 1.33270 | valid_acc 0.75168
+[ Valid | 104/300 ] loss = 1.33270, acc = 0.75168 -> best
+Best model found at epoch 103, saving model
+Epoch(105/300) train_loss 0.06138 | train_acc 0.97933 | valid_loss 1.39157 | valid_acc 0.74039
+[ Valid | 105/300 ] loss = 1.39157, acc = 0.74039
+Epoch(106/300) train_loss 0.06246 | train_acc 0.97933 | valid_loss 1.45764 | valid_acc 0.74243
+[ Valid | 106/300 ] loss = 1.45764, acc = 0.74243
+Epoch(107/300) train_loss 0.08265 | train_acc 0.97258 | valid_loss 1.41099 | valid_acc 0.74621
+[ Valid | 107/300 ] loss = 1.41099, acc = 0.74621
+Epoch(108/300) train_loss 0.07577 | train_acc 0.97278 | valid_loss 1.44582 | valid_acc 0.73800
+[ Valid | 108/300 ] loss = 1.44582, acc = 0.73800
+Epoch(109/300) train_loss 0.07441 | train_acc 0.97661 | valid_loss 1.47276 | valid_acc 0.73558
+[ Valid | 109/300 ] loss = 1.47276, acc = 0.73558
+Epoch(110/300) train_loss 0.05827 | train_acc 0.98091 | valid_loss 1.49159 | valid_acc 0.74715
+[ Valid | 110/300 ] loss = 1.49159, acc = 0.74715
+Epoch(111/300) train_loss 0.07992 | train_acc 0.97540 | valid_loss 1.28923 | valid_acc 0.75334
+[ Valid | 111/300 ] loss = 1.28923, acc = 0.75334 -> best
+Best model found at epoch 110, saving model
+Epoch(112/300) train_loss 0.04498 | train_acc 0.98468 | valid_loss 1.35807 | valid_acc 0.74386
+[ Valid | 112/300 ] loss = 1.35807, acc = 0.74386
+Epoch(113/300) train_loss 0.05469 | train_acc 0.98367 | valid_loss 1.47763 | valid_acc 0.74041
+[ Valid | 113/300 ] loss = 1.47763, acc = 0.74041
+Epoch(114/300) train_loss 0.08877 | train_acc 0.97228 | valid_loss 1.36736 | valid_acc 0.74484
+[ Valid | 114/300 ] loss = 1.36736, acc = 0.74484
+Epoch(115/300) train_loss 0.07137 | train_acc 0.97486 | valid_loss 1.43781 | valid_acc 0.73760
+[ Valid | 115/300 ] loss = 1.43781, acc = 0.73760
+Epoch(116/300) train_loss 0.09053 | train_acc 0.97087 | valid_loss 1.53207 | valid_acc 0.72862
+[ Valid | 116/300 ] loss = 1.53207, acc = 0.72862
+Epoch(117/300) train_loss 0.06224 | train_acc 0.97960 | valid_loss 1.30560 | valid_acc 0.75458
+[ Valid | 117/300 ] loss = 1.30560, acc = 0.75458 -> best
+Best model found at epoch 116, saving model
+Epoch(118/300) train_loss 0.05819 | train_acc 0.97994 | valid_loss 1.34228 | valid_acc 0.75101
+[ Valid | 118/300 ] loss = 1.34228, acc = 0.75101
+Epoch(119/300) train_loss 0.07510 | train_acc 0.97442 | valid_loss 1.54541 | valid_acc 0.72652
+[ Valid | 119/300 ] loss = 1.54541, acc = 0.72652
+Epoch(120/300) train_loss 0.08937 | train_acc 0.96966 | valid_loss 1.32836 | valid_acc 0.75257
+[ Valid | 120/300 ] loss = 1.32836, acc = 0.75257
+Epoch(121/300) train_loss 0.05290 | train_acc 0.98141 | valid_loss 1.34357 | valid_acc 0.75748
+[ Valid | 121/300 ] loss = 1.34357, acc = 0.75748 -> best
+Best model found at epoch 120, saving model
+Epoch(122/300) train_loss 0.06262 | train_acc 0.97923 | valid_loss 1.35263 | valid_acc 0.75681
+[ Valid | 122/300 ] loss = 1.35263, acc = 0.75681
+Epoch(123/300) train_loss 0.06676 | train_acc 0.97802 | valid_loss 1.39507 | valid_acc 0.74156
+[ Valid | 123/300 ] loss = 1.39507, acc = 0.74156
+Epoch(124/300) train_loss 0.07688 | train_acc 0.97421 | valid_loss 1.36149 | valid_acc 0.75583
+[ Valid | 124/300 ] loss = 1.36149, acc = 0.75583
+Epoch(125/300) train_loss 0.07254 | train_acc 0.97704 | valid_loss 1.36740 | valid_acc 0.75506
+[ Valid | 125/300 ] loss = 1.36740, acc = 0.75506
+Epoch(126/300) train_loss 0.07920 | train_acc 0.97208 | valid_loss 1.33338 | valid_acc 0.75411
+[ Valid | 126/300 ] loss = 1.33338, acc = 0.75411
+Epoch(127/300) train_loss 0.07107 | train_acc 0.97843 | valid_loss 1.30903 | valid_acc 0.75874
+[ Valid | 127/300 ] loss = 1.30903, acc = 0.75874 -> best
+Best model found at epoch 126, saving model
+Epoch(128/300) train_loss 0.04260 | train_acc 0.98534 | valid_loss 1.41934 | valid_acc 0.75041
+[ Valid | 128/300 ] loss = 1.41934, acc = 0.75041
+Epoch(129/300) train_loss 0.09698 | train_acc 0.96724 | valid_loss 1.42365 | valid_acc 0.73614
+[ Valid | 129/300 ] loss = 1.42365, acc = 0.73614
+Epoch(130/300) train_loss 0.05485 | train_acc 0.98185 | valid_loss 1.30325 | valid_acc 0.74516
+[ Valid | 130/300 ] loss = 1.30325, acc = 0.74516
+Epoch(131/300) train_loss 0.04561 | train_acc 0.98534 | valid_loss 1.35976 | valid_acc 0.74928
+[ Valid | 131/300 ] loss = 1.35976, acc = 0.74928
+Epoch(132/300) train_loss 0.05436 | train_acc 0.98161 | valid_loss 1.32750 | valid_acc 0.75602
+[ Valid | 132/300 ] loss = 1.32750, acc = 0.75602
+Epoch(133/300) train_loss 0.06033 | train_acc 0.97984 | valid_loss 1.44832 | valid_acc 0.73037
+[ Valid | 133/300 ] loss = 1.44832, acc = 0.73037
+Epoch(134/300) train_loss 0.05420 | train_acc 0.98377 | valid_loss 1.51536 | valid_acc 0.73739
+[ Valid | 134/300 ] loss = 1.51536, acc = 0.73739
+Epoch(135/300) train_loss 0.06062 | train_acc 0.97829 | valid_loss 1.33954 | valid_acc 0.75168
+[ Valid | 135/300 ] loss = 1.33954, acc = 0.75168
+Epoch(136/300) train_loss 0.09204 | train_acc 0.97026 | valid_loss 1.30207 | valid_acc 0.75053
+[ Valid | 136/300 ] loss = 1.30207, acc = 0.75053
+Epoch(137/300) train_loss 0.04476 | train_acc 0.98579 | valid_loss 1.35751 | valid_acc 0.75670
+[ Valid | 137/300 ] loss = 1.35751, acc = 0.75670
+Epoch(138/300) train_loss 0.03189 | train_acc 0.98978 | valid_loss 1.49903 | valid_acc 0.73383
+[ Valid | 138/300 ] loss = 1.49903, acc = 0.73383
+Epoch(139/300) train_loss 0.07519 | train_acc 0.97313 | valid_loss 1.45727 | valid_acc 0.74756
+[ Valid | 139/300 ] loss = 1.45727, acc = 0.74756
+Epoch(140/300) train_loss 0.06706 | train_acc 0.97692 | valid_loss 1.34062 | valid_acc 0.75206
+[ Valid | 140/300 ] loss = 1.34062, acc = 0.75206
+Epoch(141/300) train_loss 0.05042 | train_acc 0.98175 | valid_loss 1.49849 | valid_acc 0.74357
+[ Valid | 141/300 ] loss = 1.49849, acc = 0.74357
+Epoch(142/300) train_loss 0.06601 | train_acc 0.97812 | valid_loss 1.38193 | valid_acc 0.75236
+[ Valid | 142/300 ] loss = 1.38193, acc = 0.75236
+Epoch(143/300) train_loss 0.04553 | train_acc 0.98373 | valid_loss 1.44560 | valid_acc 0.75218
+[ Valid | 143/300 ] loss = 1.44560, acc = 0.75218
+Epoch(144/300) train_loss 0.06158 | train_acc 0.97929 | valid_loss 1.38623 | valid_acc 0.75768
+[ Valid | 144/300 ] loss = 1.38623, acc = 0.75768
+Epoch(145/300) train_loss 0.04831 | train_acc 0.98353 | valid_loss 1.54454 | valid_acc 0.73632
+[ Valid | 145/300 ] loss = 1.54454, acc = 0.73632
+Epoch(146/300) train_loss 0.06259 | train_acc 0.97829 | valid_loss 1.48582 | valid_acc 0.74688
+[ Valid | 146/300 ] loss = 1.48582, acc = 0.74688
+Epoch(147/300) train_loss 0.08932 | train_acc 0.97073 | valid_loss 1.28667 | valid_acc 0.75621
+[ Valid | 147/300 ] loss = 1.28667, acc = 0.75621
+Epoch(148/300) train_loss 0.05643 | train_acc 0.98151 | valid_loss 1.36660 | valid_acc 0.76221
+[ Valid | 148/300 ] loss = 1.36660, acc = 0.76221 -> best
+Best model found at epoch 147, saving model
+Epoch(149/300) train_loss 0.06177 | train_acc 0.98000 | valid_loss 1.47643 | valid_acc 0.73588
+[ Valid | 149/300 ] loss = 1.47643, acc = 0.73588
+Epoch(150/300) train_loss 0.04649 | train_acc 0.98464 | valid_loss 1.36114 | valid_acc 0.75934
+[ Valid | 150/300 ] loss = 1.36114, acc = 0.75934
+Epoch(151/300) train_loss 0.08167 | train_acc 0.97391 | valid_loss 1.40816 | valid_acc 0.75140
+[ Valid | 151/300 ] loss = 1.40816, acc = 0.75140
+Epoch(152/300) train_loss 0.05998 | train_acc 0.97923 | valid_loss 1.36812 | valid_acc 0.75372
+[ Valid | 152/300 ] loss = 1.36812, acc = 0.75372
+Epoch(153/300) train_loss 0.03552 | train_acc 0.98810 | valid_loss 1.46838 | valid_acc 0.74068
+[ Valid | 153/300 ] loss = 1.46838, acc = 0.74068
+Epoch(154/300) train_loss 0.04310 | train_acc 0.98544 | valid_loss 1.55131 | valid_acc 0.73585
+[ Valid | 154/300 ] loss = 1.55131, acc = 0.73585
+Epoch(155/300) train_loss 0.05275 | train_acc 0.98258 | valid_loss 1.37929 | valid_acc 0.75688
+[ Valid | 155/300 ] loss = 1.37929, acc = 0.75688
+Epoch(156/300) train_loss 0.06805 | train_acc 0.97712 | valid_loss 1.46551 | valid_acc 0.75178
+[ Valid | 156/300 ] loss = 1.46551, acc = 0.75178
+Epoch(157/300) train_loss 0.05239 | train_acc 0.98379 | valid_loss 1.40877 | valid_acc 0.75321
+[ Valid | 157/300 ] loss = 1.40877, acc = 0.75321
+Epoch(158/300) train_loss 0.06465 | train_acc 0.98040 | valid_loss 1.47268 | valid_acc 0.73413
+[ Valid | 158/300 ] loss = 1.47268, acc = 0.73413
+Epoch(159/300) train_loss 0.06277 | train_acc 0.97782 | valid_loss 1.39357 | valid_acc 0.75401
+[ Valid | 159/300 ] loss = 1.39357, acc = 0.75401
+Epoch(160/300) train_loss 0.03190 | train_acc 0.98952 | valid_loss 1.34489 | valid_acc 0.76325
+[ Valid | 160/300 ] loss = 1.34489, acc = 0.76325 -> best
+Best model found at epoch 159, saving model
+Epoch(161/300) train_loss 0.02348 | train_acc 0.99220 | valid_loss 1.31097 | valid_acc 0.77000
+[ Valid | 161/300 ] loss = 1.31097, acc = 0.77000 -> best
+Best model found at epoch 160, saving model
+Epoch(162/300) train_loss 0.06372 | train_acc 0.97893 | valid_loss 1.51492 | valid_acc 0.73133
+[ Valid | 162/300 ] loss = 1.51492, acc = 0.73133
+Epoch(163/300) train_loss 0.04545 | train_acc 0.98484 | valid_loss 1.45972 | valid_acc 0.76028
+[ Valid | 163/300 ] loss = 1.45972, acc = 0.76028
+Epoch(164/300) train_loss 0.06312 | train_acc 0.97903 | valid_loss 1.53314 | valid_acc 0.72778
+[ Valid | 164/300 ] loss = 1.53314, acc = 0.72778
+Epoch(165/300) train_loss 0.04208 | train_acc 0.98448 | valid_loss 1.42936 | valid_acc 0.74208
+[ Valid | 165/300 ] loss = 1.42936, acc = 0.74208
+Epoch(166/300) train_loss 0.04196 | train_acc 0.98524 | valid_loss 1.60523 | valid_acc 0.73278
+[ Valid | 166/300 ] loss = 1.60523, acc = 0.73278
+Epoch(167/300) train_loss 0.07293 | train_acc 0.97611 | valid_loss 1.44289 | valid_acc 0.74697
+[ Valid | 167/300 ] loss = 1.44289, acc = 0.74697
+Epoch(168/300) train_loss 0.04162 | train_acc 0.98740 | valid_loss 1.44038 | valid_acc 0.75701
+[ Valid | 168/300 ] loss = 1.44038, acc = 0.75701
+Epoch(169/300) train_loss 0.03832 | train_acc 0.98813 | valid_loss 1.37864 | valid_acc 0.76055
+[ Valid | 169/300 ] loss = 1.37864, acc = 0.76055
+Epoch(170/300) train_loss 0.07305 | train_acc 0.97516 | valid_loss 1.53687 | valid_acc 0.74532
+[ Valid | 170/300 ] loss = 1.53687, acc = 0.74532
+Epoch(171/300) train_loss 0.07086 | train_acc 0.97702 | valid_loss 1.51149 | valid_acc 0.73663
+[ Valid | 171/300 ] loss = 1.51149, acc = 0.73663
+Epoch(172/300) train_loss 0.04140 | train_acc 0.98619 | valid_loss 1.35421 | valid_acc 0.76063
+[ Valid | 172/300 ] loss = 1.35421, acc = 0.76063
+Epoch(173/300) train_loss 0.03281 | train_acc 0.98881 | valid_loss 1.36633 | valid_acc 0.76249
+[ Valid | 173/300 ] loss = 1.36633, acc = 0.76249
+Epoch(174/300) train_loss 0.03232 | train_acc 0.98972 | valid_loss 1.45359 | valid_acc 0.74892
+[ Valid | 174/300 ] loss = 1.45359, acc = 0.74892
+Epoch(175/300) train_loss 0.02676 | train_acc 0.99083 | valid_loss 1.46973 | valid_acc 0.75574
+[ Valid | 175/300 ] loss = 1.46973, acc = 0.75574
+Epoch(176/300) train_loss 0.03398 | train_acc 0.98911 | valid_loss 1.41378 | valid_acc 0.76250
+[ Valid | 176/300 ] loss = 1.41378, acc = 0.76250
+Epoch(177/300) train_loss 0.04646 | train_acc 0.98508 | valid_loss 1.49013 | valid_acc 0.73769
+[ Valid | 177/300 ] loss = 1.49013, acc = 0.73769
+Epoch(178/300) train_loss 0.05747 | train_acc 0.98020 | valid_loss 1.48922 | valid_acc 0.74243
+[ Valid | 178/300 ] loss = 1.48922, acc = 0.74243
+Epoch(179/300) train_loss 0.08072 | train_acc 0.97264 | valid_loss 1.67303 | valid_acc 0.71511
+[ Valid | 179/300 ] loss = 1.67303, acc = 0.71511
+Epoch(180/300) train_loss 0.08484 | train_acc 0.97228 | valid_loss 1.41458 | valid_acc 0.75478
+[ Valid | 180/300 ] loss = 1.41458, acc = 0.75478
+Epoch(181/300) train_loss 0.03927 | train_acc 0.98800 | valid_loss 1.35280 | valid_acc 0.76084
+[ Valid | 181/300 ] loss = 1.35280, acc = 0.76084
+Epoch(182/300) train_loss 0.03044 | train_acc 0.99008 | valid_loss 1.36193 | valid_acc 0.76025
+[ Valid | 182/300 ] loss = 1.36193, acc = 0.76025
+Epoch(183/300) train_loss 0.05511 | train_acc 0.98292 | valid_loss 1.33857 | valid_acc 0.76558
+[ Valid | 183/300 ] loss = 1.33857, acc = 0.76558
+Epoch(184/300) train_loss 0.04689 | train_acc 0.98619 | valid_loss 1.35132 | valid_acc 0.76462
+[ Valid | 184/300 ] loss = 1.35132, acc = 0.76462
+Epoch(185/300) train_loss 0.03325 | train_acc 0.98931 | valid_loss 1.44870 | valid_acc 0.75874
+[ Valid | 185/300 ] loss = 1.44870, acc = 0.75874
+Epoch(186/300) train_loss 0.02364 | train_acc 0.99163 | valid_loss 1.40360 | valid_acc 0.76992
+[ Valid | 186/300 ] loss = 1.40360, acc = 0.76992
+Epoch(187/300) train_loss 0.03079 | train_acc 0.98978 | valid_loss 1.37378 | valid_acc 0.76395
+[ Valid | 187/300 ] loss = 1.37378, acc = 0.76395
+Epoch(188/300) train_loss 0.06692 | train_acc 0.97994 | valid_loss 1.47854 | valid_acc 0.75632
+[ Valid | 188/300 ] loss = 1.47854, acc = 0.75632
+Epoch(189/300) train_loss 0.04177 | train_acc 0.98599 | valid_loss 1.34569 | valid_acc 0.77022
+[ Valid | 189/300 ] loss = 1.34569, acc = 0.77022 -> best
+Best model found at epoch 188, saving model
+Epoch(190/300) train_loss 0.03706 | train_acc 0.98726 | valid_loss 1.36242 | valid_acc 0.75187
+[ Valid | 190/300 ] loss = 1.36242, acc = 0.75187
+Epoch(191/300) train_loss 0.05243 | train_acc 0.98296 | valid_loss 1.29711 | valid_acc 0.76975
+[ Valid | 191/300 ] loss = 1.29711, acc = 0.76975
+Epoch(192/300) train_loss 0.04322 | train_acc 0.98575 | valid_loss 1.38659 | valid_acc 0.75373
+[ Valid | 192/300 ] loss = 1.38659, acc = 0.75373
+Epoch(193/300) train_loss 0.06723 | train_acc 0.97802 | valid_loss 1.40346 | valid_acc 0.74476
+[ Valid | 193/300 ] loss = 1.40346, acc = 0.74476
+Epoch(194/300) train_loss 0.02735 | train_acc 0.99093 | valid_loss 1.31112 | valid_acc 0.77348
+[ Valid | 194/300 ] loss = 1.31112, acc = 0.77348 -> best
+Best model found at epoch 193, saving model
+Epoch(195/300) train_loss 0.02538 | train_acc 0.99240 | valid_loss 1.36050 | valid_acc 0.76075
+[ Valid | 195/300 ] loss = 1.36050, acc = 0.76075
+Epoch(196/300) train_loss 0.06746 | train_acc 0.97829 | valid_loss 1.40991 | valid_acc 0.75528
+[ Valid | 196/300 ] loss = 1.40991, acc = 0.75528
+Epoch(197/300) train_loss 0.05608 | train_acc 0.98155 | valid_loss 1.37999 | valid_acc 0.76442
+[ Valid | 197/300 ] loss = 1.37999, acc = 0.76442
+Epoch(198/300) train_loss 0.03311 | train_acc 0.98891 | valid_loss 1.34740 | valid_acc 0.76789
+[ Valid | 198/300 ] loss = 1.34740, acc = 0.76789
+Epoch(199/300) train_loss 0.03111 | train_acc 0.99002 | valid_loss 1.42088 | valid_acc 0.75894
+[ Valid | 199/300 ] loss = 1.42088, acc = 0.75894
+Epoch(200/300) train_loss 0.02549 | train_acc 0.99254 | valid_loss 1.42451 | valid_acc 0.77030
+[ Valid | 200/300 ] loss = 1.42451, acc = 0.77030
+Epoch(201/300) train_loss 0.03713 | train_acc 0.98756 | valid_loss 1.36982 | valid_acc 0.76384
+[ Valid | 201/300 ] loss = 1.36982, acc = 0.76384
+Epoch(202/300) train_loss 0.05045 | train_acc 0.98417 | valid_loss 1.51027 | valid_acc 0.74735
+[ Valid | 202/300 ] loss = 1.51027, acc = 0.74735
+Epoch(203/300) train_loss 0.05596 | train_acc 0.98127 | valid_loss 1.41360 | valid_acc 0.75131
+[ Valid | 203/300 ] loss = 1.41360, acc = 0.75131
+Epoch(204/300) train_loss 0.07453 | train_acc 0.97490 | valid_loss 1.30058 | valid_acc 0.76479
+[ Valid | 204/300 ] loss = 1.30058, acc = 0.76479
+Epoch(205/300) train_loss 0.04219 | train_acc 0.98798 | valid_loss 1.39091 | valid_acc 0.75990
+[ Valid | 205/300 ] loss = 1.39091, acc = 0.75990
+Epoch(206/300) train_loss 0.03904 | train_acc 0.98690 | valid_loss 1.32917 | valid_acc 0.77166
+[ Valid | 206/300 ] loss = 1.32917, acc = 0.77166
+Epoch(207/300) train_loss 0.02112 | train_acc 0.99355 | valid_loss 1.34611 | valid_acc 0.76227
+[ Valid | 207/300 ] loss = 1.34611, acc = 0.76227
+Epoch(208/300) train_loss 0.02437 | train_acc 0.99304 | valid_loss 1.38641 | valid_acc 0.76858
+[ Valid | 208/300 ] loss = 1.38641, acc = 0.76858
+Epoch(209/300) train_loss 0.02811 | train_acc 0.99113 | valid_loss 1.45696 | valid_acc 0.74552
+[ Valid | 209/300 ] loss = 1.45696, acc = 0.74552
+Epoch(210/300) train_loss 0.05698 | train_acc 0.98171 | valid_loss 1.53043 | valid_acc 0.74966
+[ Valid | 210/300 ] loss = 1.53043, acc = 0.74966
+Epoch(211/300) train_loss 0.08949 | train_acc 0.96968 | valid_loss 1.35706 | valid_acc 0.75701
+[ Valid | 211/300 ] loss = 1.35706, acc = 0.75701
+Epoch(212/300) train_loss 0.06129 | train_acc 0.97970 | valid_loss 1.33866 | valid_acc 0.75557
+[ Valid | 212/300 ] loss = 1.33866, acc = 0.75557
+Epoch(213/300) train_loss 0.04633 | train_acc 0.98504 | valid_loss 1.34907 | valid_acc 0.76695
+[ Valid | 213/300 ] loss = 1.34907, acc = 0.76695
+Epoch(214/300) train_loss 0.03778 | train_acc 0.98786 | valid_loss 1.33098 | valid_acc 0.76471
+[ Valid | 214/300 ] loss = 1.33098, acc = 0.76471
+Epoch(215/300) train_loss 0.04101 | train_acc 0.98605 | valid_loss 1.39039 | valid_acc 0.76540
+[ Valid | 215/300 ] loss = 1.39039, acc = 0.76540
+Epoch(216/300) train_loss 0.03487 | train_acc 0.98927 | valid_loss 1.33817 | valid_acc 0.76269
+[ Valid | 216/300 ] loss = 1.33817, acc = 0.76269
+Epoch(217/300) train_loss 0.05127 | train_acc 0.98312 | valid_loss 1.33726 | valid_acc 0.77108
+[ Valid | 217/300 ] loss = 1.33726, acc = 0.77108
+Epoch(218/300) train_loss 0.04860 | train_acc 0.98427 | valid_loss 1.36529 | valid_acc 0.76366
+[ Valid | 218/300 ] loss = 1.36529, acc = 0.76366
+Epoch(219/300) train_loss 0.01828 | train_acc 0.99425 | valid_loss 1.40033 | valid_acc 0.76655
+[ Valid | 219/300 ] loss = 1.40033, acc = 0.76655
+Epoch(220/300) train_loss 0.01640 | train_acc 0.99486 | valid_loss 1.42972 | valid_acc 0.75795
+[ Valid | 220/300 ] loss = 1.42972, acc = 0.75795
+Epoch(221/300) train_loss 0.03770 | train_acc 0.98770 | valid_loss 1.44202 | valid_acc 0.74802
+[ Valid | 221/300 ] loss = 1.44202, acc = 0.74802
+Epoch(222/300) train_loss 0.03357 | train_acc 0.98958 | valid_loss 1.43346 | valid_acc 0.75943
+[ Valid | 222/300 ] loss = 1.43346, acc = 0.75943
+Epoch(223/300) train_loss 0.06610 | train_acc 0.97782 | valid_loss 1.39892 | valid_acc 0.76162
+[ Valid | 223/300 ] loss = 1.39892, acc = 0.76162
+Epoch(224/300) train_loss 0.03325 | train_acc 0.98883 | valid_loss 1.40696 | valid_acc 0.76220
+[ Valid | 224/300 ] loss = 1.40696, acc = 0.76220
+Epoch(225/300) train_loss 0.05003 | train_acc 0.98286 | valid_loss 1.72393 | valid_acc 0.72932
+[ Valid | 225/300 ] loss = 1.72393, acc = 0.72932
+Epoch(226/300) train_loss 0.03140 | train_acc 0.98948 | valid_loss 1.60252 | valid_acc 0.74977
+[ Valid | 226/300 ] loss = 1.60252, acc = 0.74977
+Epoch(227/300) train_loss 0.04175 | train_acc 0.98514 | valid_loss 1.58697 | valid_acc 0.73963
+[ Valid | 227/300 ] loss = 1.58697, acc = 0.73963
+Epoch(228/300) train_loss 0.06344 | train_acc 0.97899 | valid_loss 1.40274 | valid_acc 0.75640
+[ Valid | 228/300 ] loss = 1.40274, acc = 0.75640
+Epoch(229/300) train_loss 0.03263 | train_acc 0.98821 | valid_loss 1.38910 | valid_acc 0.76258
+[ Valid | 229/300 ] loss = 1.38910, acc = 0.76258
+Epoch(230/300) train_loss 0.02132 | train_acc 0.99220 | valid_loss 1.46757 | valid_acc 0.76298
+[ Valid | 230/300 ] loss = 1.46757, acc = 0.76298
+Epoch(231/300) train_loss 0.03927 | train_acc 0.98625 | valid_loss 1.38862 | valid_acc 0.75969
+[ Valid | 231/300 ] loss = 1.38862, acc = 0.75969
+Epoch(232/300) train_loss 0.05847 | train_acc 0.98044 | valid_loss 1.39557 | valid_acc 0.75708
+[ Valid | 232/300 ] loss = 1.39557, acc = 0.75708
+Epoch(233/300) train_loss 0.03111 | train_acc 0.98911 | valid_loss 1.47615 | valid_acc 0.76596
+[ Valid | 233/300 ] loss = 1.47615, acc = 0.76596
+Epoch(234/300) train_loss 0.02654 | train_acc 0.99175 | valid_loss 1.47313 | valid_acc 0.75034
+[ Valid | 234/300 ] loss = 1.47313, acc = 0.75034
+Epoch(235/300) train_loss 0.04920 | train_acc 0.98198 | valid_loss 1.45488 | valid_acc 0.74794
+[ Valid | 235/300 ] loss = 1.45488, acc = 0.74794
+Epoch(236/300) train_loss 0.05684 | train_acc 0.98173 | valid_loss 1.61673 | valid_acc 0.74167
+[ Valid | 236/300 ] loss = 1.61673, acc = 0.74167
+Epoch(237/300) train_loss 0.05311 | train_acc 0.98216 | valid_loss 1.34961 | valid_acc 0.76780
+[ Valid | 237/300 ] loss = 1.34961, acc = 0.76780
+Epoch(238/300) train_loss 0.02209 | train_acc 0.99234 | valid_loss 1.42407 | valid_acc 0.75562
+[ Valid | 238/300 ] loss = 1.42407, acc = 0.75562
+Epoch(239/300) train_loss 0.02396 | train_acc 0.99200 | valid_loss 1.39046 | valid_acc 0.76992
+[ Valid | 239/300 ] loss = 1.39046, acc = 0.76992
+Epoch(240/300) train_loss 0.04462 | train_acc 0.98685 | valid_loss 1.45830 | valid_acc 0.76046
+[ Valid | 240/300 ] loss = 1.45830, acc = 0.76046
+Epoch(241/300) train_loss 0.04606 | train_acc 0.98615 | valid_loss 1.31476 | valid_acc 0.76788
+[ Valid | 241/300 ] loss = 1.31476, acc = 0.76788
+Epoch(242/300) train_loss 0.05316 | train_acc 0.98171 | valid_loss 1.34860 | valid_acc 0.76809
+[ Valid | 242/300 ] loss = 1.34860, acc = 0.76809
+Epoch(243/300) train_loss 0.04232 | train_acc 0.98619 | valid_loss 1.46990 | valid_acc 0.75594
+[ Valid | 243/300 ] loss = 1.46990, acc = 0.75594
+Epoch(244/300) train_loss 0.02245 | train_acc 0.99284 | valid_loss 1.37658 | valid_acc 0.76693
+[ Valid | 244/300 ] loss = 1.37658, acc = 0.76693
+Epoch(245/300) train_loss 0.01673 | train_acc 0.99385 | valid_loss 1.33258 | valid_acc 0.77243
+[ Valid | 245/300 ] loss = 1.33258, acc = 0.77243
+Epoch(246/300) train_loss 0.02586 | train_acc 0.99099 | valid_loss 1.46170 | valid_acc 0.76875
+[ Valid | 246/300 ] loss = 1.46170, acc = 0.76875
+Epoch(247/300) train_loss 0.05201 | train_acc 0.98286 | valid_loss 1.45381 | valid_acc 0.75075
+[ Valid | 247/300 ] loss = 1.45381, acc = 0.75075
+Epoch(248/300) train_loss 0.03751 | train_acc 0.98712 | valid_loss 1.41357 | valid_acc 0.76413
+[ Valid | 248/300 ] loss = 1.41357, acc = 0.76413
+Epoch(249/300) train_loss 0.03987 | train_acc 0.98615 | valid_loss 1.35533 | valid_acc 0.76017
+[ Valid | 249/300 ] loss = 1.35533, acc = 0.76017
+Epoch(250/300) train_loss 0.02616 | train_acc 0.99089 | valid_loss 1.35228 | valid_acc 0.77368
+[ Valid | 250/300 ] loss = 1.35228, acc = 0.77368 -> best
+Best model found at epoch 249, saving model
+Epoch(251/300) train_loss 0.03522 | train_acc 0.98810 | valid_loss 1.53844 | valid_acc 0.75620
+[ Valid | 251/300 ] loss = 1.53844, acc = 0.75620
+Epoch(252/300) train_loss 0.02963 | train_acc 0.99048 | valid_loss 1.41567 | valid_acc 0.76384
+[ Valid | 252/300 ] loss = 1.41567, acc = 0.76384
+Epoch(253/300) train_loss 0.04913 | train_acc 0.98347 | valid_loss 1.40496 | valid_acc 0.76661
+[ Valid | 253/300 ] loss = 1.40496, acc = 0.76661
+Epoch(254/300) train_loss 0.02805 | train_acc 0.98962 | valid_loss 1.42404 | valid_acc 0.75824
+[ Valid | 254/300 ] loss = 1.42404, acc = 0.75824
+Epoch(255/300) train_loss 0.03044 | train_acc 0.98982 | valid_loss 1.39997 | valid_acc 0.76442
+[ Valid | 255/300 ] loss = 1.39997, acc = 0.76442
+Epoch(256/300) train_loss 0.02101 | train_acc 0.99304 | valid_loss 1.50540 | valid_acc 0.75786
+[ Valid | 256/300 ] loss = 1.50540, acc = 0.75786
+Epoch(257/300) train_loss 0.02749 | train_acc 0.99058 | valid_loss 1.48515 | valid_acc 0.76151
+[ Valid | 257/300 ] loss = 1.48515, acc = 0.76151
+Epoch(258/300) train_loss 0.05295 | train_acc 0.98206 | valid_loss 1.43786 | valid_acc 0.76259
+[ Valid | 258/300 ] loss = 1.43786, acc = 0.76259
+Epoch(259/300) train_loss 0.03056 | train_acc 0.98982 | valid_loss 1.43583 | valid_acc 0.75659
+[ Valid | 259/300 ] loss = 1.43583, acc = 0.75659
+Epoch(260/300) train_loss 0.01685 | train_acc 0.99446 | valid_loss 1.39788 | valid_acc 0.77851
+[ Valid | 260/300 ] loss = 1.39788, acc = 0.77851 -> best
+Best model found at epoch 259, saving model
+Epoch(261/300) train_loss 0.02224 | train_acc 0.99325 | valid_loss 1.53935 | valid_acc 0.75883
+[ Valid | 261/300 ] loss = 1.53935, acc = 0.75883
+Epoch(262/300) train_loss 0.02344 | train_acc 0.99254 | valid_loss 1.52572 | valid_acc 0.75516
+[ Valid | 262/300 ] loss = 1.52572, acc = 0.75516
+Epoch(263/300) train_loss 0.04262 | train_acc 0.98800 | valid_loss 1.65881 | valid_acc 0.73801
+[ Valid | 263/300 ] loss = 1.65881, acc = 0.73801
+Epoch(264/300) train_loss 0.04485 | train_acc 0.98440 | valid_loss 1.37315 | valid_acc 0.76739
+[ Valid | 264/300 ] loss = 1.37315, acc = 0.76739
+Epoch(265/300) train_loss 0.04579 | train_acc 0.98296 | valid_loss 1.39836 | valid_acc 0.76278
+[ Valid | 265/300 ] loss = 1.39836, acc = 0.76278
+Epoch(266/300) train_loss 0.02241 | train_acc 0.99296 | valid_loss 1.40884 | valid_acc 0.77435
+[ Valid | 266/300 ] loss = 1.40884, acc = 0.77435
+Epoch(267/300) train_loss 0.05262 | train_acc 0.98306 | valid_loss 1.58987 | valid_acc 0.74114
+[ Valid | 267/300 ] loss = 1.58987, acc = 0.74114
+Epoch(268/300) train_loss 0.03200 | train_acc 0.99058 | valid_loss 1.41181 | valid_acc 0.76339
+[ Valid | 268/300 ] loss = 1.41181, acc = 0.76339
+Epoch(269/300) train_loss 0.04283 | train_acc 0.98514 | valid_loss 1.44398 | valid_acc 0.76171
+[ Valid | 269/300 ] loss = 1.44398, acc = 0.76171
+Epoch(270/300) train_loss 0.02886 | train_acc 0.99038 | valid_loss 1.52118 | valid_acc 0.75120
+[ Valid | 270/300 ] loss = 1.52118, acc = 0.75120
+Epoch(271/300) train_loss 0.06278 | train_acc 0.98010 | valid_loss 1.54013 | valid_acc 0.74997
+[ Valid | 271/300 ] loss = 1.54013, acc = 0.74997
+Epoch(272/300) train_loss 0.03649 | train_acc 0.98770 | valid_loss 1.44156 | valid_acc 0.76086
+[ Valid | 272/300 ] loss = 1.44156, acc = 0.76086
+Epoch(273/300) train_loss 0.01552 | train_acc 0.99492 | valid_loss 1.51954 | valid_acc 0.75970
+[ Valid | 273/300 ] loss = 1.51954, acc = 0.75970
+Epoch(274/300) train_loss 0.04494 | train_acc 0.98403 | valid_loss 1.42605 | valid_acc 0.76046
+[ Valid | 274/300 ] loss = 1.42605, acc = 0.76046
+Epoch(275/300) train_loss 0.03803 | train_acc 0.98810 | valid_loss 1.37420 | valid_acc 0.76788
+[ Valid | 275/300 ] loss = 1.37420, acc = 0.76788
+Epoch(276/300) train_loss 0.01958 | train_acc 0.99446 | valid_loss 1.44471 | valid_acc 0.75592
+[ Valid | 276/300 ] loss = 1.44471, acc = 0.75592
+Epoch(277/300) train_loss 0.02394 | train_acc 0.99163 | valid_loss 1.46074 | valid_acc 0.75429
+[ Valid | 277/300 ] loss = 1.46074, acc = 0.75429
+Epoch(278/300) train_loss 0.02779 | train_acc 0.99119 | valid_loss 1.46919 | valid_acc 0.75862
+[ Valid | 278/300 ] loss = 1.46919, acc = 0.75862
+Epoch(279/300) train_loss 0.05430 | train_acc 0.98276 | valid_loss 1.46327 | valid_acc 0.76401
+[ Valid | 279/300 ] loss = 1.46327, acc = 0.76401
+Epoch(280/300) train_loss 0.02391 | train_acc 0.99236 | valid_loss 1.40676 | valid_acc 0.76634
+[ Valid | 280/300 ] loss = 1.40676, acc = 0.76634
+Epoch(281/300) train_loss 0.05830 | train_acc 0.98192 | valid_loss 1.47611 | valid_acc 0.75422
+[ Valid | 281/300 ] loss = 1.47611, acc = 0.75422
+Epoch(282/300) train_loss 0.03128 | train_acc 0.98972 | valid_loss 1.44553 | valid_acc 0.76068
+[ Valid | 282/300 ] loss = 1.44553, acc = 0.76068
+Epoch(283/300) train_loss 0.02735 | train_acc 0.99149 | valid_loss 1.44853 | valid_acc 0.76375
+[ Valid | 283/300 ] loss = 1.44853, acc = 0.76375
+Epoch(284/300) train_loss 0.04191 | train_acc 0.98655 | valid_loss 1.47518 | valid_acc 0.75777
+[ Valid | 284/300 ] loss = 1.47518, acc = 0.75777
+Epoch(285/300) train_loss 0.04718 | train_acc 0.98548 | valid_loss 1.40391 | valid_acc 0.76876
+[ Valid | 285/300 ] loss = 1.40391, acc = 0.76876
+Epoch(286/300) train_loss 0.01781 | train_acc 0.99385 | valid_loss 1.36456 | valid_acc 0.77936
+[ Valid | 286/300 ] loss = 1.36456, acc = 0.77936 -> best
+Best model found at epoch 285, saving model
+Epoch(287/300) train_loss 0.01764 | train_acc 0.99446 | valid_loss 1.36788 | valid_acc 0.76917
+[ Valid | 287/300 ] loss = 1.36788, acc = 0.76917
+Epoch(288/300) train_loss 0.02039 | train_acc 0.99492 | valid_loss 1.41387 | valid_acc 0.76556
+[ Valid | 288/300 ] loss = 1.41387, acc = 0.76556
+Epoch(289/300) train_loss 0.05710 | train_acc 0.98329 | valid_loss 1.44279 | valid_acc 0.75969
+[ Valid | 289/300 ] loss = 1.44279, acc = 0.75969
+Epoch(290/300) train_loss 0.05410 | train_acc 0.98117 | valid_loss 1.44942 | valid_acc 0.76460
+[ Valid | 290/300 ] loss = 1.44942, acc = 0.76460
+Epoch(291/300) train_loss 0.04488 | train_acc 0.98488 | valid_loss 1.41433 | valid_acc 0.76298
+[ Valid | 291/300 ] loss = 1.41433, acc = 0.76298
+Epoch(292/300) train_loss 0.01742 | train_acc 0.99456 | valid_loss 1.34034 | valid_acc 0.77578
+[ Valid | 292/300 ] loss = 1.34034, acc = 0.77578
+Epoch(293/300) train_loss 0.01922 | train_acc 0.99456 | valid_loss 1.44012 | valid_acc 0.76355
+[ Valid | 293/300 ] loss = 1.44012, acc = 0.76355
+Epoch(294/300) train_loss 0.01811 | train_acc 0.99315 | valid_loss 1.44743 | valid_acc 0.76665
+[ Valid | 294/300 ] loss = 1.44743, acc = 0.76665
+Epoch(295/300) train_loss 0.01588 | train_acc 0.99476 | valid_loss 1.49320 | valid_acc 0.74868
+[ Valid | 295/300 ] loss = 1.49320, acc = 0.74868
+Epoch(296/300) train_loss 0.02085 | train_acc 0.99325 | valid_loss 1.51172 | valid_acc 0.76473
+[ Valid | 296/300 ] loss = 1.51172, acc = 0.76473
+Epoch(297/300) train_loss 0.03081 | train_acc 0.98921 | valid_loss 1.48518 | valid_acc 0.75370
+[ Valid | 297/300 ] loss = 1.48518, acc = 0.75370
+Epoch(298/300) train_loss 0.02978 | train_acc 0.98988 | valid_loss 1.47265 | valid_acc 0.77137
+[ Valid | 298/300 ] loss = 1.47265, acc = 0.77137
+Epoch(299/300) train_loss 0.05194 | train_acc 0.98272 | valid_loss 1.46820 | valid_acc 0.75458
+[ Valid | 299/300 ] loss = 1.46820, acc = 0.75458
+Epoch(300/300) train_loss 0.06686 | train_acc 0.97738 | valid_loss 1.39856 | valid_acc 0.75390
+[ Valid | 300/300 ] loss = 1.39856, acc = 0.75390
+One ./food11/test sample ./food11/test/0001.jpg
+Save testing result to submission.csv

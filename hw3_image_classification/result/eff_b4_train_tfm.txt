@@ -1,0 +1,1504 @@
+Namespace(batch_size=64, input_size=224, learning_rate=0.0003, n_epochs=300, patience=300)
+One ./food11/training sample ./food11/training/0_0.jpg
+One ./food11/validation sample ./food11/validation/0_0.jpg
+My_Classifier(
+  (model): EfficientNet(
+    (features): Sequential(
+      (0): ConvNormActivation(
+        (0): Conv2d(3, 48, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): SiLU(inplace=True)
+      )
+      (1): Sequential(
+        (0): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48, bias=False)
+              (1): BatchNorm2d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(48, 12, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(12, 48, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (2): ConvNormActivation(
+              (0): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.0, mode=row)
+        )
+        (1): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(24, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=24, bias=False)
+              (1): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(24, 6, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(6, 24, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (2): ConvNormActivation(
+              (0): Conv2d(24, 24, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.00625, mode=row)
+        )
+      )
+      (2): Sequential(
+        (0): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(24, 144, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(144, 144, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=144, bias=False)
+              (1): BatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(144, 6, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(6, 144, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(144, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.0125, mode=row)
+        )
+        (1): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+              (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(192, 8, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(8, 192, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.018750000000000003, mode=row)
+        )
+        (2): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+              (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(192, 8, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(8, 192, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.025, mode=row)
+        )
+        (3): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+              (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(192, 8, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(8, 192, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.03125, mode=row)
+        )
+      )
+      (3): Sequential(
+        (0): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(192, 192, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=192, bias=False)
+              (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(192, 8, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(8, 192, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(192, 56, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(56, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.037500000000000006, mode=row)
+        )
+        (1): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(56, 336, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(336, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(336, 336, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=336, bias=False)
+              (1): BatchNorm2d(336, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(336, 14, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(14, 336, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(336, 56, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(56, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.043750000000000004, mode=row)
+        )
+        (2): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(56, 336, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(336, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(336, 336, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=336, bias=False)
+              (1): BatchNorm2d(336, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(336, 14, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(14, 336, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(336, 56, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(56, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.05, mode=row)
+        )
+        (3): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(56, 336, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(336, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(336, 336, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=336, bias=False)
+              (1): BatchNorm2d(336, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(336, 14, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(14, 336, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(336, 56, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(56, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.05625, mode=row)
+        )
+      )
+      (4): Sequential(
+        (0): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(56, 336, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(336, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(336, 336, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=336, bias=False)
+              (1): BatchNorm2d(336, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(336, 14, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(14, 336, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(336, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.0625, mode=row)
+        )
+        (1): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(112, 672, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(672, 672, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=672, bias=False)
+              (1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(672, 28, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(28, 672, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(672, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.06875, mode=row)
+        )
+        (2): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(112, 672, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(672, 672, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=672, bias=False)
+              (1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(672, 28, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(28, 672, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(672, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.07500000000000001, mode=row)
+        )
+        (3): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(112, 672, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(672, 672, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=672, bias=False)
+              (1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(672, 28, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(28, 672, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(672, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.08125, mode=row)
+        )
+        (4): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(112, 672, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(672, 672, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=672, bias=False)
+              (1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(672, 28, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(28, 672, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(672, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.08750000000000001, mode=row)
+        )
+        (5): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(112, 672, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(672, 672, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=672, bias=False)
+              (1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(672, 28, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(28, 672, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(672, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.09375, mode=row)
+        )
+      )
+      (5): Sequential(
+        (0): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(112, 672, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(672, 672, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=672, bias=False)
+              (1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(672, 28, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(28, 672, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(672, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.1, mode=row)
+        )
+        (1): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(960, 960, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=960, bias=False)
+              (1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(960, 40, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(40, 960, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.10625000000000001, mode=row)
+        )
+        (2): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(960, 960, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=960, bias=False)
+              (1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(960, 40, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(40, 960, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.1125, mode=row)
+        )
+        (3): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(960, 960, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=960, bias=False)
+              (1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(960, 40, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(40, 960, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.11875000000000001, mode=row)
+        )
+        (4): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(960, 960, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=960, bias=False)
+              (1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(960, 40, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(40, 960, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.125, mode=row)
+        )
+        (5): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(960, 960, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=960, bias=False)
+              (1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(960, 40, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(40, 960, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.13125, mode=row)
+        )
+      )
+      (6): Sequential(
+        (0): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(960, 960, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=960, bias=False)
+              (1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(960, 40, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(40, 960, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(960, 272, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.1375, mode=row)
+        )
+        (1): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(272, 1632, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(1632, 1632, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1632, bias=False)
+              (1): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(1632, 68, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(68, 1632, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(1632, 272, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.14375000000000002, mode=row)
+        )
+        (2): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(272, 1632, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(1632, 1632, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1632, bias=False)
+              (1): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(1632, 68, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(68, 1632, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(1632, 272, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.15000000000000002, mode=row)
+        )
+        (3): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(272, 1632, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(1632, 1632, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1632, bias=False)
+              (1): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(1632, 68, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(68, 1632, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(1632, 272, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.15625, mode=row)
+        )
+        (4): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(272, 1632, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(1632, 1632, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1632, bias=False)
+              (1): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(1632, 68, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(68, 1632, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(1632, 272, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.1625, mode=row)
+        )
+        (5): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(272, 1632, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(1632, 1632, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1632, bias=False)
+              (1): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(1632, 68, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(68, 1632, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(1632, 272, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.16875, mode=row)
+        )
+        (6): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(272, 1632, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(1632, 1632, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1632, bias=False)
+              (1): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(1632, 68, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(68, 1632, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(1632, 272, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.17500000000000002, mode=row)
+        )
+        (7): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(272, 1632, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(1632, 1632, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1632, bias=False)
+              (1): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(1632, 68, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(68, 1632, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(1632, 272, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.18125000000000002, mode=row)
+        )
+      )
+      (7): Sequential(
+        (0): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(272, 1632, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(1632, 1632, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=1632, bias=False)
+              (1): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(1632, 68, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(68, 1632, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(1632, 448, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(448, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.1875, mode=row)
+        )
+        (1): MBConv(
+          (block): Sequential(
+            (0): ConvNormActivation(
+              (0): Conv2d(448, 2688, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(2688, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (1): ConvNormActivation(
+              (0): Conv2d(2688, 2688, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2688, bias=False)
+              (1): BatchNorm2d(2688, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): SiLU(inplace=True)
+            )
+            (2): SqueezeExcitation(
+              (avgpool): AdaptiveAvgPool2d(output_size=1)
+              (fc1): Conv2d(2688, 112, kernel_size=(1, 1), stride=(1, 1))
+              (fc2): Conv2d(112, 2688, kernel_size=(1, 1), stride=(1, 1))
+              (activation): SiLU(inplace=True)
+              (scale_activation): Sigmoid()
+            )
+            (3): ConvNormActivation(
+              (0): Conv2d(2688, 448, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(448, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (stochastic_depth): StochasticDepth(p=0.19375, mode=row)
+        )
+      )
+      (8): ConvNormActivation(
+        (0): Conv2d(448, 1792, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(1792, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): SiLU(inplace=True)
+      )
+    )
+    (avgpool): AdaptiveAvgPool2d(output_size=1)
+    (classifier): Sequential(
+      (0): Dropout(p=0.4, inplace=True)
+      (1): Linear(in_features=1792, out_features=11, bias=True)
+    )
+  )
+)
+Epoch(001/300) train_loss 2.32497 | train_acc 0.19089 | valid_loss 2.48682 | valid_acc 0.22574
+[ Valid | 001/300 ] loss = 2.48682, acc = 0.22574 -> best
+Best model found at epoch 0, saving model
+Epoch(002/300) train_loss 2.10063 | train_acc 0.26546 | valid_loss 2.06278 | valid_acc 0.28652
+[ Valid | 002/300 ] loss = 2.06278, acc = 0.28652 -> best
+Best model found at epoch 1, saving model
+Epoch(003/300) train_loss 2.01393 | train_acc 0.28722 | valid_loss 2.05103 | valid_acc 0.29444
+[ Valid | 003/300 ] loss = 2.05103, acc = 0.29444 -> best
+Best model found at epoch 2, saving model
+Epoch(004/300) train_loss 1.92915 | train_acc 0.32113 | valid_loss 2.27493 | valid_acc 0.30863
+[ Valid | 004/300 ] loss = 2.27493, acc = 0.30863 -> best
+Best model found at epoch 3, saving model
+Epoch(005/300) train_loss 1.86129 | train_acc 0.34242 | valid_loss 1.81098 | valid_acc 0.35423
+[ Valid | 005/300 ] loss = 1.81098, acc = 0.35423 -> best
+Best model found at epoch 4, saving model
+Epoch(006/300) train_loss 1.79210 | train_acc 0.37222 | valid_loss 1.77260 | valid_acc 0.36781
+[ Valid | 006/300 ] loss = 1.77260, acc = 0.36781 -> best
+Best model found at epoch 5, saving model
+Epoch(007/300) train_loss 1.74698 | train_acc 0.39282 | valid_loss 1.73405 | valid_acc 0.40237
+[ Valid | 007/300 ] loss = 1.73405, acc = 0.40237 -> best
+Best model found at epoch 6, saving model
+Epoch(008/300) train_loss 1.70377 | train_acc 0.40022 | valid_loss 1.76018 | valid_acc 0.37258
+[ Valid | 008/300 ] loss = 1.76018, acc = 0.37258
+Epoch(009/300) train_loss 1.64133 | train_acc 0.42575 | valid_loss 1.74718 | valid_acc 0.38703
+[ Valid | 009/300 ] loss = 1.74718, acc = 0.38703
+Epoch(010/300) train_loss 1.58985 | train_acc 0.44565 | valid_loss 1.72226 | valid_acc 0.41498
+[ Valid | 010/300 ] loss = 1.72226, acc = 0.41498 -> best
+Best model found at epoch 9, saving model
+Epoch(011/300) train_loss 1.57003 | train_acc 0.45776 | valid_loss 1.60586 | valid_acc 0.43962
+[ Valid | 011/300 ] loss = 1.60586, acc = 0.43962 -> best
+Best model found at epoch 10, saving model
+Epoch(012/300) train_loss 1.52554 | train_acc 0.46774 | valid_loss 1.60943 | valid_acc 0.45177
+[ Valid | 012/300 ] loss = 1.60943, acc = 0.45177 -> best
+Best model found at epoch 11, saving model
+Epoch(013/300) train_loss 1.46509 | train_acc 0.49315 | valid_loss 1.64573 | valid_acc 0.45683
+[ Valid | 013/300 ] loss = 1.64573, acc = 0.45683 -> best
+Best model found at epoch 12, saving model
+Epoch(014/300) train_loss 1.42797 | train_acc 0.50575 | valid_loss 1.64149 | valid_acc 0.42824
+[ Valid | 014/300 ] loss = 1.64149, acc = 0.42824
+Epoch(015/300) train_loss 1.41113 | train_acc 0.51619 | valid_loss 1.44142 | valid_acc 0.50819
+[ Valid | 015/300 ] loss = 1.44142, acc = 0.50819 -> best
+Best model found at epoch 14, saving model
+Epoch(016/300) train_loss 1.36089 | train_acc 0.52746 | valid_loss 1.44216 | valid_acc 0.50656
+[ Valid | 016/300 ] loss = 1.44216, acc = 0.50656
+Epoch(017/300) train_loss 1.34026 | train_acc 0.54036 | valid_loss 1.39774 | valid_acc 0.53262
+[ Valid | 017/300 ] loss = 1.39774, acc = 0.53262 -> best
+Best model found at epoch 16, saving model
+Epoch(018/300) train_loss 1.31083 | train_acc 0.54665 | valid_loss 1.38597 | valid_acc 0.53792
+[ Valid | 018/300 ] loss = 1.38597, acc = 0.53792 -> best
+Best model found at epoch 17, saving model
+Epoch(019/300) train_loss 1.28356 | train_acc 0.55357 | valid_loss 1.42270 | valid_acc 0.52345
+[ Valid | 019/300 ] loss = 1.42270, acc = 0.52345
+Epoch(020/300) train_loss 1.25759 | train_acc 0.57083 | valid_loss 1.32026 | valid_acc 0.55961
+[ Valid | 020/300 ] loss = 1.32026, acc = 0.55961 -> best
+Best model found at epoch 19, saving model
+Epoch(021/300) train_loss 1.22113 | train_acc 0.58058 | valid_loss 1.31860 | valid_acc 0.57080
+[ Valid | 021/300 ] loss = 1.31860, acc = 0.57080 -> best
+Best model found at epoch 20, saving model
+Epoch(022/300) train_loss 1.20961 | train_acc 0.58831 | valid_loss 1.31044 | valid_acc 0.55469
+[ Valid | 022/300 ] loss = 1.31044, acc = 0.55469
+Epoch(023/300) train_loss 1.19279 | train_acc 0.59075 | valid_loss 1.20157 | valid_acc 0.60532
+[ Valid | 023/300 ] loss = 1.20157, acc = 0.60532 -> best
+Best model found at epoch 22, saving model
+Epoch(024/300) train_loss 1.16383 | train_acc 0.60204 | valid_loss 1.22218 | valid_acc 0.58642
+[ Valid | 024/300 ] loss = 1.22218, acc = 0.58642
+Epoch(025/300) train_loss 1.14253 | train_acc 0.61294 | valid_loss 1.28620 | valid_acc 0.58481
+[ Valid | 025/300 ] loss = 1.28620, acc = 0.58481
+Epoch(026/300) train_loss 1.12166 | train_acc 0.61790 | valid_loss 1.17207 | valid_acc 0.61046
+[ Valid | 026/300 ] loss = 1.17207, acc = 0.61046 -> best
+Best model found at epoch 25, saving model
+Epoch(027/300) train_loss 1.09499 | train_acc 0.62655 | valid_loss 1.16189 | valid_acc 0.61394
+[ Valid | 027/300 ] loss = 1.16189, acc = 0.61394 -> best
+Best model found at epoch 26, saving model
+Epoch(028/300) train_loss 1.07918 | train_acc 0.63486 | valid_loss 1.19646 | valid_acc 0.60002
+[ Valid | 028/300 ] loss = 1.19646, acc = 0.60002
+Epoch(029/300) train_loss 1.05338 | train_acc 0.64069 | valid_loss 1.14135 | valid_acc 0.62706
+[ Valid | 029/300 ] loss = 1.14135, acc = 0.62706 -> best
+Best model found at epoch 28, saving model
+Epoch(030/300) train_loss 1.03831 | train_acc 0.64857 | valid_loss 1.09882 | valid_acc 0.63872
+[ Valid | 030/300 ] loss = 1.09882, acc = 0.63872 -> best
+Best model found at epoch 29, saving model
+Epoch(031/300) train_loss 1.00630 | train_acc 0.65815 | valid_loss 1.15090 | valid_acc 0.60342
+[ Valid | 031/300 ] loss = 1.15090, acc = 0.60342
+Epoch(032/300) train_loss 1.00521 | train_acc 0.65786 | valid_loss 1.17266 | valid_acc 0.60328
+[ Valid | 032/300 ] loss = 1.17266, acc = 0.60328
+Epoch(033/300) train_loss 0.97739 | train_acc 0.66478 | valid_loss 1.09597 | valid_acc 0.62509
+[ Valid | 033/300 ] loss = 1.09597, acc = 0.62509
+Epoch(034/300) train_loss 0.96227 | train_acc 0.67006 | valid_loss 1.13763 | valid_acc 0.61046
+[ Valid | 034/300 ] loss = 1.13763, acc = 0.61046
+Epoch(035/300) train_loss 0.94798 | train_acc 0.67887 | valid_loss 1.08831 | valid_acc 0.62733
+[ Valid | 035/300 ] loss = 1.08831, acc = 0.62733
+Epoch(036/300) train_loss 0.93270 | train_acc 0.68264 | valid_loss 1.05088 | valid_acc 0.65416
+[ Valid | 036/300 ] loss = 1.05088, acc = 0.65416 -> best
+Best model found at epoch 35, saving model
+Epoch(037/300) train_loss 0.91333 | train_acc 0.69105 | valid_loss 1.06767 | valid_acc 0.64952
+[ Valid | 037/300 ] loss = 1.06767, acc = 0.64952
+Epoch(038/300) train_loss 0.90304 | train_acc 0.69302 | valid_loss 1.06786 | valid_acc 0.64462
+[ Valid | 038/300 ] loss = 1.06786, acc = 0.64462
+Epoch(039/300) train_loss 0.88890 | train_acc 0.69157 | valid_loss 1.06990 | valid_acc 0.65591
+[ Valid | 039/300 ] loss = 1.06990, acc = 0.65591 -> best
+Best model found at epoch 38, saving model
+Epoch(040/300) train_loss 0.87350 | train_acc 0.70030 | valid_loss 1.09125 | valid_acc 0.63324
+[ Valid | 040/300 ] loss = 1.09125, acc = 0.63324
+Epoch(041/300) train_loss 0.87652 | train_acc 0.70679 | valid_loss 1.00288 | valid_acc 0.67163
+[ Valid | 041/300 ] loss = 1.00288, acc = 0.67163 -> best
+Best model found at epoch 40, saving model
+Epoch(042/300) train_loss 0.83595 | train_acc 0.71935 | valid_loss 1.16366 | valid_acc 0.65358
+[ Valid | 042/300 ] loss = 1.16366, acc = 0.65358
+Epoch(043/300) train_loss 0.83394 | train_acc 0.71494 | valid_loss 1.01529 | valid_acc 0.66227
+[ Valid | 043/300 ] loss = 1.01529, acc = 0.66227
+Epoch(044/300) train_loss 0.80680 | train_acc 0.72617 | valid_loss 1.04605 | valid_acc 0.65049
+[ Valid | 044/300 ] loss = 1.04605, acc = 0.65049
+Epoch(045/300) train_loss 0.81539 | train_acc 0.72369 | valid_loss 1.02699 | valid_acc 0.66869
+[ Valid | 045/300 ] loss = 1.02699, acc = 0.66869
+Epoch(046/300) train_loss 0.78690 | train_acc 0.73183 | valid_loss 1.01152 | valid_acc 0.66255
+[ Valid | 046/300 ] loss = 1.01152, acc = 0.66255
+Epoch(047/300) train_loss 0.77499 | train_acc 0.73331 | valid_loss 0.92842 | valid_acc 0.68541
+[ Valid | 047/300 ] loss = 0.92842, acc = 0.68541 -> best
+Best model found at epoch 46, saving model
+Epoch(048/300) train_loss 0.76666 | train_acc 0.73734 | valid_loss 0.98945 | valid_acc 0.66785
+[ Valid | 048/300 ] loss = 0.98945, acc = 0.66785
+Epoch(049/300) train_loss 0.76911 | train_acc 0.73478 | valid_loss 0.90726 | valid_acc 0.69892
+[ Valid | 049/300 ] loss = 0.90726, acc = 0.69892 -> best
+Best model found at epoch 48, saving model
+Epoch(050/300) train_loss 0.75015 | train_acc 0.74554 | valid_loss 1.01588 | valid_acc 0.67247
+[ Valid | 050/300 ] loss = 1.01588, acc = 0.67247
+Epoch(051/300) train_loss 0.72501 | train_acc 0.74825 | valid_loss 0.98463 | valid_acc 0.69603
+[ Valid | 051/300 ] loss = 0.98463, acc = 0.69603
+Epoch(052/300) train_loss 0.72035 | train_acc 0.75532 | valid_loss 0.94432 | valid_acc 0.68762
+[ Valid | 052/300 ] loss = 0.94432, acc = 0.68762
+Epoch(053/300) train_loss 0.71900 | train_acc 0.75058 | valid_loss 0.93811 | valid_acc 0.69930
+[ Valid | 053/300 ] loss = 0.93811, acc = 0.69930 -> best
+Best model found at epoch 52, saving model
+Epoch(054/300) train_loss 0.70418 | train_acc 0.76002 | valid_loss 0.92001 | valid_acc 0.69981
+[ Valid | 054/300 ] loss = 0.92001, acc = 0.69981 -> best
+Best model found at epoch 53, saving model
+Epoch(055/300) train_loss 0.68165 | train_acc 0.76857 | valid_loss 0.92241 | valid_acc 0.69904
+[ Valid | 055/300 ] loss = 0.92241, acc = 0.69904
+Epoch(056/300) train_loss 0.67982 | train_acc 0.77032 | valid_loss 0.85758 | valid_acc 0.71446
+[ Valid | 056/300 ] loss = 0.85758, acc = 0.71446 -> best
+Best model found at epoch 55, saving model
+Epoch(057/300) train_loss 0.67136 | train_acc 0.77298 | valid_loss 0.94353 | valid_acc 0.68908
+[ Valid | 057/300 ] loss = 0.94353, acc = 0.68908
+Epoch(058/300) train_loss 0.67957 | train_acc 0.76355 | valid_loss 0.89130 | valid_acc 0.71328
+[ Valid | 058/300 ] loss = 0.89130, acc = 0.71328
+Epoch(059/300) train_loss 0.64608 | train_acc 0.77748 | valid_loss 0.85953 | valid_acc 0.71852
+[ Valid | 059/300 ] loss = 0.85953, acc = 0.71852 -> best
+Best model found at epoch 58, saving model
+Epoch(060/300) train_loss 0.64034 | train_acc 0.77460 | valid_loss 0.85664 | valid_acc 0.71251
+[ Valid | 060/300 ] loss = 0.85664, acc = 0.71251
+Epoch(061/300) train_loss 0.63168 | train_acc 0.78843 | valid_loss 0.88451 | valid_acc 0.72055
+[ Valid | 061/300 ] loss = 0.88451, acc = 0.72055 -> best
+Best model found at epoch 60, saving model
+Epoch(062/300) train_loss 0.62971 | train_acc 0.78077 | valid_loss 0.93297 | valid_acc 0.70354
+[ Valid | 062/300 ] loss = 0.93297, acc = 0.70354
+Epoch(063/300) train_loss 0.61435 | train_acc 0.78808 | valid_loss 0.82539 | valid_acc 0.73549
+[ Valid | 063/300 ] loss = 0.82539, acc = 0.73549 -> best
+Best model found at epoch 62, saving model
+Epoch(064/300) train_loss 0.61389 | train_acc 0.79123 | valid_loss 0.93530 | valid_acc 0.70221
+[ Valid | 064/300 ] loss = 0.93530, acc = 0.70221
+Epoch(065/300) train_loss 0.58993 | train_acc 0.79569 | valid_loss 1.12925 | valid_acc 0.70290
+[ Valid | 065/300 ] loss = 1.12925, acc = 0.70290
+Epoch(066/300) train_loss 0.59271 | train_acc 0.79635 | valid_loss 0.84285 | valid_acc 0.73297
+[ Valid | 066/300 ] loss = 0.84285, acc = 0.73297
+Epoch(067/300) train_loss 0.59766 | train_acc 0.79506 | valid_loss 0.82630 | valid_acc 0.72914
+[ Valid | 067/300 ] loss = 0.82630, acc = 0.72914
+Epoch(068/300) train_loss 0.57020 | train_acc 0.80385 | valid_loss 0.85834 | valid_acc 0.72044
+[ Valid | 068/300 ] loss = 0.85834, acc = 0.72044
+Epoch(069/300) train_loss 0.58982 | train_acc 0.80030 | valid_loss 0.86961 | valid_acc 0.72323
+[ Valid | 069/300 ] loss = 0.86961, acc = 0.72323
+Epoch(070/300) train_loss 0.56131 | train_acc 0.80361 | valid_loss 0.87561 | valid_acc 0.72142
+[ Valid | 070/300 ] loss = 0.87561, acc = 0.72142
+Epoch(071/300) train_loss 0.55719 | train_acc 0.80665 | valid_loss 0.81719 | valid_acc 0.72873
+[ Valid | 071/300 ] loss = 0.81719, acc = 0.72873
+Epoch(072/300) train_loss 0.54324 | train_acc 0.81621 | valid_loss 0.84582 | valid_acc 0.72952
+[ Valid | 072/300 ] loss = 0.84582, acc = 0.72952
+Epoch(073/300) train_loss 0.53740 | train_acc 0.81512 | valid_loss 0.90310 | valid_acc 0.72120
+[ Valid | 073/300 ] loss = 0.90310, acc = 0.72120
+Epoch(074/300) train_loss 0.52265 | train_acc 0.81839 | valid_loss 0.83740 | valid_acc 0.73460
+[ Valid | 074/300 ] loss = 0.83740, acc = 0.73460
+Epoch(075/300) train_loss 0.52264 | train_acc 0.81950 | valid_loss 0.87067 | valid_acc 0.72440
+[ Valid | 075/300 ] loss = 0.87067, acc = 0.72440
+Epoch(076/300) train_loss 0.49806 | train_acc 0.83107 | valid_loss 0.82926 | valid_acc 0.72818
+[ Valid | 076/300 ] loss = 0.82926, acc = 0.72818
+Epoch(077/300) train_loss 0.50883 | train_acc 0.82482 | valid_loss 0.91174 | valid_acc 0.72043
+[ Valid | 077/300 ] loss = 0.91174, acc = 0.72043
+Epoch(078/300) train_loss 0.50306 | train_acc 0.82778 | valid_loss 0.90737 | valid_acc 0.71051
+[ Valid | 078/300 ] loss = 0.90737, acc = 0.71051
+Epoch(079/300) train_loss 0.48583 | train_acc 0.83585 | valid_loss 0.82634 | valid_acc 0.73926
+[ Valid | 079/300 ] loss = 0.82634, acc = 0.73926 -> best
+Best model found at epoch 78, saving model
+Epoch(080/300) train_loss 0.47958 | train_acc 0.83440 | valid_loss 0.91199 | valid_acc 0.72630
+[ Valid | 080/300 ] loss = 0.91199, acc = 0.72630
+Epoch(081/300) train_loss 0.47359 | train_acc 0.83823 | valid_loss 0.95511 | valid_acc 0.72073
+[ Valid | 081/300 ] loss = 0.95511, acc = 0.72073
+Epoch(082/300) train_loss 0.47159 | train_acc 0.83802 | valid_loss 0.80147 | valid_acc 0.74446
+[ Valid | 082/300 ] loss = 0.80147, acc = 0.74446 -> best
+Best model found at epoch 81, saving model
+Epoch(083/300) train_loss 0.47025 | train_acc 0.83714 | valid_loss 1.00642 | valid_acc 0.73444
+[ Valid | 083/300 ] loss = 1.00642, acc = 0.73444
+Epoch(084/300) train_loss 0.44722 | train_acc 0.84173 | valid_loss 0.88945 | valid_acc 0.72903
+[ Valid | 084/300 ] loss = 0.88945, acc = 0.72903
+Epoch(085/300) train_loss 0.46003 | train_acc 0.84397 | valid_loss 0.89446 | valid_acc 0.73771
+[ Valid | 085/300 ] loss = 0.89446, acc = 0.73771
+Epoch(086/300) train_loss 0.44460 | train_acc 0.84675 | valid_loss 0.79652 | valid_acc 0.75672
+[ Valid | 086/300 ] loss = 0.79652, acc = 0.75672 -> best
+Best model found at epoch 85, saving model
+Epoch(087/300) train_loss 0.45698 | train_acc 0.84361 | valid_loss 0.83890 | valid_acc 0.74764
+[ Valid | 087/300 ] loss = 0.83890, acc = 0.74764
+Epoch(088/300) train_loss 0.44053 | train_acc 0.84722 | valid_loss 0.83894 | valid_acc 0.74030
+[ Valid | 088/300 ] loss = 0.83894, acc = 0.74030
+Epoch(089/300) train_loss 0.41661 | train_acc 0.85349 | valid_loss 0.85839 | valid_acc 0.72999
+[ Valid | 089/300 ] loss = 0.85839, acc = 0.72999
+Epoch(090/300) train_loss 0.43315 | train_acc 0.85135 | valid_loss 1.05375 | valid_acc 0.72652
+[ Valid | 090/300 ] loss = 1.05375, acc = 0.72652
+Epoch(091/300) train_loss 0.40872 | train_acc 0.85694 | valid_loss 0.91455 | valid_acc 0.72959
+[ Valid | 091/300 ] loss = 0.91455, acc = 0.72959
+Epoch(092/300) train_loss 0.40590 | train_acc 0.85637 | valid_loss 0.85726 | valid_acc 0.73867
+[ Valid | 092/300 ] loss = 0.85726, acc = 0.73867
+Epoch(093/300) train_loss 0.40650 | train_acc 0.85940 | valid_loss 0.88826 | valid_acc 0.73777
+[ Valid | 093/300 ] loss = 0.88826, acc = 0.73777
+Epoch(094/300) train_loss 0.40761 | train_acc 0.85798 | valid_loss 0.84731 | valid_acc 0.73605
+[ Valid | 094/300 ] loss = 0.84731, acc = 0.73605
+Epoch(095/300) train_loss 0.38637 | train_acc 0.86718 | valid_loss 0.96246 | valid_acc 0.72359
+[ Valid | 095/300 ] loss = 0.96246, acc = 0.72359
+Epoch(096/300) train_loss 0.40416 | train_acc 0.86012 | valid_loss 0.86619 | valid_acc 0.74165
+[ Valid | 096/300 ] loss = 0.86619, acc = 0.74165
+Epoch(097/300) train_loss 0.36367 | train_acc 0.87300 | valid_loss 0.93389 | valid_acc 0.73616
+[ Valid | 097/300 ] loss = 0.93389, acc = 0.73616
+Epoch(098/300) train_loss 0.36925 | train_acc 0.87210 | valid_loss 0.88585 | valid_acc 0.74283
+[ Valid | 098/300 ] loss = 0.88585, acc = 0.74283
+Epoch(099/300) train_loss 0.36792 | train_acc 0.87583 | valid_loss 0.88481 | valid_acc 0.74254
+[ Valid | 099/300 ] loss = 0.88481, acc = 0.74254
+Epoch(100/300) train_loss 0.37342 | train_acc 0.87048 | valid_loss 0.84990 | valid_acc 0.74686
+[ Valid | 100/300 ] loss = 0.84990, acc = 0.74686
+Epoch(101/300) train_loss 0.36809 | train_acc 0.87712 | valid_loss 0.89812 | valid_acc 0.73575
+[ Valid | 101/300 ] loss = 0.89812, acc = 0.73575
+Epoch(102/300) train_loss 0.34023 | train_acc 0.88202 | valid_loss 0.87441 | valid_acc 0.74514
+[ Valid | 102/300 ] loss = 0.87441, acc = 0.74514
+Epoch(103/300) train_loss 0.34306 | train_acc 0.87887 | valid_loss 0.89047 | valid_acc 0.74475
+[ Valid | 103/300 ] loss = 0.89047, acc = 0.74475
+Epoch(104/300) train_loss 0.34778 | train_acc 0.87877 | valid_loss 0.82632 | valid_acc 0.75602
+[ Valid | 104/300 ] loss = 0.82632, acc = 0.75602
+Epoch(105/300) train_loss 0.33452 | train_acc 0.88224 | valid_loss 0.96099 | valid_acc 0.73220
+[ Valid | 105/300 ] loss = 0.96099, acc = 0.73220
+Epoch(106/300) train_loss 0.33744 | train_acc 0.88268 | valid_loss 0.90716 | valid_acc 0.74330
+[ Valid | 106/300 ] loss = 0.90716, acc = 0.74330
+Epoch(107/300) train_loss 0.32895 | train_acc 0.88823 | valid_loss 0.89854 | valid_acc 0.74772
+[ Valid | 107/300 ] loss = 0.89854, acc = 0.74772
+Epoch(108/300) train_loss 0.33975 | train_acc 0.88550 | valid_loss 0.98846 | valid_acc 0.72438
+[ Valid | 108/300 ] loss = 0.98846, acc = 0.72438
+Epoch(109/300) train_loss 0.32906 | train_acc 0.88786 | valid_loss 0.84614 | valid_acc 0.76046
+[ Valid | 109/300 ] loss = 0.84614, acc = 0.76046 -> best
+Best model found at epoch 108, saving model
+Epoch(110/300) train_loss 0.31667 | train_acc 0.88756 | valid_loss 1.00009 | valid_acc 0.73028
+[ Valid | 110/300 ] loss = 1.00009, acc = 0.73028
+Epoch(111/300) train_loss 0.31990 | train_acc 0.89226 | valid_loss 0.98535 | valid_acc 0.73442
+[ Valid | 111/300 ] loss = 0.98535, acc = 0.73442
+Epoch(112/300) train_loss 0.30079 | train_acc 0.89417 | valid_loss 0.87267 | valid_acc 0.75236
+[ Valid | 112/300 ] loss = 0.87267, acc = 0.75236
+Epoch(113/300) train_loss 0.30231 | train_acc 0.89619 | valid_loss 0.96608 | valid_acc 0.73201
+[ Valid | 113/300 ] loss = 0.96608, acc = 0.73201
+Epoch(114/300) train_loss 0.29464 | train_acc 0.89972 | valid_loss 0.99610 | valid_acc 0.73054
+[ Valid | 114/300 ] loss = 0.99610, acc = 0.73054
+Epoch(115/300) train_loss 0.30246 | train_acc 0.89220 | valid_loss 0.96692 | valid_acc 0.74225
+[ Valid | 115/300 ] loss = 0.96692, acc = 0.74225
+Epoch(116/300) train_loss 0.30445 | train_acc 0.89595 | valid_loss 0.88983 | valid_acc 0.75854
+[ Valid | 116/300 ] loss = 0.88983, acc = 0.75854
+Epoch(117/300) train_loss 0.30068 | train_acc 0.89496 | valid_loss 0.92758 | valid_acc 0.74290
+[ Valid | 117/300 ] loss = 0.92758, acc = 0.74290
+Epoch(118/300) train_loss 0.28629 | train_acc 0.90133 | valid_loss 0.93616 | valid_acc 0.74909
+[ Valid | 118/300 ] loss = 0.93616, acc = 0.74909
+Epoch(119/300) train_loss 0.29217 | train_acc 0.89929 | valid_loss 0.85164 | valid_acc 0.77156
+[ Valid | 119/300 ] loss = 0.85164, acc = 0.77156 -> best
+Best model found at epoch 118, saving model
+Epoch(120/300) train_loss 0.27306 | train_acc 0.90502 | valid_loss 0.84983 | valid_acc 0.76556
+[ Valid | 120/300 ] loss = 0.84983, acc = 0.76556
+Epoch(121/300) train_loss 0.28170 | train_acc 0.90260 | valid_loss 0.89447 | valid_acc 0.75099
+[ Valid | 121/300 ] loss = 0.89447, acc = 0.75099
+Epoch(122/300) train_loss 0.26705 | train_acc 0.90601 | valid_loss 1.04268 | valid_acc 0.73731
+[ Valid | 122/300 ] loss = 1.04268, acc = 0.73731
+Epoch(123/300) train_loss 0.26493 | train_acc 0.91067 | valid_loss 0.96459 | valid_acc 0.75411
+[ Valid | 123/300 ] loss = 0.96459, acc = 0.75411
+Epoch(124/300) train_loss 0.25719 | train_acc 0.91284 | valid_loss 0.96246 | valid_acc 0.74948
+[ Valid | 124/300 ] loss = 0.96246, acc = 0.74948
+Epoch(125/300) train_loss 0.27467 | train_acc 0.90982 | valid_loss 0.95812 | valid_acc 0.75603
+[ Valid | 125/300 ] loss = 0.95812, acc = 0.75603
+Epoch(126/300) train_loss 0.25498 | train_acc 0.91246 | valid_loss 1.06573 | valid_acc 0.75209
+[ Valid | 126/300 ] loss = 1.06573, acc = 0.75209
+Epoch(127/300) train_loss 0.26548 | train_acc 0.91127 | valid_loss 1.12736 | valid_acc 0.74252
+[ Valid | 127/300 ] loss = 1.12736, acc = 0.74252
+Epoch(128/300) train_loss 0.26160 | train_acc 0.91119 | valid_loss 1.06713 | valid_acc 0.73026
+[ Valid | 128/300 ] loss = 1.06713, acc = 0.73026
+Epoch(129/300) train_loss 0.24703 | train_acc 0.91556 | valid_loss 0.96072 | valid_acc 0.75787
+[ Valid | 129/300 ] loss = 0.96072, acc = 0.75787
+Epoch(130/300) train_loss 0.24090 | train_acc 0.91562 | valid_loss 0.96905 | valid_acc 0.75111
+[ Valid | 130/300 ] loss = 0.96905, acc = 0.75111
+Epoch(131/300) train_loss 0.24351 | train_acc 0.91405 | valid_loss 0.99634 | valid_acc 0.74840
+[ Valid | 131/300 ] loss = 0.99634, acc = 0.74840
+Epoch(132/300) train_loss 0.25073 | train_acc 0.91359 | valid_loss 0.95940 | valid_acc 0.75691
+[ Valid | 132/300 ] loss = 0.95940, acc = 0.75691
+Epoch(133/300) train_loss 0.23561 | train_acc 0.91802 | valid_loss 0.99803 | valid_acc 0.74572
+[ Valid | 133/300 ] loss = 0.99803, acc = 0.74572
+Epoch(134/300) train_loss 0.23081 | train_acc 0.92117 | valid_loss 0.91795 | valid_acc 0.76442
+[ Valid | 134/300 ] loss = 0.91795, acc = 0.76442
+Epoch(135/300) train_loss 0.22517 | train_acc 0.92129 | valid_loss 0.97518 | valid_acc 0.75594
+[ Valid | 135/300 ] loss = 0.97518, acc = 0.75594
+Epoch(136/300) train_loss 0.24698 | train_acc 0.91617 | valid_loss 0.93639 | valid_acc 0.75408
+[ Valid | 136/300 ] loss = 0.93639, acc = 0.75408
+Epoch(137/300) train_loss 0.24150 | train_acc 0.91704 | valid_loss 1.23577 | valid_acc 0.73287
+[ Valid | 137/300 ] loss = 1.23577, acc = 0.73287
+Epoch(138/300) train_loss 0.22596 | train_acc 0.92240 | valid_loss 1.02210 | valid_acc 0.75777
+[ Valid | 138/300 ] loss = 1.02210, acc = 0.75777
+Epoch(139/300) train_loss 0.23405 | train_acc 0.91980 | valid_loss 0.91383 | valid_acc 0.75428
+[ Valid | 139/300 ] loss = 0.91383, acc = 0.75428
+Epoch(140/300) train_loss 0.21886 | train_acc 0.92383 | valid_loss 1.06582 | valid_acc 0.74744
+[ Valid | 140/300 ] loss = 1.06582, acc = 0.74744
+Epoch(141/300) train_loss 0.20517 | train_acc 0.92980 | valid_loss 1.02698 | valid_acc 0.74243
+[ Valid | 141/300 ] loss = 1.02698, acc = 0.74243
+Epoch(142/300) train_loss 0.22514 | train_acc 0.92044 | valid_loss 1.01372 | valid_acc 0.74916
+[ Valid | 142/300 ] loss = 1.01372, acc = 0.74916
+Epoch(143/300) train_loss 0.21420 | train_acc 0.92718 | valid_loss 0.94329 | valid_acc 0.76182
+[ Valid | 143/300 ] loss = 0.94329, acc = 0.76182
+Epoch(144/300) train_loss 0.21318 | train_acc 0.92563 | valid_loss 0.95977 | valid_acc 0.75670
+[ Valid | 144/300 ] loss = 0.95977, acc = 0.75670
+Epoch(145/300) train_loss 0.20196 | train_acc 0.92990 | valid_loss 1.05291 | valid_acc 0.75053
+[ Valid | 145/300 ] loss = 1.05291, acc = 0.75053
+Epoch(146/300) train_loss 0.20277 | train_acc 0.92923 | valid_loss 1.00148 | valid_acc 0.75256
+[ Valid | 146/300 ] loss = 1.00148, acc = 0.75256
+Epoch(147/300) train_loss 0.21451 | train_acc 0.92685 | valid_loss 1.04136 | valid_acc 0.74695
+[ Valid | 147/300 ] loss = 1.04136, acc = 0.74695
+Epoch(148/300) train_loss 0.19690 | train_acc 0.93627 | valid_loss 1.02319 | valid_acc 0.75436
+[ Valid | 148/300 ] loss = 1.02319, acc = 0.75436
+Epoch(149/300) train_loss 0.19561 | train_acc 0.93306 | valid_loss 0.92162 | valid_acc 0.77417
+[ Valid | 149/300 ] loss = 0.92162, acc = 0.77417 -> best
+Best model found at epoch 148, saving model
+Epoch(150/300) train_loss 0.21330 | train_acc 0.92889 | valid_loss 1.27549 | valid_acc 0.73914
+[ Valid | 150/300 ] loss = 1.27549, acc = 0.73914
+Epoch(151/300) train_loss 0.19740 | train_acc 0.93242 | valid_loss 1.07589 | valid_acc 0.74791
+[ Valid | 151/300 ] loss = 1.07589, acc = 0.74791
+Epoch(152/300) train_loss 0.20326 | train_acc 0.93065 | valid_loss 1.00581 | valid_acc 0.75160
+[ Valid | 152/300 ] loss = 1.00581, acc = 0.75160
+Epoch(153/300) train_loss 0.20871 | train_acc 0.93109 | valid_loss 0.97479 | valid_acc 0.75679
+[ Valid | 153/300 ] loss = 0.97479, acc = 0.75679
+Epoch(154/300) train_loss 0.18592 | train_acc 0.93857 | valid_loss 1.05858 | valid_acc 0.75171
+[ Valid | 154/300 ] loss = 1.05858, acc = 0.75171
+Epoch(155/300) train_loss 0.18777 | train_acc 0.93675 | valid_loss 1.02204 | valid_acc 0.75283
+[ Valid | 155/300 ] loss = 1.02204, acc = 0.75283
+Epoch(156/300) train_loss 0.17693 | train_acc 0.94063 | valid_loss 1.04629 | valid_acc 0.75440
+[ Valid | 156/300 ] loss = 1.04629, acc = 0.75440
+Epoch(157/300) train_loss 0.20216 | train_acc 0.93000 | valid_loss 1.05475 | valid_acc 0.75294
+[ Valid | 157/300 ] loss = 1.05475, acc = 0.75294
+Epoch(158/300) train_loss 0.18158 | train_acc 0.93649 | valid_loss 1.15113 | valid_acc 0.75061
+[ Valid | 158/300 ] loss = 1.15113, acc = 0.75061
+Epoch(159/300) train_loss 0.17880 | train_acc 0.93823 | valid_loss 1.19247 | valid_acc 0.76066
+[ Valid | 159/300 ] loss = 1.19247, acc = 0.76066
+Epoch(160/300) train_loss 0.18994 | train_acc 0.93532 | valid_loss 0.99260 | valid_acc 0.76462
+[ Valid | 160/300 ] loss = 0.99260, acc = 0.76462
+Epoch(161/300) train_loss 0.17266 | train_acc 0.93964 | valid_loss 1.00595 | valid_acc 0.76878
+[ Valid | 161/300 ] loss = 1.00595, acc = 0.76878
+Epoch(162/300) train_loss 0.18502 | train_acc 0.93986 | valid_loss 1.09351 | valid_acc 0.75525
+[ Valid | 162/300 ] loss = 1.09351, acc = 0.75525
+Epoch(163/300) train_loss 0.18787 | train_acc 0.93665 | valid_loss 1.04377 | valid_acc 0.75853
+[ Valid | 163/300 ] loss = 1.04377, acc = 0.75853
+Epoch(164/300) train_loss 0.16163 | train_acc 0.94532 | valid_loss 1.07828 | valid_acc 0.75509
+[ Valid | 164/300 ] loss = 1.07828, acc = 0.75509
+Epoch(165/300) train_loss 0.16722 | train_acc 0.94373 | valid_loss 1.05474 | valid_acc 0.75768
+[ Valid | 165/300 ] loss = 1.05474, acc = 0.75768
+Epoch(166/300) train_loss 0.16580 | train_acc 0.94512 | valid_loss 1.04806 | valid_acc 0.76279
+[ Valid | 166/300 ] loss = 1.04806, acc = 0.76279
+Epoch(167/300) train_loss 0.17877 | train_acc 0.94044 | valid_loss 1.03569 | valid_acc 0.75956
+[ Valid | 167/300 ] loss = 1.03569, acc = 0.75956
+Epoch(168/300) train_loss 0.19006 | train_acc 0.93591 | valid_loss 1.05790 | valid_acc 0.75600
+[ Valid | 168/300 ] loss = 1.05790, acc = 0.75600
+Epoch(169/300) train_loss 0.17180 | train_acc 0.94060 | valid_loss 0.98234 | valid_acc 0.76354
+[ Valid | 169/300 ] loss = 0.98234, acc = 0.76354
+Epoch(170/300) train_loss 0.16508 | train_acc 0.94397 | valid_loss 1.01613 | valid_acc 0.76374
+[ Valid | 170/300 ] loss = 1.01613, acc = 0.76374
+Epoch(171/300) train_loss 0.15455 | train_acc 0.94694 | valid_loss 1.12765 | valid_acc 0.75073
+[ Valid | 171/300 ] loss = 1.12765, acc = 0.75073
+Epoch(172/300) train_loss 0.16837 | train_acc 0.94236 | valid_loss 1.03430 | valid_acc 0.76934
+[ Valid | 172/300 ] loss = 1.03430, acc = 0.76934
+Epoch(173/300) train_loss 0.18065 | train_acc 0.94113 | valid_loss 1.01024 | valid_acc 0.75803
+[ Valid | 173/300 ] loss = 1.01024, acc = 0.75803
+Epoch(174/300) train_loss 0.15308 | train_acc 0.95020 | valid_loss 0.95677 | valid_acc 0.77001
+[ Valid | 174/300 ] loss = 0.95677, acc = 0.77001
+Epoch(175/300) train_loss 0.15773 | train_acc 0.94593 | valid_loss 0.98084 | valid_acc 0.76316
+[ Valid | 175/300 ] loss = 0.98084, acc = 0.76316
+Epoch(176/300) train_loss 0.16476 | train_acc 0.94484 | valid_loss 1.04049 | valid_acc 0.75408
+[ Valid | 176/300 ] loss = 1.04049, acc = 0.75408
+Epoch(177/300) train_loss 0.15115 | train_acc 0.94937 | valid_loss 1.04720 | valid_acc 0.75670
+[ Valid | 177/300 ] loss = 1.04720, acc = 0.75670
+Epoch(178/300) train_loss 0.15501 | train_acc 0.94944 | valid_loss 1.07203 | valid_acc 0.75017
+[ Valid | 178/300 ] loss = 1.07203, acc = 0.75017
+Epoch(179/300) train_loss 0.14774 | train_acc 0.94633 | valid_loss 1.07187 | valid_acc 0.76125
+[ Valid | 179/300 ] loss = 1.07187, acc = 0.76125
+Epoch(180/300) train_loss 0.16107 | train_acc 0.94623 | valid_loss 0.97981 | valid_acc 0.76732
+[ Valid | 180/300 ] loss = 0.97981, acc = 0.76732
+Epoch(181/300) train_loss 0.14972 | train_acc 0.94766 | valid_loss 1.23717 | valid_acc 0.75659
+[ Valid | 181/300 ] loss = 1.23717, acc = 0.75659
+Epoch(182/300) train_loss 0.14424 | train_acc 0.94931 | valid_loss 1.09105 | valid_acc 0.75827
+[ Valid | 182/300 ] loss = 1.09105, acc = 0.75827
+Epoch(183/300) train_loss 0.15414 | train_acc 0.94911 | valid_loss 1.10309 | valid_acc 0.75198
+[ Valid | 183/300 ] loss = 1.10309, acc = 0.75198
+Epoch(184/300) train_loss 0.15242 | train_acc 0.94937 | valid_loss 1.03948 | valid_acc 0.75969
+[ Valid | 184/300 ] loss = 1.03948, acc = 0.75969
+Epoch(185/300) train_loss 0.15041 | train_acc 0.94742 | valid_loss 0.97150 | valid_acc 0.76855
+[ Valid | 185/300 ] loss = 0.97150, acc = 0.76855
+Epoch(186/300) train_loss 0.16211 | train_acc 0.94554 | valid_loss 0.98727 | valid_acc 0.77290
+[ Valid | 186/300 ] loss = 0.98727, acc = 0.77290
+Epoch(187/300) train_loss 0.14640 | train_acc 0.94958 | valid_loss 1.03835 | valid_acc 0.76415
+[ Valid | 187/300 ] loss = 1.03835, acc = 0.76415
+Epoch(188/300) train_loss 0.15730 | train_acc 0.94514 | valid_loss 0.96091 | valid_acc 0.76547
+[ Valid | 188/300 ] loss = 0.96091, acc = 0.76547
+Epoch(189/300) train_loss 0.14004 | train_acc 0.95262 | valid_loss 1.04519 | valid_acc 0.76771
+[ Valid | 189/300 ] loss = 1.04519, acc = 0.76771
+Epoch(190/300) train_loss 0.14364 | train_acc 0.95087 | valid_loss 0.99835 | valid_acc 0.77202
+[ Valid | 190/300 ] loss = 0.99835, acc = 0.77202
+Epoch(191/300) train_loss 0.13084 | train_acc 0.95661 | valid_loss 1.11968 | valid_acc 0.75151
+[ Valid | 191/300 ] loss = 1.11968, acc = 0.75151
+Epoch(192/300) train_loss 0.14337 | train_acc 0.95133 | valid_loss 1.03689 | valid_acc 0.76818
+[ Valid | 192/300 ] loss = 1.03689, acc = 0.76818
+Epoch(193/300) train_loss 0.13668 | train_acc 0.95540 | valid_loss 0.96783 | valid_acc 0.77523
+[ Valid | 193/300 ] loss = 0.96783, acc = 0.77523 -> best
+Best model found at epoch 192, saving model
+Epoch(194/300) train_loss 0.13645 | train_acc 0.95240 | valid_loss 1.11709 | valid_acc 0.77164
+[ Valid | 194/300 ] loss = 1.11709, acc = 0.77164
+Epoch(195/300) train_loss 0.14978 | train_acc 0.94960 | valid_loss 1.15517 | valid_acc 0.76160
+[ Valid | 195/300 ] loss = 1.15517, acc = 0.76160
+Epoch(196/300) train_loss 0.13392 | train_acc 0.95556 | valid_loss 1.00412 | valid_acc 0.76925
+[ Valid | 196/300 ] loss = 1.00412, acc = 0.76925
+Epoch(197/300) train_loss 0.11728 | train_acc 0.95994 | valid_loss 0.98157 | valid_acc 0.78198
+[ Valid | 197/300 ] loss = 0.98157, acc = 0.78198 -> best
+Best model found at epoch 196, saving model
+Epoch(198/300) train_loss 0.12957 | train_acc 0.95671 | valid_loss 1.07566 | valid_acc 0.76460
+[ Valid | 198/300 ] loss = 1.07566, acc = 0.76460
+Epoch(199/300) train_loss 0.15417 | train_acc 0.95063 | valid_loss 1.01227 | valid_acc 0.76383
+[ Valid | 199/300 ] loss = 1.01227, acc = 0.76383
+Epoch(200/300) train_loss 0.13270 | train_acc 0.95433 | valid_loss 1.02014 | valid_acc 0.76433
+[ Valid | 200/300 ] loss = 1.02014, acc = 0.76433
+Epoch(201/300) train_loss 0.13656 | train_acc 0.95204 | valid_loss 0.95511 | valid_acc 0.77029
+[ Valid | 201/300 ] loss = 0.95511, acc = 0.77029
+Epoch(202/300) train_loss 0.12430 | train_acc 0.95732 | valid_loss 1.11459 | valid_acc 0.77144
+[ Valid | 202/300 ] loss = 1.11459, acc = 0.77144
+Epoch(203/300) train_loss 0.12105 | train_acc 0.96014 | valid_loss 1.15503 | valid_acc 0.76026
+[ Valid | 203/300 ] loss = 1.15503, acc = 0.76026
+Epoch(204/300) train_loss 0.14024 | train_acc 0.95101 | valid_loss 1.03717 | valid_acc 0.77158
+[ Valid | 204/300 ] loss = 1.03717, acc = 0.77158
+Epoch(205/300) train_loss 0.13469 | train_acc 0.95359 | valid_loss 1.07499 | valid_acc 0.76308
+[ Valid | 205/300 ] loss = 1.07499, acc = 0.76308
+Epoch(206/300) train_loss 0.12143 | train_acc 0.95867 | valid_loss 1.14127 | valid_acc 0.76258
+[ Valid | 206/300 ] loss = 1.14127, acc = 0.76258
+Epoch(207/300) train_loss 0.11574 | train_acc 0.95921 | valid_loss 1.20399 | valid_acc 0.76316
+[ Valid | 207/300 ] loss = 1.20399, acc = 0.76316
+Epoch(208/300) train_loss 0.12876 | train_acc 0.95615 | valid_loss 0.97809 | valid_acc 0.78564
+[ Valid | 208/300 ] loss = 0.97809, acc = 0.78564 -> best
+Best model found at epoch 207, saving model
+Epoch(209/300) train_loss 0.12948 | train_acc 0.95365 | valid_loss 1.08984 | valid_acc 0.76558
+[ Valid | 209/300 ] loss = 1.08984, acc = 0.76558
+Epoch(210/300) train_loss 0.11788 | train_acc 0.95919 | valid_loss 1.11756 | valid_acc 0.75998
+[ Valid | 210/300 ] loss = 1.11756, acc = 0.75998
+Epoch(211/300) train_loss 0.13311 | train_acc 0.95359 | valid_loss 1.01780 | valid_acc 0.77657
+[ Valid | 211/300 ] loss = 1.01780, acc = 0.77657
+Epoch(212/300) train_loss 0.13582 | train_acc 0.95569 | valid_loss 1.02556 | valid_acc 0.76036
+[ Valid | 212/300 ] loss = 1.02556, acc = 0.76036
+Epoch(213/300) train_loss 0.11092 | train_acc 0.96266 | valid_loss 1.11356 | valid_acc 0.76218
+[ Valid | 213/300 ] loss = 1.11356, acc = 0.76218
+Epoch(214/300) train_loss 0.11589 | train_acc 0.96058 | valid_loss 1.05574 | valid_acc 0.77012
+[ Valid | 214/300 ] loss = 1.05574, acc = 0.77012
+Epoch(215/300) train_loss 0.09898 | train_acc 0.96603 | valid_loss 1.06364 | valid_acc 0.77080
+[ Valid | 215/300 ] loss = 1.06364, acc = 0.77080
+Epoch(216/300) train_loss 0.11134 | train_acc 0.96089 | valid_loss 1.02866 | valid_acc 0.77495
+[ Valid | 216/300 ] loss = 1.02866, acc = 0.77495
+Epoch(217/300) train_loss 0.11693 | train_acc 0.95849 | valid_loss 1.12582 | valid_acc 0.77012
+[ Valid | 217/300 ] loss = 1.12582, acc = 0.77012
+Epoch(218/300) train_loss 0.13305 | train_acc 0.95621 | valid_loss 1.17993 | valid_acc 0.75573
+[ Valid | 218/300 ] loss = 1.17993, acc = 0.75573
+Epoch(219/300) train_loss 0.12865 | train_acc 0.95492 | valid_loss 1.09436 | valid_acc 0.77572
+[ Valid | 219/300 ] loss = 1.09436, acc = 0.77572
+Epoch(220/300) train_loss 0.12541 | train_acc 0.95859 | valid_loss 1.17304 | valid_acc 0.75652
+[ Valid | 220/300 ] loss = 1.17304, acc = 0.75652
+Epoch(221/300) train_loss 0.11759 | train_acc 0.96044 | valid_loss 1.04438 | valid_acc 0.77329
+[ Valid | 221/300 ] loss = 1.04438, acc = 0.77329
+Epoch(222/300) train_loss 0.09815 | train_acc 0.96673 | valid_loss 1.13155 | valid_acc 0.77004
+[ Valid | 222/300 ] loss = 1.13155, acc = 0.77004
+Epoch(223/300) train_loss 0.10974 | train_acc 0.96323 | valid_loss 1.08570 | valid_acc 0.76936
+[ Valid | 223/300 ] loss = 1.08570, acc = 0.76936
+Epoch(224/300) train_loss 0.11036 | train_acc 0.96111 | valid_loss 1.08277 | valid_acc 0.77176
+[ Valid | 224/300 ] loss = 1.08277, acc = 0.77176
+Epoch(225/300) train_loss 0.12395 | train_acc 0.95933 | valid_loss 1.13078 | valid_acc 0.76713
+[ Valid | 225/300 ] loss = 1.13078, acc = 0.76713
+Epoch(226/300) train_loss 0.11204 | train_acc 0.96119 | valid_loss 1.08572 | valid_acc 0.77552
+[ Valid | 226/300 ] loss = 1.08572, acc = 0.77552
+Epoch(227/300) train_loss 0.10851 | train_acc 0.96202 | valid_loss 1.05369 | valid_acc 0.78015
+[ Valid | 227/300 ] loss = 1.05369, acc = 0.78015
+Epoch(228/300) train_loss 0.11382 | train_acc 0.96165 | valid_loss 1.04097 | valid_acc 0.77890
+[ Valid | 228/300 ] loss = 1.04097, acc = 0.77890
+Epoch(229/300) train_loss 0.12125 | train_acc 0.95996 | valid_loss 1.25593 | valid_acc 0.76229
+[ Valid | 229/300 ] loss = 1.25593, acc = 0.76229
+Epoch(230/300) train_loss 0.10205 | train_acc 0.96599 | valid_loss 1.13548 | valid_acc 0.76144
+[ Valid | 230/300 ] loss = 1.13548, acc = 0.76144
+Epoch(231/300) train_loss 0.10774 | train_acc 0.96323 | valid_loss 1.09585 | valid_acc 0.77562
+[ Valid | 231/300 ] loss = 1.09585, acc = 0.77562
+Epoch(232/300) train_loss 0.10392 | train_acc 0.96474 | valid_loss 1.15726 | valid_acc 0.76057
+[ Valid | 232/300 ] loss = 1.15726, acc = 0.76057
+Epoch(233/300) train_loss 0.10277 | train_acc 0.96562 | valid_loss 1.21829 | valid_acc 0.77059
+[ Valid | 233/300 ] loss = 1.21829, acc = 0.77059
+Epoch(234/300) train_loss 0.10859 | train_acc 0.96351 | valid_loss 1.02211 | valid_acc 0.78326
+[ Valid | 234/300 ] loss = 1.02211, acc = 0.78326
+Epoch(235/300) train_loss 0.11514 | train_acc 0.96276 | valid_loss 1.03739 | valid_acc 0.77522
+[ Valid | 235/300 ] loss = 1.03739, acc = 0.77522
+Epoch(236/300) train_loss 0.10500 | train_acc 0.96367 | valid_loss 1.03491 | valid_acc 0.77648
+[ Valid | 236/300 ] loss = 1.03491, acc = 0.77648
+Epoch(237/300) train_loss 0.10712 | train_acc 0.96442 | valid_loss 1.10146 | valid_acc 0.76809
+[ Valid | 237/300 ] loss = 1.10146, acc = 0.76809
+Epoch(238/300) train_loss 0.09695 | train_acc 0.96673 | valid_loss 1.06026 | valid_acc 0.78159
+[ Valid | 238/300 ] loss = 1.06026, acc = 0.78159
+Epoch(239/300) train_loss 0.09435 | train_acc 0.97006 | valid_loss 1.23487 | valid_acc 0.75911
+[ Valid | 239/300 ] loss = 1.23487, acc = 0.75911
+Epoch(240/300) train_loss 0.11020 | train_acc 0.96266 | valid_loss 1.08548 | valid_acc 0.77280
+[ Valid | 240/300 ] loss = 1.08548, acc = 0.77280
+Epoch(241/300) train_loss 0.10052 | train_acc 0.96649 | valid_loss 1.16453 | valid_acc 0.76413
+[ Valid | 241/300 ] loss = 1.16453, acc = 0.76413
+Epoch(242/300) train_loss 0.10608 | train_acc 0.96702 | valid_loss 1.45991 | valid_acc 0.76269
+[ Valid | 242/300 ] loss = 1.45991, acc = 0.76269
+Epoch(243/300) train_loss 0.11571 | train_acc 0.96030 | valid_loss 1.13273 | valid_acc 0.76587
+[ Valid | 243/300 ] loss = 1.13273, acc = 0.76587
+Epoch(244/300) train_loss 0.11329 | train_acc 0.96323 | valid_loss 1.66221 | valid_acc 0.75556
+[ Valid | 244/300 ] loss = 1.66221, acc = 0.75556
+Epoch(245/300) train_loss 0.09366 | train_acc 0.96780 | valid_loss 1.07242 | valid_acc 0.77763
+[ Valid | 245/300 ] loss = 1.07242, acc = 0.77763
+Epoch(246/300) train_loss 0.09505 | train_acc 0.96740 | valid_loss 1.07841 | valid_acc 0.77677
+[ Valid | 246/300 ] loss = 1.07841, acc = 0.77677
+Epoch(247/300) train_loss 0.09988 | train_acc 0.96726 | valid_loss 1.08078 | valid_acc 0.77417
+[ Valid | 247/300 ] loss = 1.08078, acc = 0.77417
+Epoch(248/300) train_loss 0.09945 | train_acc 0.96631 | valid_loss 1.25446 | valid_acc 0.77158
+[ Valid | 248/300 ] loss = 1.25446, acc = 0.77158
+Epoch(249/300) train_loss 0.10783 | train_acc 0.96494 | valid_loss 1.40431 | valid_acc 0.73730
+[ Valid | 249/300 ] loss = 1.40431, acc = 0.73730
+Epoch(250/300) train_loss 0.10546 | train_acc 0.96302 | valid_loss 1.08136 | valid_acc 0.78005
+[ Valid | 250/300 ] loss = 1.08136, acc = 0.78005
+Epoch(251/300) train_loss 0.09477 | train_acc 0.96683 | valid_loss 1.11907 | valid_acc 0.77300
+[ Valid | 251/300 ] loss = 1.11907, acc = 0.77300
+Epoch(252/300) train_loss 0.08632 | train_acc 0.97117 | valid_loss 1.08519 | valid_acc 0.78090
+[ Valid | 252/300 ] loss = 1.08519, acc = 0.78090
+Epoch(253/300) train_loss 0.11086 | train_acc 0.96417 | valid_loss 1.11019 | valid_acc 0.77531
+[ Valid | 253/300 ] loss = 1.11019, acc = 0.77531
+Epoch(254/300) train_loss 0.09290 | train_acc 0.96875 | valid_loss 1.04090 | valid_acc 0.77823
+[ Valid | 254/300 ] loss = 1.04090, acc = 0.77823
+Epoch(255/300) train_loss 0.09781 | train_acc 0.96601 | valid_loss 1.10434 | valid_acc 0.76645
+[ Valid | 255/300 ] loss = 1.10434, acc = 0.76645
+Epoch(256/300) train_loss 0.09496 | train_acc 0.96804 | valid_loss 1.04757 | valid_acc 0.77670
+[ Valid | 256/300 ] loss = 1.04757, acc = 0.77670
+Epoch(257/300) train_loss 0.09269 | train_acc 0.96746 | valid_loss 1.08112 | valid_acc 0.76917
+[ Valid | 257/300 ] loss = 1.08112, acc = 0.76917
+Epoch(258/300) train_loss 0.11091 | train_acc 0.96442 | valid_loss 1.11930 | valid_acc 0.76856
+[ Valid | 258/300 ] loss = 1.11930, acc = 0.76856
+Epoch(259/300) train_loss 0.09410 | train_acc 0.96774 | valid_loss 1.11863 | valid_acc 0.77592
+[ Valid | 259/300 ] loss = 1.11863, acc = 0.77592
+Epoch(260/300) train_loss 0.09358 | train_acc 0.96954 | valid_loss 1.12754 | valid_acc 0.77255
+[ Valid | 260/300 ] loss = 1.12754, acc = 0.77255
+Epoch(261/300) train_loss 0.08683 | train_acc 0.97016 | valid_loss 1.15588 | valid_acc 0.76433
+[ Valid | 261/300 ] loss = 1.15588, acc = 0.76433
+Epoch(262/300) train_loss 0.09652 | train_acc 0.96942 | valid_loss 1.04239 | valid_acc 0.78171
+[ Valid | 262/300 ] loss = 1.04239, acc = 0.78171
+Epoch(263/300) train_loss 0.09831 | train_acc 0.96665 | valid_loss 1.16695 | valid_acc 0.76334
+[ Valid | 263/300 ] loss = 1.16695, acc = 0.76334
+Epoch(264/300) train_loss 0.09230 | train_acc 0.96873 | valid_loss 1.08460 | valid_acc 0.77041
+[ Valid | 264/300 ] loss = 1.08460, acc = 0.77041
+Epoch(265/300) train_loss 0.09586 | train_acc 0.96685 | valid_loss 1.02973 | valid_acc 0.77833
+[ Valid | 265/300 ] loss = 1.02973, acc = 0.77833
+Epoch(266/300) train_loss 0.09731 | train_acc 0.96710 | valid_loss 1.07199 | valid_acc 0.78113
+[ Valid | 266/300 ] loss = 1.07199, acc = 0.78113
+Epoch(267/300) train_loss 0.08243 | train_acc 0.97274 | valid_loss 1.16587 | valid_acc 0.76954
+[ Valid | 267/300 ] loss = 1.16587, acc = 0.76954
+Epoch(268/300) train_loss 0.09235 | train_acc 0.97302 | valid_loss 1.07268 | valid_acc 0.77957
+[ Valid | 268/300 ] loss = 1.07268, acc = 0.77957
+Epoch(269/300) train_loss 0.08761 | train_acc 0.97248 | valid_loss 1.05839 | valid_acc 0.77347
+[ Valid | 269/300 ] loss = 1.05839, acc = 0.77347
+Epoch(270/300) train_loss 0.09025 | train_acc 0.96917 | valid_loss 1.12877 | valid_acc 0.76607
+[ Valid | 270/300 ] loss = 1.12877, acc = 0.76607
+Epoch(271/300) train_loss 0.09585 | train_acc 0.96907 | valid_loss 1.26007 | valid_acc 0.75238
+[ Valid | 271/300 ] loss = 1.26007, acc = 0.75238
+Epoch(272/300) train_loss 0.08322 | train_acc 0.97087 | valid_loss 1.30017 | valid_acc 0.76617
+[ Valid | 272/300 ] loss = 1.30017, acc = 0.76617
+Epoch(273/300) train_loss 0.08379 | train_acc 0.97173 | valid_loss 1.14112 | valid_acc 0.78536
+[ Valid | 273/300 ] loss = 1.14112, acc = 0.78536
+Epoch(274/300) train_loss 0.09202 | train_acc 0.97002 | valid_loss 1.16540 | valid_acc 0.76317
+[ Valid | 274/300 ] loss = 1.16540, acc = 0.76317
+Epoch(275/300) train_loss 0.08573 | train_acc 0.97224 | valid_loss 1.25456 | valid_acc 0.75334
+[ Valid | 275/300 ] loss = 1.25456, acc = 0.75334
+Epoch(276/300) train_loss 0.09227 | train_acc 0.97052 | valid_loss 1.08981 | valid_acc 0.77333
+[ Valid | 276/300 ] loss = 1.08981, acc = 0.77333
+Epoch(277/300) train_loss 0.09960 | train_acc 0.96796 | valid_loss 1.05145 | valid_acc 0.77590
+[ Valid | 277/300 ] loss = 1.05145, acc = 0.77590
+Epoch(278/300) train_loss 0.08092 | train_acc 0.97087 | valid_loss 1.09263 | valid_acc 0.78063
+[ Valid | 278/300 ] loss = 1.09263, acc = 0.78063
+Epoch(279/300) train_loss 0.07134 | train_acc 0.97472 | valid_loss 1.11707 | valid_acc 0.77321
+[ Valid | 279/300 ] loss = 1.11707, acc = 0.77321
+Epoch(280/300) train_loss 0.08069 | train_acc 0.97450 | valid_loss 1.00805 | valid_acc 0.79104
+[ Valid | 280/300 ] loss = 1.00805, acc = 0.79104 -> best
+Best model found at epoch 279, saving model
+Epoch(281/300) train_loss 0.08035 | train_acc 0.97119 | valid_loss 1.08509 | valid_acc 0.78264
+[ Valid | 281/300 ] loss = 1.08509, acc = 0.78264
+Epoch(282/300) train_loss 0.08700 | train_acc 0.96982 | valid_loss 1.15081 | valid_acc 0.78206
+[ Valid | 282/300 ] loss = 1.15081, acc = 0.78206
+Epoch(283/300) train_loss 0.08752 | train_acc 0.96978 | valid_loss 1.13319 | valid_acc 0.78267
+[ Valid | 283/300 ] loss = 1.13319, acc = 0.78267
+Epoch(284/300) train_loss 0.08671 | train_acc 0.96865 | valid_loss 1.21486 | valid_acc 0.76298
+[ Valid | 284/300 ] loss = 1.21486, acc = 0.76298
+Epoch(285/300) train_loss 0.09042 | train_acc 0.96817 | valid_loss 1.10745 | valid_acc 0.77600
+[ Valid | 285/300 ] loss = 1.10745, acc = 0.77600
+Epoch(286/300) train_loss 0.08550 | train_acc 0.97216 | valid_loss 1.19654 | valid_acc 0.75244
+[ Valid | 286/300 ] loss = 1.19654, acc = 0.75244
+Epoch(287/300) train_loss 0.09914 | train_acc 0.96851 | valid_loss 1.11824 | valid_acc 0.77900
+[ Valid | 287/300 ] loss = 1.11824, acc = 0.77900
+Epoch(288/300) train_loss 0.07832 | train_acc 0.97278 | valid_loss 1.11032 | valid_acc 0.78160
+[ Valid | 288/300 ] loss = 1.11032, acc = 0.78160
+Epoch(289/300) train_loss 0.07938 | train_acc 0.97244 | valid_loss 1.07724 | valid_acc 0.78190
+[ Valid | 289/300 ] loss = 1.07724, acc = 0.78190
+Epoch(290/300) train_loss 0.07340 | train_acc 0.97667 | valid_loss 1.21019 | valid_acc 0.78111
+[ Valid | 290/300 ] loss = 1.21019, acc = 0.78111
+Epoch(291/300) train_loss 0.08301 | train_acc 0.97167 | valid_loss 1.09546 | valid_acc 0.77493
+[ Valid | 291/300 ] loss = 1.09546, acc = 0.77493
+Epoch(292/300) train_loss 0.07358 | train_acc 0.97425 | valid_loss 1.06122 | valid_acc 0.78187
+[ Valid | 292/300 ] loss = 1.06122, acc = 0.78187
+Epoch(293/300) train_loss 0.09457 | train_acc 0.96605 | valid_loss 1.16040 | valid_acc 0.76757
+[ Valid | 293/300 ] loss = 1.16040, acc = 0.76757
+Epoch(294/300) train_loss 0.08169 | train_acc 0.97224 | valid_loss 1.12022 | valid_acc 0.78209
+[ Valid | 294/300 ] loss = 1.12022, acc = 0.78209
+Epoch(295/300) train_loss 0.08494 | train_acc 0.97300 | valid_loss 1.23761 | valid_acc 0.76395
+[ Valid | 295/300 ] loss = 1.23761, acc = 0.76395
+Epoch(296/300) train_loss 0.08600 | train_acc 0.97006 | valid_loss 1.13356 | valid_acc 0.76607
+[ Valid | 296/300 ] loss = 1.13356, acc = 0.76607
+Epoch(297/300) train_loss 0.07077 | train_acc 0.97728 | valid_loss 1.13312 | valid_acc 0.76608
+[ Valid | 297/300 ] loss = 1.13312, acc = 0.76608
+Epoch(298/300) train_loss 0.09286 | train_acc 0.96796 | valid_loss 1.15856 | valid_acc 0.77321
+[ Valid | 298/300 ] loss = 1.15856, acc = 0.77321
+Epoch(299/300) train_loss 0.08405 | train_acc 0.97369 | valid_loss 1.09803 | valid_acc 0.77648
+[ Valid | 299/300 ] loss = 1.09803, acc = 0.77648
+Epoch(300/300) train_loss 0.07911 | train_acc 0.97347 | valid_loss 1.16207 | valid_acc 0.77233
+[ Valid | 300/300 ] loss = 1.16207, acc = 0.77233
+One ./food11/test sample ./food11/test/0001.jpg
+Save testing result to submission.csv

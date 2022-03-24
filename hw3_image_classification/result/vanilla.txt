@@ -1,0 +1,21 @@
+Namespace(batch_size=64, learning_rate=0.0003, n_epochs=4, patience=300)
+One ./food11/training sample ./food11/training/0_0.jpg
+One ./food11/validation sample ./food11/validation/0_0.jpg
+[ Train | 001/004 ] loss = 1.89476, acc = 0.33135
+[ Valid | 001/004 ] loss = 1.92369, acc = 0.36696
+[ Valid | 001/004 ] loss = 1.92369, acc = 0.36696 -> best
+Best model found at epoch 0, saving model
+[ Train | 002/004 ] loss = 1.59074, acc = 0.44829
+[ Valid | 002/004 ] loss = 1.58642, acc = 0.45012
+[ Valid | 002/004 ] loss = 1.58642, acc = 0.45012 -> best
+Best model found at epoch 1, saving model
+[ Train | 003/004 ] loss = 1.34586, acc = 0.53276
+[ Valid | 003/004 ] loss = 1.54234, acc = 0.47781
+[ Valid | 003/004 ] loss = 1.54234, acc = 0.47781 -> best
+Best model found at epoch 2, saving model
+[ Train | 004/004 ] loss = 1.16930, acc = 0.59389
+[ Valid | 004/004 ] loss = 1.34373, acc = 0.54675
+[ Valid | 004/004 ] loss = 1.34373, acc = 0.54675 -> best
+Best model found at epoch 3, saving model
+One ./food11/test sample ./food11/test/0001.jpg
+Save testing result to submission.csv

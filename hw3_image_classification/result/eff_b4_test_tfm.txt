@@ -1,0 +1,30 @@
+Namespace(batch_size=64, input_size=224, learning_rate=0.0003, n_epochs=300, patience=300)
+One ./food11/training sample ./food11/training/0_0.jpg
+One ./food11/validation sample ./food11/validation/0_0.jpg
+Testing ./food11/test/0001.jpg
+defaultdict(<class 'int'>, {9: 154, 8: 5, 2: 41})
+Testing ./food11/test/0002.jpg
+defaultdict(<class 'int'>, {9: 200})
+Testing ./food11/test/0003.jpg
+defaultdict(<class 'int'>, {0: 199, 8: 1})
+Testing ./food11/test/0004.jpg
+defaultdict(<class 'int'>, {9: 14, 2: 186})
+Testing ./food11/test/0005.jpg
+defaultdict(<class 'int'>, {10: 138, 5: 29, 1: 20, 3: 13})
+Testing ./food11/test/0006.jpg
+defaultdict(<class 'int'>, {9: 200})
+Testing ./food11/test/0007.jpg
+defaultdict(<class 'int'>, {4: 113, 0: 87})
+Testing ./food11/test/0008.jpg
+defaultdict(<class 'int'>, {9: 200})
+Testing ./food11/test/0009.jpg
+defaultdict(<class 'int'>, {5: 200})
+Testing ./food11/test/0010.jpg
+defaultdict(<class 'int'>, {9: 200})
+Testing ./food11/test/0011.jpg
+defaultdict(<class 'int'>, {9: 200})
+Testing ./food11/test/0012.jpg
+defaultdict(<class 'int'>, {0: 200})
+Testing ./food11/test/0013.jpg
+defaultdict(<class 'int'>, {3: 200})
+Testing ./food11/test/0014.jpg

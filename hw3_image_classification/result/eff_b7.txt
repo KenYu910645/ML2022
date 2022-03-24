@@ -1,0 +1,3 @@
+Namespace(batch_size=64, input_size=224, learning_rate=0.0003, n_epochs=30, patience=300)
+One ./food11/training sample ./food11/training/0_0.jpg
+One ./food11/validation sample ./food11/validation/0_0.jpg
