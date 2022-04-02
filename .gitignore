@@ -14,3 +14,9 @@ hw3_image_classification/*.zip
 hw4_speaker_identification/Dataset
 hw4_speaker_identification/*.ckpt
 hw4_speaker_identification/*.gz*
+
+# hw5
+hw5_machine_translation/checkpoints
+hw5_machine_translation/DATA
+hw5_machine_translation/fairseq
+
