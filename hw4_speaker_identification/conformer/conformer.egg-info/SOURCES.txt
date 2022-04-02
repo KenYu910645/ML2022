@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+conformer/__init__.py
+conformer/activation.py
+conformer/attention.py
+conformer/convolution.py
+conformer/embedding.py
+conformer/encoder.py
+conformer/feed_forward.py
+conformer/model.py
+conformer/modules.py
+conformer.egg-info/PKG-INFO
+conformer.egg-info/SOURCES.txt
+conformer.egg-info/dependency_links.txt
+conformer.egg-info/requires.txt
+conformer.egg-info/top_level.txt

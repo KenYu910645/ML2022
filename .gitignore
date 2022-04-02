@@ -1,0 +1,16 @@
+
+# hw1
+
+# hw2
+
+hw2_phoneme_classification/libriphone
+
+# hw3
+hw3_image_classification/food11
+hw3_image_classification/*.ckpt
+hw3_image_classification/*.zip
+
+# hw4
+hw4_speaker_identification/Dataset
+hw4_speaker_identification/*.ckpt
+hw4_speaker_identification/*.gz*

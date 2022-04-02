@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: conformer
+Version: latest
+Summary: Convolution-augmented Transformer for Speech Recognition
+Home-page: https://github.com/sooftware/conformer
+Author: Soohwan Kim
+Author-email: sh951011@gmail.com
+License: UNKNOWN
+Keywords: asr,speech_recognition,conformer,end-to-end
+Platform: UNKNOWN
+Requires-Python: >=3.6
+License-File: LICENSE
+
+UNKNOWN
+

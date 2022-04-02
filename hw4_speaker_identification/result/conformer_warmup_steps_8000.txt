@@ -1,0 +1,96 @@
+[Info]: Use cuda now!
+[Info]: Finish loading data!
+[Info]: Finish creating model!
+(002000/150000)[Train] loss: 5.346424, acc: 0.088641 [Valid] loss: 84.423884, acc: 0.239347 
+(004000/150000)[Train] loss: 2.717395, acc: 0.425008 [Valid] loss: 46.637460, acc: 0.511009 
+(006000/150000)[Train] loss: 1.566569, acc: 0.627697 [Valid] loss: 34.520651, acc: 0.631570 
+(008000/150000)[Train] loss: 1.076374, acc: 0.729945 [Valid] loss: 28.777981, acc: 0.698864 
+(010000/150000)[Train] loss: 0.775148, acc: 0.797711 [Valid] loss: 23.661982, acc: 0.757280 
+Save model at 10000
+(012000/150000)[Train] loss: 0.570903, acc: 0.846131 [Valid] loss: 21.650809, acc: 0.781783 
+(014000/150000)[Train] loss: 0.442194, acc: 0.877215 [Valid] loss: 19.570014, acc: 0.804155 
+(016000/150000)[Train] loss: 0.357157, acc: 0.898531 [Valid] loss: 19.558088, acc: 0.804332 
+(018000/150000)[Train] loss: 0.300438, acc: 0.913078 [Valid] loss: 20.227645, acc: 0.812145 
+(020000/150000)[Train] loss: 0.256679, acc: 0.924840 [Valid] loss: 19.708573, acc: 0.821200 
+Save model at 20000
+(022000/150000)[Train] loss: 0.225901, acc: 0.933270 [Valid] loss: 18.533148, acc: 0.831143 
+(024000/150000)[Train] loss: 0.201764, acc: 0.939510 [Valid] loss: 18.342582, acc: 0.838956 
+(026000/150000)[Train] loss: 0.183957, acc: 0.944697 [Valid] loss: 18.694819, acc: 0.841087 
+(028000/150000)[Train] loss: 0.164531, acc: 0.949938 [Valid] loss: 18.301453, acc: 0.841264 
+(030000/150000)[Train] loss: 0.154790, acc: 0.952621 [Valid] loss: 18.091606, acc: 0.843750 
+Save model at 30000
+(032000/150000)[Train] loss: 0.140590, acc: 0.956674 [Valid] loss: 18.650555, acc: 0.847301 
+(034000/150000)[Train] loss: 0.129879, acc: 0.960121 [Valid] loss: 17.824226, acc: 0.855646 
+(036000/150000)[Train] loss: 0.123522, acc: 0.961752 [Valid] loss: 18.845938, acc: 0.851562 
+(038000/150000)[Train] loss: 0.113600, acc: 0.964639 [Valid] loss: 17.963200, acc: 0.864524 
+(040000/150000)[Train] loss: 0.107738, acc: 0.966559 [Valid] loss: 18.252123, acc: 0.856357 
+Save model at 40000
+(042000/150000)[Train] loss: 0.101539, acc: 0.968074 [Valid] loss: 18.367728, acc: 0.860440 
+(044000/150000)[Train] loss: 0.095229, acc: 0.970180 [Valid] loss: 17.774044, acc: 0.865945 
+(046000/150000)[Train] loss: 0.091707, acc: 0.971207 [Valid] loss: 18.465246, acc: 0.857777 
+(048000/150000)[Train] loss: 0.085116, acc: 0.973475 [Valid] loss: 17.208117, acc: 0.869851 
+(050000/150000)[Train] loss: 0.081951, acc: 0.974133 [Valid] loss: 17.705945, acc: 0.873047 
+Save model at 50000
+(052000/150000)[Train] loss: 0.076420, acc: 0.976008 [Valid] loss: 17.699347, acc: 0.867543 
+(054000/150000)[Train] loss: 0.072998, acc: 0.976943 [Valid] loss: 17.515707, acc: 0.872692 
+(056000/150000)[Train] loss: 0.068362, acc: 0.978270 [Valid] loss: 17.997847, acc: 0.867010 
+(058000/150000)[Train] loss: 0.064930, acc: 0.979416 [Valid] loss: 18.039669, acc: 0.870384 
+(060000/150000)[Train] loss: 0.061078, acc: 0.980639 [Valid] loss: 17.352745, acc: 0.874822 
+Save model at 60000
+(062000/150000)[Train] loss: 0.058294, acc: 0.981605 [Valid] loss: 18.436629, acc: 0.869673 
+(064000/150000)[Train] loss: 0.055128, acc: 0.982523 [Valid] loss: 17.570604, acc: 0.869496 
+(066000/150000)[Train] loss: 0.051614, acc: 0.983344 [Valid] loss: 16.491119, acc: 0.875888 
+(068000/150000)[Train] loss: 0.049963, acc: 0.984057 [Valid] loss: 16.326655, acc: 0.883168 
+(070000/150000)[Train] loss: 0.045966, acc: 0.985363 [Valid] loss: 16.814624, acc: 0.883523 
+Save model at 70000
+(072000/150000)[Train] loss: 0.043851, acc: 0.985998 [Valid] loss: 17.748430, acc: 0.880504 
+(074000/150000)[Train] loss: 0.041890, acc: 0.986727 [Valid] loss: 17.088916, acc: 0.881570 
+(076000/150000)[Train] loss: 0.038572, acc: 0.987680 [Valid] loss: 16.891641, acc: 0.882280 
+(078000/150000)[Train] loss: 0.036623, acc: 0.988344 [Valid] loss: 17.373154, acc: 0.882457 
+(080000/150000)[Train] loss: 0.033766, acc: 0.989359 [Valid] loss: 17.855670, acc: 0.883523 
+Save model at 80000
+(082000/150000)[Train] loss: 0.032135, acc: 0.989723 [Valid] loss: 16.720877, acc: 0.882990 
+(084000/150000)[Train] loss: 0.029023, acc: 0.990777 [Valid] loss: 15.795981, acc: 0.892578 
+(086000/150000)[Train] loss: 0.027376, acc: 0.991369 [Valid] loss: 16.979361, acc: 0.888672 
+(088000/150000)[Train] loss: 0.026868, acc: 0.991332 [Valid] loss: 16.334412, acc: 0.884055 
+(090000/150000)[Train] loss: 0.024028, acc: 0.992277 [Valid] loss: 15.920791, acc: 0.891158 
+Save model at 90000
+(092000/150000)[Train] loss: 0.022233, acc: 0.993000 [Valid] loss: 16.482650, acc: 0.890092 
+(094000/150000)[Train] loss: 0.020404, acc: 0.993367 [Valid] loss: 16.872423, acc: 0.887429 
+(096000/150000)[Train] loss: 0.018654, acc: 0.994137 [Valid] loss: 17.020412, acc: 0.890447 
+(098000/150000)[Train] loss: 0.017994, acc: 0.994297 [Valid] loss: 16.193790, acc: 0.892578 
+(100000/150000)[Train] loss: 0.016561, acc: 0.994781 [Valid] loss: 16.540252, acc: 0.890625 
+Save model at 100000
+(102000/150000)[Train] loss: 0.014909, acc: 0.995305 [Valid] loss: 16.270924, acc: 0.890980 
+(104000/150000)[Train] loss: 0.013922, acc: 0.995555 [Valid] loss: 16.187346, acc: 0.897195 
+(106000/150000)[Train] loss: 0.012964, acc: 0.995918 [Valid] loss: 15.987621, acc: 0.897017 
+(108000/150000)[Train] loss: 0.011972, acc: 0.996213 [Valid] loss: 16.130849, acc: 0.896839 
+(110000/150000)[Train] loss: 0.010733, acc: 0.996584 [Valid] loss: 16.742485, acc: 0.890625 
+Save model at 110000
+(112000/150000)[Train] loss: 0.009718, acc: 0.996961 [Valid] loss: 15.581977, acc: 0.897195 
+(114000/150000)[Train] loss: 0.009134, acc: 0.996992 [Valid] loss: 14.843022, acc: 0.898082 
+(116000/150000)[Train] loss: 0.008258, acc: 0.997371 [Valid] loss: 15.002176, acc: 0.903054 
+(118000/150000)[Train] loss: 0.007675, acc: 0.997553 [Valid] loss: 14.767127, acc: 0.901989 
+(120000/150000)[Train] loss: 0.006961, acc: 0.997797 [Valid] loss: 15.461352, acc: 0.905540 
+Save model at 120000
+(122000/150000)[Train] loss: 0.006669, acc: 0.997801 [Valid] loss: 15.582023, acc: 0.901456 
+(124000/150000)[Train] loss: 0.006062, acc: 0.997998 [Valid] loss: 15.354384, acc: 0.898615 
+(126000/150000)[Train] loss: 0.005750, acc: 0.997986 [Valid] loss: 14.722972, acc: 0.903587 
+(128000/150000)[Train] loss: 0.005285, acc: 0.998217 [Valid] loss: 15.289708, acc: 0.904297 
+(130000/150000)[Train] loss: 0.005067, acc: 0.998271 [Valid] loss: 15.924063, acc: 0.898082 
+Save model at 130000
+(132000/150000)[Train] loss: 0.004819, acc: 0.998268 [Valid] loss: 14.549062, acc: 0.905540 
+(134000/150000)[Train] loss: 0.004515, acc: 0.998420 [Valid] loss: 15.785857, acc: 0.905717 
+(136000/150000)[Train] loss: 0.004407, acc: 0.998439 [Valid] loss: 15.016339, acc: 0.911044 
+(138000/150000)[Train] loss: 0.004186, acc: 0.998502 [Valid] loss: 14.607853, acc: 0.909446 
+(140000/150000)[Train] loss: 0.004109, acc: 0.998514 [Valid] loss: 14.466690, acc: 0.912642 
+Save model at 140000
+(142000/150000)[Train] loss: 0.004009, acc: 0.998512 [Valid] loss: 14.837747, acc: 0.906605 
+(144000/150000)[Train] loss: 0.003842, acc: 0.998611 [Valid] loss: 14.607529, acc: 0.910866 
+(146000/150000)[Train] loss: 0.003878, acc: 0.998541 [Valid] loss: 14.962070, acc: 0.909624 
+(148000/150000)[Train] loss: 0.003827, acc: 0.998588 [Valid] loss: 15.808283, acc: 0.906783 
+(150000/150000)[Train] loss: 0.003889, acc: 0.998598 [Valid] loss: 15.584208, acc: 0.905895 
+Save model at 150000
+[Info]: Use cuda now!
+[Info]: Finish loading data!
+[Info]: Finish creating model!
