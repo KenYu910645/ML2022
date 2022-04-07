@@ -1,0 +1,393 @@
+2022-04-03 13:43:57 | INFO | fairseq.utils | ***********************CUDA enviroments for all 1 workers***********************
+2022-04-03 13:43:57 | INFO | fairseq.utils | rank   0: capabilities =  8.6  ; total memory = 9.999 GB ; name = NVIDIA GeForce RTX 3080                 
+2022-04-03 13:43:57 | INFO | fairseq.utils | ***********************CUDA enviroments for all 1 workers***********************
+2022-04-03 13:43:57 | INFO | fairseq.tasks.translation | [en] dictionary: 8000 types
+2022-04-03 13:43:57 | INFO | fairseq.tasks.translation | [zh] dictionary: 8000 types
+2022-04-03 13:43:57 | INFO | hw5.seq2seq | loading data for epoch 1
+2022-04-03 13:43:57 | INFO | fairseq.data.data_utils | loaded 390,041 examples from: ./DATA/data-bin/ted2020/train.en-zh.en
+2022-04-03 13:43:57 | INFO | fairseq.data.data_utils | loaded 390,041 examples from: ./DATA/data-bin/ted2020/train.en-zh.zh
+2022-04-03 13:43:57 | INFO | fairseq.tasks.translation | ./DATA/data-bin/ted2020 train en-zh 390041 examples
+2022-04-03 13:43:57 | INFO | fairseq.data.data_utils | loaded 3,939 examples from: ./DATA/data-bin/ted2020/valid.en-zh.en
+2022-04-03 13:43:57 | INFO | fairseq.data.data_utils | loaded 3,939 examples from: ./DATA/data-bin/ted2020/valid.en-zh.zh
+2022-04-03 13:43:57 | INFO | fairseq.tasks.translation | ./DATA/data-bin/ted2020 valid en-zh 3939 examples
+{'id': 1,
+ 'source': tensor([  18,   14,    6, 2234,   60,   19,   80,    5,  256,   16,  405, 1407,
+        1706,    7,    2]),
+ 'target': tensor([ 140,  690,   28,  270,   45,  151, 1142,  660,  606,  369, 3114, 2434,
+        1434,  192,    2])}
+"Source: that's exactly what i do optical mind control ."
+'Target: 這實在就是我所做的--光學操控思想'
+2022-04-03 13:43:57 | WARNING | fairseq.tasks.fairseq_task | 2,532 samples have invalid sizes and will be skipped, max_positions=(20, 20), first few sample ids=[29, 135, 2444, 3058, 682, 731, 235, 1558, 3383, 559]
+2022-04-03 13:43:57 | INFO | hw5.seq2seq | Seq2Seq(
+  (encoder): TransformerEncoder(
+    (dropout_module): FairseqDropout()
+    (embed_tokens): Embedding(8000, 256, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=256, out_features=256, bias=True)
+          (v_proj): Linear(in_features=256, out_features=256, bias=True)
+          (q_proj): Linear(in_features=256, out_features=256, bias=True)
+          (out_proj): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=256, out_features=1024, bias=True)
+        (fc2): Linear(in_features=1024, out_features=256, bias=True)
+        (final_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=256, out_features=256, bias=True)
+          (v_proj): Linear(in_features=256, out_features=256, bias=True)
+          (q_proj): Linear(in_features=256, out_features=256, bias=True)
+          (out_proj): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=256, out_features=1024, bias=True)
+        (fc2): Linear(in_features=1024, out_features=256, bias=True)
+        (final_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (dropout_module): FairseqDropout()
+    (embed_tokens): Embedding(8000, 256, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=256, out_features=256, bias=True)
+          (v_proj): Linear(in_features=256, out_features=256, bias=True)
+          (q_proj): Linear(in_features=256, out_features=256, bias=True)
+          (out_proj): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=256, out_features=256, bias=True)
+          (v_proj): Linear(in_features=256, out_features=256, bias=True)
+          (q_proj): Linear(in_features=256, out_features=256, bias=True)
+          (out_proj): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=256, out_features=1024, bias=True)
+        (fc2): Linear(in_features=1024, out_features=256, bias=True)
+        (final_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=256, out_features=256, bias=True)
+          (v_proj): Linear(in_features=256, out_features=256, bias=True)
+          (q_proj): Linear(in_features=256, out_features=256, bias=True)
+          (out_proj): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=256, out_features=256, bias=True)
+          (v_proj): Linear(in_features=256, out_features=256, bias=True)
+          (q_proj): Linear(in_features=256, out_features=256, bias=True)
+          (out_proj): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=256, out_features=1024, bias=True)
+        (fc2): Linear(in_features=1024, out_features=256, bias=True)
+        (final_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    (output_projection): Linear(in_features=256, out_features=8000, bias=False)
+  )
+)
+2022-04-03 13:44:00 | INFO | hw5.seq2seq | task: TranslationTask
+2022-04-03 13:44:00 | INFO | hw5.seq2seq | encoder: TransformerEncoder
+2022-04-03 13:44:00 | INFO | hw5.seq2seq | decoder: TransformerDecoder
+2022-04-03 13:44:00 | INFO | hw5.seq2seq | criterion: LabelSmoothedCrossEntropyCriterion
+2022-04-03 13:44:00 | INFO | hw5.seq2seq | optimizer: NoamOpt
+2022-04-03 13:44:00 | INFO | hw5.seq2seq | num. model params: 7,783,424 (num. trained: 7,783,424)
+2022-04-03 13:44:00 | INFO | hw5.seq2seq | max tokens per batch = 8192, accumulate steps = 2
+2022-04-03 13:44:00 | WARNING | fairseq.tasks.fairseq_task | 1 samples have invalid sizes and will be skipped, max_positions=(1024, 1024), first few sample ids=[326674]
+2022-04-03 13:46:41 | INFO | hw5.seq2seq | training loss: 7.1110
+2022-04-03 13:46:41 | INFO | hw5.seq2seq | begin validation
+2022-04-03 13:47:42 | INFO | hw5.seq2seq | example source: but the point is , it doesn't feel that way .
+2022-04-03 13:47:42 | INFO | hw5.seq2seq | example hypothesis: 所以 , 這樣 , 說 , 這樣 。
+2022-04-03 13:47:42 | INFO | hw5.seq2seq | example reference: 但重點是 , 感覺起來卻不是那麼回事呀
+2022-04-03 13:47:42 | INFO | hw5.seq2seq | validation loss:	6.0918
+2022-04-03 13:47:42 | INFO | hw5.seq2seq | BLEU = 0.59 14.7/2.0/0.4/0.1 (BP = 0.679 ratio = 0.721 hyp_len = 80647 ref_len = 111811)
+2022-04-03 13:47:43 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint1.pt
+2022-04-03 13:47:43 | INFO | hw5.seq2seq | end of epoch 1
+2022-04-03 13:50:02 | INFO | hw5.seq2seq | training loss: 5.6281
+2022-04-03 13:50:02 | INFO | hw5.seq2seq | begin validation
+2022-04-03 13:50:48 | INFO | hw5.seq2seq | example source: we can push through that .
+2022-04-03 13:50:48 | INFO | hw5.seq2seq | example hypothesis: 我們可以用它 。
+2022-04-03 13:50:48 | INFO | hw5.seq2seq | example reference: 我們可以衝破這些限制 。
+2022-04-03 13:50:48 | INFO | hw5.seq2seq | validation loss:	5.1850
+2022-04-03 13:50:48 | INFO | hw5.seq2seq | BLEU = 6.89 40.6/15.4/6.4/2.7 (BP = 0.675 ratio = 0.718 hyp_len = 80288 ref_len = 111811)
+2022-04-03 13:50:48 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint2.pt
+2022-04-03 13:50:48 | INFO | hw5.seq2seq | end of epoch 2
+2022-04-03 13:53:25 | INFO | hw5.seq2seq | training loss: 5.0741
+2022-04-03 13:53:25 | INFO | hw5.seq2seq | begin validation
+2022-04-03 13:54:15 | INFO | hw5.seq2seq | example source: thank you .
+2022-04-03 13:54:15 | INFO | hw5.seq2seq | example hypothesis: 謝謝 。
+2022-04-03 13:54:15 | INFO | hw5.seq2seq | example reference: 謝謝 。
+2022-04-03 13:54:15 | INFO | hw5.seq2seq | validation loss:	4.7320
+2022-04-03 13:54:15 | INFO | hw5.seq2seq | BLEU = 10.37 44.3/19.1/9.1/4.5 (BP = 0.761 ratio = 0.785 hyp_len = 87804 ref_len = 111811)
+2022-04-03 13:54:16 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint3.pt
+2022-04-03 13:54:16 | INFO | hw5.seq2seq | end of epoch 3
+2022-04-03 13:56:59 | INFO | hw5.seq2seq | training loss: 4.8079
+2022-04-03 13:56:59 | INFO | hw5.seq2seq | begin validation
+2022-04-03 13:58:09 | INFO | hw5.seq2seq | example source: those men would eventually be convicted of placing a van filled with 1 , 500 pounds of explosives into the sublevel parking lot of the world trade center's north tower , causing an explosion that killed six people and injured over 1 , 000 others .
+2022-04-03 13:58:09 | INFO | hw5.seq2seq | example hypothesis: 那些男人會被邀請一千五百磅 , 用1500磅的探索 。
+2022-04-03 13:58:09 | INFO | hw5.seq2seq | example reference: 這群男人最終被指控將滿載1500磅重的炸彈的廂式貨車停在世界貿易中心北塔的地下停車場 , 爆炸造成6人死亡 , 同時致使超過1000人受傷 。
+2022-04-03 13:58:09 | INFO | hw5.seq2seq | validation loss:	4.5000
+2022-04-03 13:58:09 | INFO | hw5.seq2seq | BLEU = 11.43 46.7/21.2/10.5/5.3 (BP = 0.746 ratio = 0.773 hyp_len = 86442 ref_len = 111811)
+2022-04-03 13:58:11 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint4.pt
+2022-04-03 13:58:11 | INFO | hw5.seq2seq | end of epoch 4
+2022-04-03 14:00:50 | INFO | hw5.seq2seq | training loss: 4.6513
+2022-04-03 14:00:50 | INFO | hw5.seq2seq | begin validation
+2022-04-03 14:01:47 | INFO | hw5.seq2seq | example source: but this is really how i go about creating these photographs .
+2022-04-03 14:01:47 | INFO | hw5.seq2seq | example hypothesis: 但這真的是我如何創造這些照片 。
+2022-04-03 14:01:47 | INFO | hw5.seq2seq | example reference: 但是我真的是這樣做出這些相片的 。
+2022-04-03 14:01:47 | INFO | hw5.seq2seq | validation loss:	4.3577
+2022-04-03 14:01:47 | INFO | hw5.seq2seq | BLEU = 14.19 46.6/21.9/11.1/5.8 (BP = 0.886 ratio = 0.892 hyp_len = 99707 ref_len = 111811)
+2022-04-03 14:01:48 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint5.pt
+2022-04-03 14:01:48 | INFO | hw5.seq2seq | end of epoch 5
+2022-04-03 14:04:24 | INFO | hw5.seq2seq | training loss: 4.5353
+2022-04-03 14:04:24 | INFO | hw5.seq2seq | begin validation
+2022-04-03 14:05:17 | INFO | hw5.seq2seq | example source: so that is a fact .
+2022-04-03 14:05:17 | INFO | hw5.seq2seq | example hypothesis: 這就是事實 。
+2022-04-03 14:05:17 | INFO | hw5.seq2seq | example reference: 這就是事實
+2022-04-03 14:05:17 | INFO | hw5.seq2seq | validation loss:	4.2406
+2022-04-03 14:05:17 | INFO | hw5.seq2seq | BLEU = 15.09 49.9/24.2/12.5/6.8 (BP = 0.843 ratio = 0.854 hyp_len = 95493 ref_len = 111811)
+2022-04-03 14:05:17 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint6.pt
+2022-04-03 14:05:17 | INFO | hw5.seq2seq | end of epoch 6
+2022-04-03 14:07:57 | INFO | hw5.seq2seq | training loss: 4.4250
+2022-04-03 14:07:57 | INFO | hw5.seq2seq | begin validation
+2022-04-03 14:08:51 | INFO | hw5.seq2seq | example source: thank you so much everyone .
+2022-04-03 14:08:51 | INFO | hw5.seq2seq | example hypothesis: 感謝大家 。
+2022-04-03 14:08:51 | INFO | hw5.seq2seq | example reference: 謝謝大家 !
+2022-04-03 14:08:51 | INFO | hw5.seq2seq | validation loss:	4.1786
+2022-04-03 14:08:51 | INFO | hw5.seq2seq | BLEU = 14.55 51.7/25.4/13.4/7.3 (BP = 0.769 ratio = 0.792 hyp_len = 88542 ref_len = 111811)
+2022-04-03 14:08:52 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint7.pt
+2022-04-03 14:08:52 | INFO | hw5.seq2seq | end of epoch 7
+2022-04-03 14:11:28 | INFO | hw5.seq2seq | training loss: 4.3423
+2022-04-03 14:11:28 | INFO | hw5.seq2seq | begin validation
+2022-04-03 14:12:23 | INFO | hw5.seq2seq | example source: these differences became a source of inspired artistic celebration .
+2022-04-03 14:12:23 | INFO | hw5.seq2seq | example hypothesis: 這些差別變成了靈感的勇氣 。
+2022-04-03 14:12:23 | INFO | hw5.seq2seq | example reference: 這些差異變成了一個源頭 , 富有靈感之藝術讚頌的源頭 。
+2022-04-03 14:12:23 | INFO | hw5.seq2seq | validation loss:	4.0810
+2022-04-03 14:12:23 | INFO | hw5.seq2seq | BLEU = 16.63 52.0/26.3/14.1/7.8 (BP = 0.844 ratio = 0.855 hyp_len = 95605 ref_len = 111811)
+2022-04-03 14:12:24 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint8.pt
+2022-04-03 14:12:24 | INFO | hw5.seq2seq | end of epoch 8
+2022-04-03 14:14:57 | INFO | hw5.seq2seq | training loss: 4.2747
+2022-04-03 14:14:57 | INFO | hw5.seq2seq | begin validation
+2022-04-03 14:16:04 | INFO | hw5.seq2seq | example source: it's not .
+2022-04-03 14:16:04 | INFO | hw5.seq2seq | example hypothesis: 這不是 。
+2022-04-03 14:16:04 | INFO | hw5.seq2seq | example reference: 不是
+2022-04-03 14:16:04 | INFO | hw5.seq2seq | validation loss:	4.0474
+2022-04-03 14:16:04 | INFO | hw5.seq2seq | BLEU = 18.02 47.8/23.9/12.8/7.2 (BP = 1.000 ratio = 1.010 hyp_len = 112875 ref_len = 111811)
+2022-04-03 14:16:04 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint9.pt
+2022-04-03 14:16:05 | INFO | hw5.seq2seq | end of epoch 9
+2022-04-03 14:18:51 | INFO | hw5.seq2seq | training loss: 4.2214
+2022-04-03 14:18:51 | INFO | hw5.seq2seq | begin validation
+2022-04-03 14:19:48 | INFO | hw5.seq2seq | example source: so think about when you have friends , families and coworkers in california , on the west coast or in other parts of the world .
+2022-04-03 14:19:48 | INFO | hw5.seq2seq | example hypothesis: 所以 , 當你有朋友、家庭和同事在加州的西方或其他地方 。
+2022-04-03 14:19:48 | INFO | hw5.seq2seq | example reference: 所以 , 想像當你嘗試聯繫在加州 , 在西海岸或者在世界的另一面
+2022-04-03 14:19:48 | INFO | hw5.seq2seq | validation loss:	4.0020
+2022-04-03 14:19:48 | INFO | hw5.seq2seq | BLEU = 17.96 54.3/27.7/15.0/8.6 (BP = 0.854 ratio = 0.864 hyp_len = 96564 ref_len = 111811)
+2022-04-03 14:19:49 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint10.pt
+2022-04-03 14:19:50 | INFO | hw5.seq2seq | end of epoch 10
+2022-04-03 14:22:35 | INFO | hw5.seq2seq | training loss: 4.1796
+2022-04-03 14:22:35 | INFO | hw5.seq2seq | begin validation
+2022-04-03 14:23:33 | INFO | hw5.seq2seq | example source: and i was asked to move out because one of my roommates had shared my status with her parents .
+2022-04-03 14:23:33 | INFO | hw5.seq2seq | example hypothesis: 我被要求搬出去 , 因為我的房間和父母分享我的雕像 。
+2022-04-03 14:23:33 | INFO | hw5.seq2seq | example reference: 我會被要求搬出去 , 是因為其中一名室友和她的父母談了我的狀況 。
+2022-04-03 14:23:33 | INFO | hw5.seq2seq | validation loss:	3.9697
+2022-04-03 14:23:33 | INFO | hw5.seq2seq | BLEU = 18.96 53.6/27.7/15.1/8.7 (BP = 0.904 ratio = 0.908 hyp_len = 101535 ref_len = 111811)
+2022-04-03 14:23:35 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint11.pt
+2022-04-03 14:23:35 | INFO | hw5.seq2seq | end of epoch 11
+2022-04-03 14:26:13 | INFO | hw5.seq2seq | training loss: 4.1486
+2022-04-03 14:26:13 | INFO | hw5.seq2seq | begin validation
+2022-04-03 14:27:05 | INFO | hw5.seq2seq | example source: and i want to share with you a quick video from our facility that gives you a sense of how this looks at scale .
+2022-04-03 14:27:05 | INFO | hw5.seq2seq | example hypothesis: 我想跟各位分享一個快速的影片 , 給你們分享這個觀點有多大 。
+2022-04-03 14:27:05 | INFO | hw5.seq2seq | example reference: 我想與你們快速分享一段關於我們設備的影片可以瞭解一下它的規模
+2022-04-03 14:27:05 | INFO | hw5.seq2seq | validation loss:	3.9330
+2022-04-03 14:27:05 | INFO | hw5.seq2seq | BLEU = 19.01 54.1/28.1/15.3/8.9 (BP = 0.892 ratio = 0.898 hyp_len = 100390 ref_len = 111811)
+2022-04-03 14:27:06 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint12.pt
+2022-04-03 14:27:06 | INFO | hw5.seq2seq | end of epoch 12
+2022-04-03 14:29:53 | INFO | hw5.seq2seq | training loss: 4.1191
+2022-04-03 14:29:53 | INFO | hw5.seq2seq | begin validation
+2022-04-03 14:31:03 | INFO | hw5.seq2seq | example source: it's a distinction perhaps we might make between two nobel laureates , richard feynman and john nash .
+2022-04-03 14:31:03 | INFO | hw5.seq2seq | example hypothesis: 或許我們可能在兩個諾貝爾女士、理查德曼和約翰納什 。
+2022-04-03 14:31:03 | INFO | hw5.seq2seq | example reference: 我們或許可以從兩位諾貝爾獎得主 , 理查費曼和約翰奈許之間看出這樣的差異 。
+2022-04-03 14:31:03 | INFO | hw5.seq2seq | validation loss:	3.9293
+2022-04-03 14:31:03 | INFO | hw5.seq2seq | BLEU = 18.82 54.9/28.7/15.8/9.2 (BP = 0.861 ratio = 0.870 hyp_len = 97247 ref_len = 111811)
+2022-04-03 14:31:04 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint13.pt
+2022-04-03 14:31:04 | INFO | hw5.seq2seq | end of epoch 13
+2022-04-03 14:33:40 | INFO | hw5.seq2seq | training loss: 4.0968
+2022-04-03 14:33:40 | INFO | hw5.seq2seq | begin validation
+2022-04-03 14:34:29 | INFO | hw5.seq2seq | example source: and therein lie the words of wisdom of a young girl whose brief life forever impacted mine .
+2022-04-03 14:34:29 | INFO | hw5.seq2seq | example hypothesis: 在那兒 , 年輕女孩的智慧詞彙 , 永遠都會影響我 。
+2022-04-03 14:34:29 | INFO | hw5.seq2seq | example reference: 她說的話對我有很大啟發 。 這一個年幼女孩短暫的一生永遠影響著我 。
+2022-04-03 14:34:29 | INFO | hw5.seq2seq | validation loss:	3.9091
+2022-04-03 14:34:29 | INFO | hw5.seq2seq | BLEU = 18.40 56.3/29.5/16.2/9.4 (BP = 0.820 ratio = 0.834 hyp_len = 93290 ref_len = 111811)
+2022-04-03 14:34:29 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint14.pt
+2022-04-03 14:34:29 | INFO | hw5.seq2seq | end of epoch 14
+2022-04-03 14:37:11 | INFO | hw5.seq2seq | training loss: 4.0809
+2022-04-03 14:37:11 | INFO | hw5.seq2seq | begin validation
+2022-04-03 14:38:00 | INFO | hw5.seq2seq | example source: and we've started making curtains , and not only is it beautiful , but people can see status that you care about your children .
+2022-04-03 14:38:00 | INFO | hw5.seq2seq | example hypothesis: 我們開始做曲線 , 不僅是美麗 , 而是大家都能在乎孩子的狀況 。
+2022-04-03 14:38:00 | INFO | hw5.seq2seq | example reference: 我們也開始生産窗簾不止因爲窗簾看起來漂亮 , 人們也可以看到你的地位看得出你很關心小孩
+2022-04-03 14:38:00 | INFO | hw5.seq2seq | validation loss:	3.8881
+2022-04-03 14:38:00 | INFO | hw5.seq2seq | BLEU = 19.03 55.7/29.3/16.2/9.5 (BP = 0.851 ratio = 0.861 hyp_len = 96254 ref_len = 111811)
+2022-04-03 14:38:01 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint15.pt
+2022-04-03 14:38:01 | INFO | hw5.seq2seq | end of epoch 15
+2022-04-03 14:40:43 | INFO | hw5.seq2seq | training loss: 4.0579
+2022-04-03 14:40:43 | INFO | hw5.seq2seq | begin validation
+2022-04-03 14:41:38 | INFO | hw5.seq2seq | example source: now , i'm not suggesting we want to raise our babies in our stomach , but i am suggesting it's possible we might want to manage gastric secretion in the gut .
+2022-04-03 14:41:38 | INFO | hw5.seq2seq | example hypothesis: 現在 , 我並不是建議我們想要在胃裡舉起我們的寶寶 , 但我建議我們可能想管理氣體安全 。
+2022-04-03 14:41:38 | INFO | hw5.seq2seq | example reference: 我並不是說要把嬰兒養在胃裡而是我們可能可以了解胃在內臟裡的分泌物
+2022-04-03 14:41:38 | INFO | hw5.seq2seq | validation loss:	3.8765
+2022-04-03 14:41:38 | INFO | hw5.seq2seq | BLEU = 19.63 54.8/28.6/15.7/9.2 (BP = 0.901 ratio = 0.905 hyp_len = 101207 ref_len = 111811)
+2022-04-03 14:41:39 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint16.pt
+2022-04-03 14:41:39 | INFO | hw5.seq2seq | end of epoch 16
+2022-04-03 14:44:29 | INFO | hw5.seq2seq | training loss: 4.0444
+2022-04-03 14:44:29 | INFO | hw5.seq2seq | begin validation
+2022-04-03 14:45:21 | INFO | hw5.seq2seq | example source: so we're hoping that's what they'll do .
+2022-04-03 14:45:21 | INFO | hw5.seq2seq | example hypothesis: 所以 , 我們希望這就是他們會做的 。
+2022-04-03 14:45:21 | INFO | hw5.seq2seq | example reference: 所以 , 我們希望它們能夠幫忙 。
+2022-04-03 14:45:21 | INFO | hw5.seq2seq | validation loss:	3.8648
+2022-04-03 14:45:21 | INFO | hw5.seq2seq | BLEU = 20.00 55.0/28.9/15.9/9.3 (BP = 0.908 ratio = 0.912 hyp_len = 102011 ref_len = 111811)
+2022-04-03 14:45:21 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint17.pt
+2022-04-03 14:45:21 | INFO | hw5.seq2seq | end of epoch 17
+2022-04-03 14:48:01 | INFO | hw5.seq2seq | training loss: 4.0293
+2022-04-03 14:48:01 | INFO | hw5.seq2seq | begin validation
+2022-04-03 14:48:54 | INFO | hw5.seq2seq | example source: i remember so vividly that day .
+2022-04-03 14:48:54 | INFO | hw5.seq2seq | example hypothesis: 我還記得那一天 。
+2022-04-03 14:48:54 | INFO | hw5.seq2seq | example reference: 我對那一天還記憶猶新 。
+2022-04-03 14:48:54 | INFO | hw5.seq2seq | validation loss:	3.8528
+2022-04-03 14:48:54 | INFO | hw5.seq2seq | BLEU = 19.77 54.9/28.9/16.0/9.3 (BP = 0.897 ratio = 0.902 hyp_len = 100821 ref_len = 111811)
+2022-04-03 14:48:55 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint18.pt
+2022-04-03 14:48:55 | INFO | hw5.seq2seq | end of epoch 18
+2022-04-03 14:51:41 | INFO | hw5.seq2seq | training loss: 4.0169
+2022-04-03 14:51:41 | INFO | hw5.seq2seq | begin validation
+2022-04-03 14:52:32 | INFO | hw5.seq2seq | example source: the next step is to make compliant toes , and try to add spines and claws and set it for dry adhesives .
+2022-04-03 14:52:32 | INFO | hw5.seq2seq | example hypothesis: 接下來的一步是要做出複雜的玩具 , 試圖加入脊椎和爪子 , 並為乾燥的蛋白質 。
+2022-04-03 14:52:32 | INFO | hw5.seq2seq | example reference: 下一步是要製造順從聽話的腳趾頭 。 然後加上刺和爪子 , 再加上乾膠 。
+2022-04-03 14:52:32 | INFO | hw5.seq2seq | validation loss:	3.8519
+2022-04-03 14:52:32 | INFO | hw5.seq2seq | BLEU = 20.07 54.9/28.9/16.0/9.3 (BP = 0.912 ratio = 0.916 hyp_len = 102383 ref_len = 111811)
+2022-04-03 14:52:32 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint19.pt
+2022-04-03 14:52:32 | INFO | hw5.seq2seq | end of epoch 19
+2022-04-03 14:55:20 | INFO | hw5.seq2seq | training loss: 4.0043
+2022-04-03 14:55:20 | INFO | hw5.seq2seq | begin validation
+2022-04-03 14:56:17 | INFO | hw5.seq2seq | example source: and got the cord off of the baby's neck , and a healthy screaming , kicking baby arrived , just as the dad ran in from the parking lot , " hi , you have a son , i'm dr . darria .
+2022-04-03 14:56:17 | INFO | hw5.seq2seq | example hypothesis: 然後從嬰兒的脖子裡拿出來 , 一隻健康的尖叫、kicby , 就像從停車場跑出來的爸爸 , 「 嗨 , 你有兒子 , 我是darria 。
+2022-04-03 14:56:17 | INFO | hw5.seq2seq | example reference: 我把臍帶從嬰兒的脖子繞開 , 接著 , 一個健康哭鬧的嬰兒誕生了 。 同時 , 他的父親剛從停車場趕來 。 「 你好 , 是一個男孩 。 我是達里亞醫生 。
+2022-04-03 14:56:17 | INFO | hw5.seq2seq | validation loss:	3.8318
+2022-04-03 14:56:17 | INFO | hw5.seq2seq | BLEU = 19.86 55.7/29.5/16.4/9.6 (BP = 0.881 ratio = 0.888 hyp_len = 99280 ref_len = 111811)
+2022-04-03 14:56:18 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint20.pt
+2022-04-03 14:56:18 | INFO | hw5.seq2seq | end of epoch 20
+2022-04-03 14:59:00 | INFO | hw5.seq2seq | training loss: 3.9988
+2022-04-03 14:59:00 | INFO | hw5.seq2seq | begin validation
+2022-04-03 15:00:03 | INFO | hw5.seq2seq | example source: no , but the issue of city building in democracy is interesting because it creates chaos , right ?
+2022-04-03 15:00:03 | INFO | hw5.seq2seq | example hypothesis: 不 , 但城市的建築問題很有趣 , 因為它創造了混亂 , 對吧 ?
+2022-04-03 15:00:03 | INFO | hw5.seq2seq | example reference: 不 , 但民主的城市建設很有趣 , 因為會造成混亂 , 是嗎 ?
+2022-04-03 15:00:03 | INFO | hw5.seq2seq | validation loss:	3.8278
+2022-04-03 15:00:03 | INFO | hw5.seq2seq | BLEU = 20.20 55.5/29.3/16.2/9.5 (BP = 0.904 ratio = 0.909 hyp_len = 101590 ref_len = 111811)
+2022-04-03 15:00:04 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint21.pt
+2022-04-03 15:00:04 | INFO | hw5.seq2seq | end of epoch 21
+2022-04-03 15:02:47 | INFO | hw5.seq2seq | training loss: 3.9822
+2022-04-03 15:02:47 | INFO | hw5.seq2seq | begin validation
+2022-04-03 15:03:38 | INFO | hw5.seq2seq | example source: so i'm going to show you a demo of this .
+2022-04-03 15:03:38 | INFO | hw5.seq2seq | example hypothesis: 所以 , 我要給你們看一個例子 。
+2022-04-03 15:03:38 | INFO | hw5.seq2seq | example reference: 現在請各位看示範
+2022-04-03 15:03:38 | INFO | hw5.seq2seq | validation loss:	3.8326
+2022-04-03 15:03:38 | INFO | hw5.seq2seq | BLEU = 20.36 55.6/29.5/16.4/9.6 (BP = 0.902 ratio = 0.907 hyp_len = 101388 ref_len = 111811)
+2022-04-03 15:03:39 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint22.pt
+2022-04-03 15:03:39 | INFO | hw5.seq2seq | end of epoch 22
+2022-04-03 15:06:25 | INFO | hw5.seq2seq | training loss: 3.9756
+2022-04-03 15:06:25 | INFO | hw5.seq2seq | begin validation
+2022-04-03 15:07:11 | INFO | hw5.seq2seq | example source: you see , in every country where you hear about armed jihadis targeting civilians , there are also unarmed people defying those militants that you don't hear about , and those people need our support to succeed .
+2022-04-03 15:07:11 | INFO | hw5.seq2seq | example hypothesis: 在每個你聽過的國家 , 約翰迪州的每個國家 , 都沒有人害怕那些你聽過的軍隊 , 而那些人需要成功的支持 。
+2022-04-03 15:07:11 | INFO | hw5.seq2seq | example reference: 你看 , 不管在哪個國家你都會聽到武裝聖戰者針對平民百姓 , 也有很多手無寸鐵的人民公然反抗那些激進分子 , 只是你沒聽過 , 那些人需要我們的支持才能成功 。
+2022-04-03 15:07:11 | INFO | hw5.seq2seq | validation loss:	3.8236
+2022-04-03 15:07:11 | INFO | hw5.seq2seq | BLEU = 20.06 56.2/29.9/16.6/9.7 (BP = 0.879 ratio = 0.886 hyp_len = 99025 ref_len = 111811)
+2022-04-03 15:07:11 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint23.pt
+2022-04-03 15:07:11 | INFO | hw5.seq2seq | end of epoch 23
+2022-04-03 15:09:46 | INFO | hw5.seq2seq | training loss: 3.9643
+2022-04-03 15:09:46 | INFO | hw5.seq2seq | begin validation
+2022-04-03 15:10:45 | INFO | hw5.seq2seq | example source: from gezi to tahrir to elsewhere , i've seen people put their lives and livelihoods on the line .
+2022-04-03 15:10:45 | INFO | hw5.seq2seq | example hypothesis: 從gezi到塔利市 , 我見過人們把他們的生活和生活在線上 。
+2022-04-03 15:10:45 | INFO | hw5.seq2seq | example reference: 從格濟公園 , 到解放廣場 , 再到其它地方 , 我見過許多人用他們的生命和生計做賭注 。
+2022-04-03 15:10:45 | INFO | hw5.seq2seq | validation loss:	3.8179
+2022-04-03 15:10:45 | INFO | hw5.seq2seq | BLEU = 20.15 56.6/30.2/16.9/9.9 (BP = 0.871 ratio = 0.878 hyp_len = 98197 ref_len = 111811)
+2022-04-03 15:10:46 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint24.pt
+2022-04-03 15:10:46 | INFO | hw5.seq2seq | end of epoch 24
+2022-04-03 15:13:19 | INFO | hw5.seq2seq | training loss: 3.9596
+2022-04-03 15:13:19 | INFO | hw5.seq2seq | begin validation
+2022-04-03 15:14:22 | INFO | hw5.seq2seq | example source: and every project before that had been completely personal and it was a revelation when people just started commenting , started giving feedback on your code .
+2022-04-03 15:14:22 | INFO | hw5.seq2seq | example hypothesis: 在那些已經完全個人的專案之前 , 大家剛開始評論 , 開始回饋你的程式碼 。
+2022-04-03 15:14:22 | INFO | hw5.seq2seq | example reference: 在那之前每一件計劃都是我個人的東西 , 所以當大家開始評論 , 開始對你的程式給意見時 , 真的是一種啟示 。
+2022-04-03 15:14:22 | INFO | hw5.seq2seq | validation loss:	3.7968
+2022-04-03 15:14:22 | INFO | hw5.seq2seq | BLEU = 20.66 55.0/29.1/16.3/9.5 (BP = 0.926 ratio = 0.929 hyp_len = 103842 ref_len = 111811)
+2022-04-03 15:14:24 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint25.pt
+2022-04-03 15:14:24 | INFO | hw5.seq2seq | end of epoch 25
+2022-04-03 15:17:07 | INFO | hw5.seq2seq | training loss: 3.9540
+2022-04-03 15:17:07 | INFO | hw5.seq2seq | begin validation
+2022-04-03 15:18:06 | INFO | hw5.seq2seq | example source: thank you so much .
+2022-04-03 15:18:06 | INFO | hw5.seq2seq | example hypothesis: 謝謝
+2022-04-03 15:18:06 | INFO | hw5.seq2seq | example reference: 感謝各位.
+2022-04-03 15:18:06 | INFO | hw5.seq2seq | validation loss:	3.8094
+2022-04-03 15:18:06 | INFO | hw5.seq2seq | BLEU = 19.71 57.4/30.7/17.1/10.1 (BP = 0.839 ratio = 0.851 hyp_len = 95102 ref_len = 111811)
+2022-04-03 15:18:07 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint26.pt
+2022-04-03 15:18:07 | INFO | hw5.seq2seq | end of epoch 26
+2022-04-03 15:20:47 | INFO | hw5.seq2seq | training loss: 3.9481
+2022-04-03 15:20:47 | INFO | hw5.seq2seq | begin validation
+2022-04-03 15:21:35 | INFO | hw5.seq2seq | example source: at the age of six months , virtually every one of us is able to differentiate between animate and inanimate objects .
+2022-04-03 15:21:35 | INFO | hw5.seq2seq | example hypothesis: 六個月以來 , 我們每一個人都能夠在動畫和最初的物體之間分辨 。
+2022-04-03 15:21:35 | INFO | hw5.seq2seq | example reference: 在六個月大時 , 幾乎每個人都能辨別東西是否有生命 。
+2022-04-03 15:21:35 | INFO | hw5.seq2seq | validation loss:	3.8025
+2022-04-03 15:21:35 | INFO | hw5.seq2seq | BLEU = 20.30 57.2/30.6/17.2/10.2 (BP = 0.863 ratio = 0.871 hyp_len = 97421 ref_len = 111811)
+2022-04-03 15:21:35 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint27.pt
+2022-04-03 15:21:35 | INFO | hw5.seq2seq | end of epoch 27
+2022-04-03 15:24:14 | INFO | hw5.seq2seq | training loss: 3.9390
+2022-04-03 15:24:14 | INFO | hw5.seq2seq | begin validation
+2022-04-03 15:25:05 | INFO | hw5.seq2seq | example source: the problem is there is no such thing as a viable democracy made up of experts , zealots , politicians and spectators .
+2022-04-03 15:25:05 | INFO | hw5.seq2seq | example hypothesis: 問題在於 , 政治家和尊重者都沒有那麼可靠的民主制度 , 無論是專家、政治家、政治人物 。
+2022-04-03 15:25:05 | INFO | hw5.seq2seq | example reference: 事實上 , 根本沒有一種民主制度是由專家 , 狂熱分子 , 政治家和旁觀者組成的
+2022-04-03 15:25:05 | INFO | hw5.seq2seq | validation loss:	3.7833
+2022-04-03 15:25:05 | INFO | hw5.seq2seq | BLEU = 21.16 55.0/29.4/16.5/9.7 (BP = 0.938 ratio = 0.940 hyp_len = 105137 ref_len = 111811)
+2022-04-03 15:25:05 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint28.pt
+2022-04-03 15:25:05 | INFO | hw5.seq2seq | end of epoch 28
+2022-04-03 15:27:46 | INFO | hw5.seq2seq | training loss: 3.9333
+2022-04-03 15:27:46 | INFO | hw5.seq2seq | begin validation
+2022-04-03 15:28:44 | INFO | hw5.seq2seq | example source: they're learning our culture , our language , our heritage and realizing we're just as different and just the same as each other .
+2022-04-03 15:28:44 | INFO | hw5.seq2seq | example hypothesis: 他們在學習我們的文化、語言、遺產、意識到我們是不一樣的 , 就像彼此一樣 。
+2022-04-03 15:28:44 | INFO | hw5.seq2seq | example reference: 他們正在習知我們的文化、語言、傳統 , 並意識到彼此不同及相同之處 。
+2022-04-03 15:28:44 | INFO | hw5.seq2seq | validation loss:	3.7841
+2022-04-03 15:28:44 | INFO | hw5.seq2seq | BLEU = 20.62 55.9/29.6/16.5/9.7 (BP = 0.909 ratio = 0.913 hyp_len = 102045 ref_len = 111811)
+2022-04-03 15:28:45 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint29.pt
+2022-04-03 15:28:45 | INFO | hw5.seq2seq | end of epoch 29
+2022-04-03 15:31:25 | INFO | hw5.seq2seq | training loss: 3.9277
+2022-04-03 15:31:25 | INFO | hw5.seq2seq | begin validation
+2022-04-03 15:32:25 | INFO | hw5.seq2seq | example source: but did you know that only two percent of that funding went to rebuild haitian public institutions , including its health sector ?
+2022-04-03 15:32:25 | INFO | hw5.seq2seq | example hypothesis: 但你知道 , 只有2%的資金去重建海地公共機構 , 包括它的健康部門 ?
+2022-04-03 15:32:25 | INFO | hw5.seq2seq | example reference: 但你知不知道國際社會捐款中只有2%用去重建海地的公共體制 , 包括衞生部門 ?
+2022-04-03 15:32:25 | INFO | hw5.seq2seq | validation loss:	3.7736
+2022-04-03 15:32:25 | INFO | hw5.seq2seq | BLEU = 20.69 56.3/30.1/17.0/10.1 (BP = 0.892 ratio = 0.898 hyp_len = 100371 ref_len = 111811)
+2022-04-03 15:32:26 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint30.pt
+2022-04-03 15:32:26 | INFO | hw5.seq2seq | end of epoch 30

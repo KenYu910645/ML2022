@@ -1,0 +1,341 @@
+2022-04-03 16:04:30 | INFO | fairseq.utils | ***********************CUDA enviroments for all 1 workers***********************
+2022-04-03 16:04:30 | INFO | fairseq.utils | rank   0: capabilities =  8.6  ; total memory = 9.999 GB ; name = NVIDIA GeForce RTX 3080                 
+2022-04-03 16:04:30 | INFO | fairseq.utils | ***********************CUDA enviroments for all 1 workers***********************
+2022-04-03 16:04:31 | INFO | fairseq.tasks.translation | [en] dictionary: 8000 types
+2022-04-03 16:04:31 | INFO | fairseq.tasks.translation | [zh] dictionary: 8000 types
+2022-04-03 16:04:31 | INFO | hw5.seq2seq | loading data for epoch 1
+2022-04-03 16:04:31 | INFO | fairseq.data.data_utils | loaded 390,041 examples from: ./DATA/data-bin/ted2020/train.en-zh.en
+2022-04-03 16:04:31 | INFO | fairseq.data.data_utils | loaded 390,041 examples from: ./DATA/data-bin/ted2020/train.en-zh.zh
+2022-04-03 16:04:31 | INFO | fairseq.tasks.translation | ./DATA/data-bin/ted2020 train en-zh 390041 examples
+2022-04-03 16:04:31 | INFO | fairseq.data.data_utils | loaded 3,939 examples from: ./DATA/data-bin/ted2020/valid.en-zh.en
+2022-04-03 16:04:31 | INFO | fairseq.data.data_utils | loaded 3,939 examples from: ./DATA/data-bin/ted2020/valid.en-zh.zh
+2022-04-03 16:04:31 | INFO | fairseq.tasks.translation | ./DATA/data-bin/ted2020 valid en-zh 3939 examples
+{'id': 1,
+ 'source': tensor([  18,   14,    6, 2234,   60,   19,   80,    5,  256,   16,  405, 1407,
+        1706,    7,    2]),
+ 'target': tensor([ 140,  690,   28,  270,   45,  151, 1142,  660,  606,  369, 3114, 2434,
+        1434,  192,    2])}
+"Source: that's exactly what i do optical mind control ."
+'Target: 這實在就是我所做的--光學操控思想'
+2022-04-03 16:04:31 | WARNING | fairseq.tasks.fairseq_task | 2,532 samples have invalid sizes and will be skipped, max_positions=(20, 20), first few sample ids=[29, 135, 2444, 3058, 682, 731, 235, 1558, 3383, 559]
+2022-04-03 16:04:31 | INFO | hw5.seq2seq | Seq2Seq(
+  (encoder): TransformerEncoder(
+    (dropout_module): FairseqDropout()
+    (embed_tokens): Embedding(8000, 256, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=256, out_features=256, bias=True)
+          (v_proj): Linear(in_features=256, out_features=256, bias=True)
+          (q_proj): Linear(in_features=256, out_features=256, bias=True)
+          (out_proj): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=256, out_features=1024, bias=True)
+        (fc2): Linear(in_features=1024, out_features=256, bias=True)
+        (final_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=256, out_features=256, bias=True)
+          (v_proj): Linear(in_features=256, out_features=256, bias=True)
+          (q_proj): Linear(in_features=256, out_features=256, bias=True)
+          (out_proj): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=256, out_features=1024, bias=True)
+        (fc2): Linear(in_features=1024, out_features=256, bias=True)
+        (final_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=256, out_features=256, bias=True)
+          (v_proj): Linear(in_features=256, out_features=256, bias=True)
+          (q_proj): Linear(in_features=256, out_features=256, bias=True)
+          (out_proj): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=256, out_features=1024, bias=True)
+        (fc2): Linear(in_features=1024, out_features=256, bias=True)
+        (final_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (dropout_module): FairseqDropout()
+    (embed_tokens): Embedding(8000, 256, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=256, out_features=256, bias=True)
+          (v_proj): Linear(in_features=256, out_features=256, bias=True)
+          (q_proj): Linear(in_features=256, out_features=256, bias=True)
+          (out_proj): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=256, out_features=256, bias=True)
+          (v_proj): Linear(in_features=256, out_features=256, bias=True)
+          (q_proj): Linear(in_features=256, out_features=256, bias=True)
+          (out_proj): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=256, out_features=1024, bias=True)
+        (fc2): Linear(in_features=1024, out_features=256, bias=True)
+        (final_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=256, out_features=256, bias=True)
+          (v_proj): Linear(in_features=256, out_features=256, bias=True)
+          (q_proj): Linear(in_features=256, out_features=256, bias=True)
+          (out_proj): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=256, out_features=256, bias=True)
+          (v_proj): Linear(in_features=256, out_features=256, bias=True)
+          (q_proj): Linear(in_features=256, out_features=256, bias=True)
+          (out_proj): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=256, out_features=1024, bias=True)
+        (fc2): Linear(in_features=1024, out_features=256, bias=True)
+        (final_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=256, out_features=256, bias=True)
+          (v_proj): Linear(in_features=256, out_features=256, bias=True)
+          (q_proj): Linear(in_features=256, out_features=256, bias=True)
+          (out_proj): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=256, out_features=256, bias=True)
+          (v_proj): Linear(in_features=256, out_features=256, bias=True)
+          (q_proj): Linear(in_features=256, out_features=256, bias=True)
+          (out_proj): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=256, out_features=1024, bias=True)
+        (fc2): Linear(in_features=1024, out_features=256, bias=True)
+        (final_layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    (output_projection): Linear(in_features=256, out_features=8000, bias=False)
+  )
+)
+2022-04-03 16:04:34 | INFO | hw5.seq2seq | task: TranslationTask
+2022-04-03 16:04:34 | INFO | hw5.seq2seq | encoder: TransformerEncoder
+2022-04-03 16:04:34 | INFO | hw5.seq2seq | decoder: TransformerDecoder
+2022-04-03 16:04:34 | INFO | hw5.seq2seq | criterion: LabelSmoothedCrossEntropyCriterion
+2022-04-03 16:04:34 | INFO | hw5.seq2seq | optimizer: NoamOpt
+2022-04-03 16:04:34 | INFO | hw5.seq2seq | num. model params: 9,626,624 (num. trained: 9,626,624)
+2022-04-03 16:04:34 | INFO | hw5.seq2seq | max tokens per batch = 8192, accumulate steps = 2
+2022-04-03 16:04:34 | WARNING | fairseq.tasks.fairseq_task | 1 samples have invalid sizes and will be skipped, max_positions=(1024, 1024), first few sample ids=[326674]
+2022-04-03 16:07:59 | INFO | hw5.seq2seq | training loss: 7.0689
+2022-04-03 16:07:59 | INFO | hw5.seq2seq | Epoch: 1/30
+2022-04-03 16:07:59 | INFO | hw5.seq2seq | training loss: 7.068915571381957
+2022-04-03 16:09:00 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint1.pt
+2022-04-03 16:09:00 | INFO | hw5.seq2seq | validation loss: 6.009068012237549
+2022-04-03 16:09:00 | INFO | hw5.seq2seq | BLEU = 0.87 17.3/2.8/0.5/0.1 (BP = 0.720 ratio = 0.753 hyp_len = 84200 ref_len = 111811)
+2022-04-03 16:12:07 | INFO | hw5.seq2seq | training loss: 5.5638
+2022-04-03 16:12:07 | INFO | hw5.seq2seq | Epoch: 2/30
+2022-04-03 16:12:07 | INFO | hw5.seq2seq | training loss: 5.563830704037493
+2022-04-03 16:12:55 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint2.pt
+2022-04-03 16:12:57 | INFO | hw5.seq2seq | validation loss: 5.098571300506592
+2022-04-03 16:12:57 | INFO | hw5.seq2seq | BLEU = 6.94 42.2/16.1/6.6/2.7 (BP = 0.659 ratio = 0.705 hyp_len = 78868 ref_len = 111811)
+2022-04-03 16:16:37 | INFO | hw5.seq2seq | training loss: 4.9822
+2022-04-03 16:16:37 | INFO | hw5.seq2seq | Epoch: 3/30
+2022-04-03 16:16:37 | INFO | hw5.seq2seq | training loss: 4.982161433813332
+2022-04-03 16:17:33 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint3.pt
+2022-04-03 16:17:33 | INFO | hw5.seq2seq | validation loss: 4.5989179611206055
+2022-04-03 16:17:33 | INFO | hw5.seq2seq | BLEU = 11.25 44.9/19.6/9.4/4.7 (BP = 0.804 ratio = 0.821 hyp_len = 91782 ref_len = 111811)
+2022-04-03 16:20:56 | INFO | hw5.seq2seq | training loss: 4.6883
+2022-04-03 16:20:56 | INFO | hw5.seq2seq | Epoch: 4/30
+2022-04-03 16:20:56 | INFO | hw5.seq2seq | training loss: 4.688302167315419
+2022-04-03 16:22:00 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint4.pt
+2022-04-03 16:22:01 | INFO | hw5.seq2seq | validation loss: 4.361748695373535
+2022-04-03 16:22:01 | INFO | hw5.seq2seq | BLEU = 13.60 45.4/21.0/10.6/5.6 (BP = 0.881 ratio = 0.887 hyp_len = 99195 ref_len = 111811)
+2022-04-03 16:25:58 | INFO | hw5.seq2seq | training loss: 4.4867
+2022-04-03 16:25:58 | INFO | hw5.seq2seq | Epoch: 5/30
+2022-04-03 16:25:58 | INFO | hw5.seq2seq | training loss: 4.486660828200819
+2022-04-03 16:27:04 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint5.pt
+2022-04-03 16:27:04 | INFO | hw5.seq2seq | validation loss: 4.193428993225098
+2022-04-03 16:27:04 | INFO | hw5.seq2seq | BLEU = 15.94 48.4/23.3/12.0/6.5 (BP = 0.923 ratio = 0.925 hyp_len = 103470 ref_len = 111811)
+2022-04-03 16:30:22 | INFO | hw5.seq2seq | training loss: 4.3442
+2022-04-03 16:30:22 | INFO | hw5.seq2seq | Epoch: 6/30
+2022-04-03 16:30:22 | INFO | hw5.seq2seq | training loss: 4.344167618450034
+2022-04-03 16:31:29 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint6.pt
+2022-04-03 16:31:29 | INFO | hw5.seq2seq | validation loss: 4.054250240325928
+2022-04-03 16:31:29 | INFO | hw5.seq2seq | BLEU = 17.18 51.9/25.8/13.6/7.6 (BP = 0.892 ratio = 0.897 hyp_len = 100300 ref_len = 111811)
+2022-04-03 16:35:16 | INFO | hw5.seq2seq | training loss: 4.2185
+2022-04-03 16:35:16 | INFO | hw5.seq2seq | Epoch: 7/30
+2022-04-03 16:35:16 | INFO | hw5.seq2seq | training loss: 4.218519239034235
+2022-04-03 16:36:14 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint7.pt
+2022-04-03 16:36:15 | INFO | hw5.seq2seq | validation loss: 3.9970364570617676
+2022-04-03 16:36:15 | INFO | hw5.seq2seq | BLEU = 17.02 54.6/27.8/15.0/8.5 (BP = 0.812 ratio = 0.828 hyp_len = 92570 ref_len = 111811)
+2022-04-03 16:39:40 | INFO | hw5.seq2seq | training loss: 4.1313
+2022-04-03 16:39:40 | INFO | hw5.seq2seq | Epoch: 8/30
+2022-04-03 16:39:40 | INFO | hw5.seq2seq | training loss: 4.1312821648407105
+2022-04-03 16:40:41 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint8.pt
+2022-04-03 16:40:42 | INFO | hw5.seq2seq | validation loss: 3.9090404510498047
+2022-04-03 16:40:42 | INFO | hw5.seq2seq | BLEU = 18.69 54.9/28.6/15.7/9.1 (BP = 0.858 ratio = 0.867 hyp_len = 96959 ref_len = 111811)
+2022-04-03 16:43:53 | INFO | hw5.seq2seq | training loss: 4.0640
+2022-04-03 16:43:53 | INFO | hw5.seq2seq | Epoch: 9/30
+2022-04-03 16:43:53 | INFO | hw5.seq2seq | training loss: 4.063961664248451
+2022-04-03 16:45:00 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint9.pt
+2022-04-03 16:45:00 | INFO | hw5.seq2seq | validation loss: 3.8879966735839844
+2022-04-03 16:45:00 | INFO | hw5.seq2seq | BLEU = 19.18 49.2/25.3/13.8/7.9 (BP = 1.000 ratio = 1.045 hyp_len = 116801 ref_len = 111811)
+2022-04-03 16:48:32 | INFO | hw5.seq2seq | training loss: 4.0142
+2022-04-03 16:48:32 | INFO | hw5.seq2seq | Epoch: 10/30
+2022-04-03 16:48:32 | INFO | hw5.seq2seq | training loss: 4.014174269983121
+2022-04-03 16:49:38 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint10.pt
+2022-04-03 16:49:38 | INFO | hw5.seq2seq | validation loss: 3.8241565227508545
+2022-04-03 16:49:38 | INFO | hw5.seq2seq | BLEU = 19.71 55.6/29.3/16.2/9.5 (BP = 0.881 ratio = 0.888 hyp_len = 99252 ref_len = 111811)
+2022-04-03 16:53:33 | INFO | hw5.seq2seq | training loss: 3.9725
+2022-04-03 16:53:33 | INFO | hw5.seq2seq | Epoch: 11/30
+2022-04-03 16:53:33 | INFO | hw5.seq2seq | training loss: 3.972485686500499
+2022-04-03 16:54:34 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint11.pt
+2022-04-03 16:54:34 | INFO | hw5.seq2seq | validation loss: 3.8055198192596436
+2022-04-03 16:54:34 | INFO | hw5.seq2seq | BLEU = 20.52 55.0/29.1/16.2/9.6 (BP = 0.918 ratio = 0.922 hyp_len = 103043 ref_len = 111811)
+2022-04-03 16:57:55 | INFO | hw5.seq2seq | training loss: 3.9407
+2022-04-03 16:57:55 | INFO | hw5.seq2seq | Epoch: 12/30
+2022-04-03 16:57:55 | INFO | hw5.seq2seq | training loss: 3.9406939205247205
+2022-04-03 16:58:56 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint12.pt
+2022-04-03 16:58:56 | INFO | hw5.seq2seq | validation loss: 3.762422800064087
+2022-04-03 16:58:56 | INFO | hw5.seq2seq | BLEU = 20.50 56.0/29.7/16.6/9.8 (BP = 0.900 ratio = 0.905 hyp_len = 101199 ref_len = 111811)
+2022-04-03 17:02:38 | INFO | hw5.seq2seq | training loss: 3.9115
+2022-04-03 17:02:38 | INFO | hw5.seq2seq | Epoch: 13/30
+2022-04-03 17:02:38 | INFO | hw5.seq2seq | training loss: 3.911514704966709
+2022-04-03 17:03:43 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint13.pt
+2022-04-03 17:03:43 | INFO | hw5.seq2seq | validation loss: 3.751771926879883
+2022-04-03 17:03:43 | INFO | hw5.seq2seq | BLEU = 20.54 56.7/30.3/17.0/10.0 (BP = 0.883 ratio = 0.890 hyp_len = 99473 ref_len = 111811)
+2022-04-03 17:07:09 | INFO | hw5.seq2seq | training loss: 3.8882
+2022-04-03 17:07:09 | INFO | hw5.seq2seq | Epoch: 14/30
+2022-04-03 17:07:09 | INFO | hw5.seq2seq | training loss: 3.888176113782528
+2022-04-03 17:08:05 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint14.pt
+2022-04-03 17:08:05 | INFO | hw5.seq2seq | validation loss: 3.736774444580078
+2022-04-03 17:08:05 | INFO | hw5.seq2seq | BLEU = 20.27 57.8/31.1/17.5/10.4 (BP = 0.847 ratio = 0.858 hyp_len = 95908 ref_len = 111811)
+2022-04-03 17:11:39 | INFO | hw5.seq2seq | training loss: 3.8718
+2022-04-03 17:11:39 | INFO | hw5.seq2seq | Epoch: 15/30
+2022-04-03 17:11:39 | INFO | hw5.seq2seq | training loss: 3.871802496846525
+2022-04-03 17:12:43 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint15.pt
+2022-04-03 17:12:43 | INFO | hw5.seq2seq | validation loss: 3.7128703594207764
+2022-04-03 17:12:43 | INFO | hw5.seq2seq | BLEU = 20.72 57.4/30.9/17.4/10.4 (BP = 0.870 ratio = 0.878 hyp_len = 98151 ref_len = 111811)
+2022-04-03 17:16:04 | INFO | hw5.seq2seq | training loss: 3.8477
+2022-04-03 17:16:04 | INFO | hw5.seq2seq | Epoch: 16/30
+2022-04-03 17:16:04 | INFO | hw5.seq2seq | training loss: 3.8477467146326068
+2022-04-03 17:17:09 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint16.pt
+2022-04-03 17:17:09 | INFO | hw5.seq2seq | validation loss: 3.7006032466888428
+2022-04-03 17:17:09 | INFO | hw5.seq2seq | BLEU = 21.41 56.6/30.5/17.2/10.3 (BP = 0.910 ratio = 0.914 hyp_len = 102220 ref_len = 111811)
+2022-04-03 17:20:34 | INFO | hw5.seq2seq | training loss: 3.8335
+2022-04-03 17:20:34 | INFO | hw5.seq2seq | Epoch: 17/30
+2022-04-03 17:20:34 | INFO | hw5.seq2seq | training loss: 3.8334528069788982
+2022-04-03 17:21:42 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint17.pt
+2022-04-03 17:21:43 | INFO | hw5.seq2seq | validation loss: 3.694478988647461
+2022-04-03 17:21:43 | INFO | hw5.seq2seq | BLEU = 21.53 56.5/30.5/17.2/10.2 (BP = 0.919 ratio = 0.922 hyp_len = 103066 ref_len = 111811)
+2022-04-03 17:23:52 | INFO | hw5.seq2seq | training loss: 3.8180
+2022-04-03 17:23:52 | INFO | hw5.seq2seq | Epoch: 18/30
+2022-04-03 17:23:52 | INFO | hw5.seq2seq | training loss: 3.818015236245052
+2022-04-03 17:24:19 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint18.pt
+2022-04-03 17:24:19 | INFO | hw5.seq2seq | validation loss: 3.6846370697021484
+2022-04-03 17:24:19 | INFO | hw5.seq2seq | BLEU = 21.19 57.2/31.0/17.5/10.4 (BP = 0.888 ratio = 0.894 hyp_len = 99980 ref_len = 111811)
+2022-04-03 17:26:24 | INFO | hw5.seq2seq | training loss: 3.8046
+2022-04-03 17:26:24 | INFO | hw5.seq2seq | Epoch: 19/30
+2022-04-03 17:26:24 | INFO | hw5.seq2seq | training loss: 3.804629406727275
+2022-04-03 17:26:50 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint19.pt
+2022-04-03 17:26:50 | INFO | hw5.seq2seq | validation loss: 3.662825345993042
+2022-04-03 17:26:50 | INFO | hw5.seq2seq | BLEU = 21.99 56.9/30.9/17.6/10.6 (BP = 0.919 ratio = 0.922 hyp_len = 103101 ref_len = 111811)
+2022-04-03 17:28:56 | INFO | hw5.seq2seq | training loss: 3.7911
+2022-04-03 17:28:56 | INFO | hw5.seq2seq | Epoch: 20/30
+2022-04-03 17:28:56 | INFO | hw5.seq2seq | training loss: 3.7910611725721868
+2022-04-03 17:29:24 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint20.pt
+2022-04-03 17:29:24 | INFO | hw5.seq2seq | validation loss: 3.657686233520508
+2022-04-03 17:29:24 | INFO | hw5.seq2seq | BLEU = 21.83 56.8/30.8/17.5/10.4 (BP = 0.919 ratio = 0.922 hyp_len = 103099 ref_len = 111811)
+2022-04-03 17:31:29 | INFO | hw5.seq2seq | training loss: 3.7845
+2022-04-03 17:31:29 | INFO | hw5.seq2seq | Epoch: 21/30
+2022-04-03 17:31:29 | INFO | hw5.seq2seq | training loss: 3.784538211086723
+2022-04-03 17:31:56 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint21.pt
+2022-04-03 17:31:56 | INFO | hw5.seq2seq | validation loss: 3.644742250442505
+2022-04-03 17:31:56 | INFO | hw5.seq2seq | BLEU = 22.15 56.8/30.9/17.6/10.5 (BP = 0.928 ratio = 0.930 hyp_len = 103997 ref_len = 111811)
+2022-04-03 17:33:59 | INFO | hw5.seq2seq | training loss: 3.7680
+2022-04-03 17:33:59 | INFO | hw5.seq2seq | Epoch: 22/30
+2022-04-03 17:33:59 | INFO | hw5.seq2seq | training loss: 3.767969461362385
+2022-04-03 17:34:25 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint22.pt
+2022-04-03 17:34:25 | INFO | hw5.seq2seq | validation loss: 3.650960922241211
+2022-04-03 17:34:25 | INFO | hw5.seq2seq | BLEU = 21.96 57.5/31.3/17.8/10.7 (BP = 0.908 ratio = 0.912 hyp_len = 101960 ref_len = 111811)
+2022-04-03 17:36:28 | INFO | hw5.seq2seq | training loss: 3.7604
+2022-04-03 17:36:28 | INFO | hw5.seq2seq | Epoch: 23/30
+2022-04-03 17:36:28 | INFO | hw5.seq2seq | training loss: 3.760438049071188
+2022-04-03 17:36:52 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint23.pt
+2022-04-03 17:36:52 | INFO | hw5.seq2seq | validation loss: 3.637812376022339
+2022-04-03 17:36:52 | INFO | hw5.seq2seq | BLEU = 21.87 57.8/31.6/18.0/10.8 (BP = 0.895 ratio = 0.900 hyp_len = 100649 ref_len = 111811)
+2022-04-03 17:38:55 | INFO | hw5.seq2seq | training loss: 3.7494
+2022-04-03 17:38:55 | INFO | hw5.seq2seq | Epoch: 24/30
+2022-04-03 17:38:55 | INFO | hw5.seq2seq | training loss: 3.749366028297058
+2022-04-03 17:39:21 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint24.pt
+2022-04-03 17:39:21 | INFO | hw5.seq2seq | validation loss: 3.6377506256103516
+2022-04-03 17:39:21 | INFO | hw5.seq2seq | BLEU = 22.15 58.1/31.9/18.3/11.1 (BP = 0.893 ratio = 0.898 hyp_len = 100442 ref_len = 111811)
+2022-04-03 17:41:24 | INFO | hw5.seq2seq | training loss: 3.7440
+2022-04-03 17:41:24 | INFO | hw5.seq2seq | Epoch: 25/30
+2022-04-03 17:41:24 | INFO | hw5.seq2seq | training loss: 3.7439721899287584
+2022-04-03 17:41:51 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint25.pt
+2022-04-03 17:41:51 | INFO | hw5.seq2seq | validation loss: 3.6234395503997803
+2022-04-03 17:41:51 | INFO | hw5.seq2seq | BLEU = 22.56 56.5/30.8/17.6/10.6 (BP = 0.945 ratio = 0.946 hyp_len = 105811 ref_len = 111811)
+2022-04-03 17:43:54 | INFO | hw5.seq2seq | training loss: 3.7372
+2022-04-03 17:43:54 | INFO | hw5.seq2seq | Epoch: 26/30
+2022-04-03 17:43:54 | INFO | hw5.seq2seq | training loss: 3.7372271902899707
+2022-04-03 17:44:19 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint26.pt
+2022-04-03 17:44:19 | INFO | hw5.seq2seq | validation loss: 3.6305181980133057
+2022-04-03 17:44:19 | INFO | hw5.seq2seq | BLEU = 21.30 59.1/32.4/18.5/11.2 (BP = 0.850 ratio = 0.860 hyp_len = 96138 ref_len = 111811)
+2022-04-03 17:46:22 | INFO | hw5.seq2seq | training loss: 3.7315
+2022-04-03 17:46:22 | INFO | hw5.seq2seq | Epoch: 27/30
+2022-04-03 17:46:22 | INFO | hw5.seq2seq | training loss: 3.7314961403370748
+2022-04-03 17:46:45 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint27.pt
+2022-04-03 17:46:45 | INFO | hw5.seq2seq | validation loss: 3.617567777633667
+2022-04-03 17:46:45 | INFO | hw5.seq2seq | BLEU = 22.25 58.0/31.9/18.3/11.1 (BP = 0.899 ratio = 0.904 hyp_len = 101040 ref_len = 111811)
+2022-04-03 17:48:49 | INFO | hw5.seq2seq | training loss: 3.7213
+2022-04-03 17:48:49 | INFO | hw5.seq2seq | Epoch: 28/30
+2022-04-03 17:48:49 | INFO | hw5.seq2seq | training loss: 3.7212740221390064
+2022-04-03 17:49:16 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint28.pt
+2022-04-03 17:49:16 | INFO | hw5.seq2seq | validation loss: 3.609776020050049
+2022-04-03 17:49:16 | INFO | hw5.seq2seq | BLEU = 22.72 57.0/31.2/17.9/10.8 (BP = 0.938 ratio = 0.940 hyp_len = 105133 ref_len = 111811)
+2022-04-03 17:51:19 | INFO | hw5.seq2seq | training loss: 3.7164
+2022-04-03 17:51:19 | INFO | hw5.seq2seq | Epoch: 29/30
+2022-04-03 17:51:19 | INFO | hw5.seq2seq | training loss: 3.716353024451112
+2022-04-03 17:51:47 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint29.pt
+2022-04-03 17:51:47 | INFO | hw5.seq2seq | validation loss: 3.6013150215148926
+2022-04-03 17:51:47 | INFO | hw5.seq2seq | BLEU = 22.65 57.5/31.5/18.0/10.9 (BP = 0.929 ratio = 0.931 hyp_len = 104131 ref_len = 111811)
+2022-04-03 17:53:49 | INFO | hw5.seq2seq | training loss: 3.7095
+2022-04-03 17:53:49 | INFO | hw5.seq2seq | Epoch: 30/30
+2022-04-03 17:53:49 | INFO | hw5.seq2seq | training loss: 3.709499900797123
+2022-04-03 17:54:14 | INFO | hw5.seq2seq | saved epoch checkpoint: /home/spiderkiller/ML2022/hw5_machine_translation/checkpoints/rnn/checkpoint30.pt
+2022-04-03 17:54:14 | INFO | hw5.seq2seq | validation loss: 3.5959599018096924
+2022-04-03 17:54:14 | INFO | hw5.seq2seq | BLEU = 22.38 57.9/31.7/18.1/10.9 (BP = 0.913 ratio = 0.917 hyp_len = 102495 ref_len = 111811)
