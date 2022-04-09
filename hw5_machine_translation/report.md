@@ -59,6 +59,8 @@ Summit score: 17.55
 ### ffn = 2048
 (100/100)[Train] loss: 3.075147 [Valid] loss: 3.240474
 2022-04-04 20:35:28 | INFO | hw5.seq2seq | BLEU = 26.03 61.0/35.4/21.4/13.6 (BP = 0.924 ratio = 0.927 hyp_len = 103644 ref_len = 111811)
+Summit: 26.56
+
 
 
 

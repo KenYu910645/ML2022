@@ -31,6 +31,7 @@ from fairseq.data import iterators
 from torch.cuda.amp import GradScaler, autocast
 from fairseq.modules import MultiheadAttention
 from fairseq.models.transformer import base_architecture
+import pandas as pd
 
 # * Controls every batch to contain no more than N tokens, which optimizes GPU memory efficiency
 # * Shuffles the training set for every epoch
@@ -289,6 +290,7 @@ def train_one_epoch(epoch_itr, model, task, criterion, optimizer, accum_steps=1)
     
     model.train()
     progress = tqdm.tqdm(itr, desc=f"train epoch {epoch_itr.epoch}", leave=False)
+    
     for samples in progress:
         model.zero_grad()
         accum_loss = 0
@@ -317,8 +319,12 @@ def train_one_epoch(epoch_itr, model, task, criterion, optimizer, accum_steps=1)
         
         scaler.unscale_(optimizer)
         optimizer.multiply_grads(1 / (sample_size or 1.0)) # (sample_size or 1.0) handles the case of a zero gradient
+        # TODO Do something about it.
+
         gnorm = nn.utils.clip_grad_norm_(model.parameters(), config.clip_norm) # grad norm clipping prevents gradient exploding
-        
+
+        if config_arg.p1:
+            gnorm_list.append(gnorm.item())
         scaler.step(optimizer)
         scaler.update()
         
@@ -509,6 +515,7 @@ def generate_prediction(model, task, split="test", outfile="./prediction.txt"):
 
 if __name__ == "__main__":
     IS_TRAIN = True
+    N_ITERT_P1 = 1000
     # Parse argument
     parser = argparse.ArgumentParser()
     parser.add_argument('--device', type = str, default = "cuda:0")
@@ -522,6 +529,8 @@ if __name__ == "__main__":
     parser.add_argument('--n_heads', type = int, default = 4) # 8, 16
     parser.add_argument('--output_fn', type = str, default = "summit.txt")
     parser.add_argument('--n_epoch', type = int, default = 100)
+    parser.add_argument('--p1', action="store_true")
+    parser.add_argument('--p2', action="store_true")
     config_arg = parser.parse_args()
     arch_args = Namespace(
         encoder_embed_dim=config_arg.encoder_embed_dim,
@@ -534,7 +543,7 @@ if __name__ == "__main__":
         dropout=config_arg.dropout,
     )
     # Set random seed 
-    seed = 73 # 5278
+    seed = 73
     random.seed(seed)
     torch.manual_seed(seed)
     if torch.cuda.is_available():
@@ -675,12 +684,30 @@ if __name__ == "__main__":
     logger.info(f"max tokens per batch = {config.max_tokens}, accumulate steps = {config.accum_steps}")
     epoch_itr = load_data_iterator(task, "train", config.start_epoch, config.max_tokens, config.num_workers)
     
+    if config_arg.p2:
+        pos_emb = model.decoder.embed_positions.weights.cpu().detach()
+        N = pos_emb.shape[0]
+        sim_mat = []
+        for i in range(N):
+            sim_mat.append(torch.nn.functional.cosine_similarity(pos_emb[i], pos_emb).cpu().detach().numpy())
+        with open('p2.pkl', 'wb') as f:
+            import pickle
+            pickle.dump(sim_mat, f)
+        exit()
+
     # try_load_checkpoint(model, optimizer, name=config.resume)
-    
+    gnorm_list = [] # For p1
     if IS_TRAIN:
         while epoch_itr.next_epoch_idx <= config.max_epoch:
             # train for one epoch
             train_stats = train_one_epoch(epoch_itr, model, task, criterion, optimizer, config.accum_steps)
+            if len(gnorm_list) >= N_ITERT_P1:
+                df = pd.DataFrame()
+                df['t'] = list(range(0, len(gnorm_list)))
+                df['gnorm'] = gnorm_list
+                df.to_csv("p1.csv", index=False)
+                print("Output gnorm to p1.csv")
+                exit()
             stats = validate_and_save(model, task, criterion, optimizer, epoch=epoch_itr.epoch)
             print("({:03d}/{:03d})[Train] loss: {:.6f} [Valid] loss: {:.6f}".format(epoch_itr.epoch, config.max_epoch, np.mean(train_stats['loss']), stats['loss']))
             logger.info(stats["bleu"].format())
