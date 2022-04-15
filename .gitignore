@@ -20,3 +20,11 @@ hw5_machine_translation/checkpoints
 hw5_machine_translation/DATA
 hw5_machine_translation/fairseq
 
+# hw6
+hw6_anime_face_renegation/style_gan
+hw6_anime_face_renegation/output
+hw6_anime_face_renegation/logs
+hw6_anime_face_renegation/*.pkl
+hw6_anime_face_renegation/checkpoints
+hw6_anime_face_renegation/faces
+hw6_anime_face_renegation/results
