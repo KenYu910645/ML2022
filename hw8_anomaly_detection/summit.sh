@@ -1,0 +1,1 @@
+kaggle competitions submit -c ml2022spring-hw8 -f prediction.csv -m "Hello Kaggle"

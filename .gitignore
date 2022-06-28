@@ -28,3 +28,35 @@ hw6_anime_face_renegation/*.pkl
 hw6_anime_face_renegation/checkpoints
 hw6_anime_face_renegation/faces
 hw6_anime_face_renegation/results
+
+# hw8
+hw8_anomaly_detection/*.pt
+hw8_anomaly_detection/data
+
+# hw9
+hw9_explainable_ai/*.pth
+hw9_explainable_ai/hw9_bert
+hw9_explainable_ai/*.ttf
+
+# hw10
+hw10_attack/*.tgz
+hw10_attack/mifgsm
+hw10_attack/ifgsm
+hw10_attack/fgsm
+hw10_attack/data
+
+# hw11
+hw11_domain_adaptation/*.csv
+hw11_domain_adaptation/*.bin
+hw11_domain_adaptation/real_or_drawing
+
+# hw15
+hw15_meta_learning/*.tar.gz
+hw15_meta_learning/Omniglot
+hw15_meta_learning/Omniglot-test
+hw15_meta_learning/*.csv
+
+
+
+
+
